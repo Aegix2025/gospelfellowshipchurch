@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gospel Fellowship Church</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f4f7fc;
+      color: #1a2a3a;
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    position: fixed;
+    border-radius: 50px;
+
+    top: 15px;
+    left: 60px;
+    right: 60px;
+
+    z-index: 999;
+    flex-wrap: wrap;
+    gap: 5px;
+    transition: all 0.3s ease;
+}
+
+    .header.scrolled {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    .logo-img {
+      height: 48px;
+      width: auto;
+      border-radius: 50%;
+    }
+
+    .logo-text {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1a2a3a;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+      margin-left: 8px;
+      cursor: pointer;
+    }
+
+    .navbar ul {
+      display: flex;
+      list-style: none;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .navbar ul li a {
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      color: #1a2a3a;
+      transition: 0.3s;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .navbar ul li a:hover,
+    .navbar ul li a.active {
+      background: #3895D3;
+      color: #fff;
+    }
+
+    #darkModeToggle {
+      background: transparent;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      padding: 0 8px;
+      line-height: 1;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .social-media a {
+      font-size: 1.6rem;
+      color: #1a2a3a;
+      transition: 0.3s;
+    }
+    .social-media a:hover { color: #3895D3; }
+
+    .login-form {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .login-form .form-content {
+      background: #fff;
+      padding: 40px 35px;
+      border-radius: 24px;
+      max-width: 400px;
+      width: 90%;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .login-form .form-content #closeForm {
+      position: absolute;
+      top: 12px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      color: #888;
+    }
+    .login-form h2 { margin-bottom: 20px; text-align: center; }
+    .login-form input {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 8px 0;
+      border: 1px solid #ddd;
+      border-radius: 30px;
+      font-size: 0.95rem;
+    }
+    .login-form button[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background: #3895D3;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      font-weight: 700;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 18px 0 12px;
+      color: #aaa;
+      font-size: 0.8rem;
+    }
+    .divider span { flex: 1; text-align: center; }
+    .social-btn {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      margin: 4px 0;
+      cursor: pointer;
+    }
+    .social-btn.facebook { background: #1877f2; color: #fff; }
+    .social-btn.google { background: #ea4335; color: #fff; }
+    .forgot { display: block; text-align: center; margin-top: 15px; color: #3895D3; text-decoration: none; }
+
+    /* ===== SECTIONS ===== */
+    .section {
+      display: block;
+      padding: 100px 20px 60px;
+      max-width: 1300px;
+      margin: 0 auto;
+      scroll-margin-top: 80px;
+      min-height: 100vh;
+    }
+
+    /* ===== HOME ===== */
+    #homeSection {
+      background: #ffffff;
+      margin: 0 auto;
+      padding-top: 100px;
+    }
+
+    .background {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 40px;
+      background: linear-gradient(145deg, #dce8f5, #f0f5fc);
+      padding: 40px 30px;
+      border-radius: 40px;
+      margin-bottom: 30px;
+    }
+
+    .background-content {
+      flex: 1 1 300px;
+      text-align: left;
+      padding-left: 10px;
+    }
+    .background-content h1 { font-size: 2.2rem; font-weight: 300; }
+    .background-content h2 { font-size: 2.8rem; font-weight: 700; color: #1a2a3a; font-family: 'Times New Roman', Times, serif; }
+    .background-content p { font-size: 1.2rem; color: #2c3e50; margin-top: 10px; }
+
+    .background-img {
+      flex: 0 0 180px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .circle-logo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      border: 4px solid #fff;
+      flex-shrink: 0;
+    }
+    .circle-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .home {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(8px);
+      padding: 30px 20px;
+      border-radius: 50px;
+      margin: 20px 0 40px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    }
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .btn-container .btn,
+    .btn-container .btn-give {
+      padding: 14px 40px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-container .btn {
+      background: #3895D3;
+      color: #fff;
+    }
+    .btn-container .btn:hover { background: #1f7bb5; transform: scale(1.02); }
+    .btn-container .btn-give {
+      background: #f5c842;
+      color: #1a2a3a;
+      border: 2px solid #f5c842;
+    }
+    .btn-container .btn-give:hover { background: #e0b330; }
+
+    .countdown-section {
+      background: #1a2a3a;
+      color: #fff;
+      padding: 30px 20px;
+      border-radius: 40px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .countdown-section h3 { font-weight: 300; letter-spacing: 1px; margin-bottom: 15px; }
+    .countdown-timer {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .countdown-block .num {
+      font-size: 2.8rem;
+      font-weight: 700;
+      background: rgba(255,255,255,0.1);
+      padding: 10px 18px;
+      border-radius: 20px;
+      display: inline-block;
+      min-width: 70px;
+    }
+    .countdown-block .label {
+      display: block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-top: 6px;
+      color: #bbb;
+    }
+
+    /* ===== GET STARTED ===== */
+    #getStartedSection {
+      background: #ffffff;
+      margin: 0 auto;
+    }
+
+    .events-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .events-main-title { font-size: 2.5rem; text-align: center; }
+    .events-main-subtitle { text-align: center; color: #555; max-width: 700px; margin: 10px auto 30px; }
+
+    .btn-events, .btn-secondary, .btn-attendees, .btn-live, .btn-prayer, .btn-announcements {
+      padding: 12px 28px;
+      border: none;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 0.95rem;
+    }
+    .btn-events { background: #3895D3; color: #fff; }
+    .btn-events:hover { background: #1f7bb5; }
+    .btn-secondary { background: #28a745; color: #fff; }
+    .btn-secondary:hover { background: #1e7e34; }
+    .btn-attendees { background: #6c757d; color: #fff; }
+    .btn-attendees:hover { background: #5a6268; }
+    .btn-live { background: #e63946; color: #fff; }
+    .btn-live:hover { background: #c62833; }
+    .btn-prayer { background: #6c63ff; color: #fff; }
+    .btn-prayer:hover { background: #5a52d5; }
+    .btn-announcements { background: #dc3545; color: #fff; }
+    .btn-announcements:hover { background: #bd2130; }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin: 30px 0 40px;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+    }
+    .event-card {
+      background: #fff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .event-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+    .event-card img { width: 100%; height: 160px; object-fit: cover; }
+    .event-card-content { padding: 18px; }
+    .event-tag {
+      display: inline-block;
+      background: #eef2f7;
+      padding: 4px 14px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    /* ===== ABOUT ===== */
+    #aboutSection {
+      background: #1a3a5c;
+      color: #ffffff;
+      margin: 0 auto;
+    }
+    #aboutSection .about-box {
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #fff;
+    }
+    #aboutSection .about-box h2 { color: #fff; }
+    #aboutSection .about-box p { color: rgba(255,255,255,0.85); }
+    #aboutSection .about-box hr { border-color: #f5c842; }
+    #aboutSection .pastors-section h2 { color: #fff; }
+    #aboutSection .pastor-card {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    #aboutSection .pastor-card h3 { color: #fff; }
+    #aboutSection .pastor-card .role { color: rgba(255,255,255,0.7); }
+
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin: 40px 0;
+    }
+    .about-box {
+      background: rgba(255,255,255,0.12);
+      padding: 30px 25px;
+      border-radius: 24px;
+      flex: 1 1 220px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #fff;
+    }
+    .about-box h2 { color: #fff; }
+    .about-box hr { margin: 12px 0; border: 1px solid #f5c842; width: 40px; }
+    .about-box p { color: rgba(255,255,255,0.85); }
+    
+    .pastors-section {
+  margin: 60px 0;
+}
+
+.pastors-section h2 {
+  color: #fff;
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
+
+.pastors-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.pastor-card {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 24px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.pastor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+.pastor-card img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid rgba(255,255,255,0.3);
+  margin-bottom: 18px;
+}
+
+.pastor-card h3 {
+  color: #fff;
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.pastor-card .role {
+  color: rgba(255,255,255,0.75);
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.pastor-card a {
+  color: #3895D3;
+  font-size: 2rem;
+  transition: .3s;
+}
+
+.pastor-card a:hover {
+  color: #fff;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .pastors-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .pastors-container {
+    grid-template-columns: 1fr;
+  }
+
+  .pastor-card img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+    /* ===== EVENTS ===== */
+    #eventsSection {
+      background: #e8f0f8;
+      margin: 0 auto;
+    }
+
+    /* ===== SERMONS ===== */
+    #sermonsSection {
+      background: #ffffff;
+      margin: 0 auto;
+    }
+
+    .sermons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin: 30px 0;
+    }
+    .sermon-card {
+      background: #fff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .sermon-card img { width: 100%; height: 170px; object-fit: cover; }
+    .sermon-card-content { padding: 20px; }
+    .sermon-verse { font-style: italic; color: #555; margin: 10px 0; }
+
+    /* ===== CONTACT ===== */
+    #contactSection {
+      background: #e8f0f8;
+      margin: 0 auto;
+    }
+
+    .map-embed-wrapper iframe {
+      width: 100%;
+      height: 220px;
+      border: 0;
+      border-radius: 16px;
+    }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background: #1a2a3a;
+      color: #ccc;
+      padding: 40px 20px 20px;
+      margin-top: 0;
+    }
+    .footer-container { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; }
+    .footer-column { display: flex; flex-wrap: wrap; gap: 40px; }
+    .footer-column h3 { color: #fff; font-weight: 600; margin-bottom: 12px; }
+    .social-icons a { color: #ccc; font-size: 1.6rem; margin-right: 12px; }
+    .footer-bottom { border-top: 1px solid #2a3a4a; padding-top: 20px; text-align: center; margin-top: 30px; }
+
+    /* ===== MODALS ===== */
+    .front-page {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+    }
+    .front-content {
+      background: #fff;
+      padding: 35px 30px;
+      border-radius: 28px;
+      max-width: 500px;
+      width: 92%;
+      position: relative;
+    }
+    .close-btn {
+      background: #eee;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 40px;
+      font-weight: 600;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    .close-btn:hover { background: #ddd; }
+
+    .register-form input, .addlist-form input, .prayer-form input, .prayer-form textarea {
+      width: 100%;
+      padding: 12px 16px;
+      margin: 8px 0;
+      border: 1px solid #ddd;
+      border-radius: 30px;
+    }
+
+    /* ===== EVENT MODAL ===== */
+    .event-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .event-modal.show {
+      display: flex;
+    }
+
+    .event-modal-content {
+      background: #fff;
+      border-radius: 20px;
+      max-width: 700px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 40px;
+      position: relative;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .event-modal-close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 30px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #999;
+      transition: color 0.3s;
+    }
+
+    .event-modal-close:hover {
+      color: #333;
+    }
+
+    .event-detail-header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .event-detail-header h2 {
+      font-size: 2rem;
+      color: #1a2a3a;
+    }
+
+    .event-detail-header p {
+      color: #555;
+      margin: 5px 0;
+    }
+
+    .event-detail-header .event-location-detail {
+      color: #777;
+      margin: 5px 0;
+    }
+
+    .event-detail-description {
+      color: #555;
+      line-height: 1.7;
+      margin: 15px 0;
+    }
+
+    .event-detail-verse {
+      background: #f5f0e8;
+      padding: 25px;
+      border-radius: 10px;
+      border-left: 5px solid #f5c842;
+      margin-top: 20px;
+    }
+
+    .event-detail-verse .verse-text {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #1a2a3a;
+      line-height: 1.8;
+    }
+
+    .event-detail-verse .verse-ref {
+      display: block;
+      text-align: right;
+      font-weight: 600;
+      color: #555;
+      margin-top: 10px;
+    }
+
+    .event-detail-btn {
+      display: inline-block;
+      background: #3895D3;
+      color: white;
+      padding: 10px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      margin-top: 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .event-detail-btn:hover {
+      background: #2c7bbf;
+      transform: scale(1.02);
+    }
+
+    /* ===== DATE GALLERY ===== */
+    .date-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .date-thumb {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      gap: 6px;
+      transition: transform 0.3s, border-color 0.3s;
+      padding: 8px;
+      border-radius: 12px;
+      background: #f8f9fa;
+      border: 2px solid transparent;
+    }
+
+    .date-thumb:hover {
+      transform: scale(1.05);
+      border-color: #3895D3;
+      background: #eef4fa;
+    }
+
+    .date-thumb img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .date-label {
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #1a2a3a;
+      margin-top: 4px;
+    }
+
+    /* ===== ACTIVITY GALLERY ===== */
+    .activity-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .activity-gallery .gallery-item {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      aspect-ratio: 4/3;
+    }
+
+    .activity-gallery .gallery-item:hover {
+      transform: scale(1.03);
+    }
+
+    .activity-gallery .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .activity-gallery .no-photos {
+      color: #777;
+      text-align: center;
+      padding: 30px;
+      grid-column: 1 / -1;
+      font-size: 1.1rem;
+    }
+
+    /* ===== BACK TO DATES ===== */
+    #backToDatesContainer {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    /* ===== BACK TO TOP ===== */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: #3895D3;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      z-index: 999;
+      transition: all 0.3s;
+    }
+    #backToTop:hover {
+      transform: scale(1.1);
+      background: #1f7bb5;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+      .header { flex-direction: column; align-items: stretch; padding: 10px 15px; }
+      .navbar ul { justify-content: center; }
+      .header-actions { justify-content: center; }
+      .background-content h2 { font-size: 2rem; }
+      .background { justify-content: center; }
+      .background-content { text-align: center; padding-left: 0; }
+      .event-modal-content { padding: 25px; }
+      .date-gallery { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
+      .activity-gallery { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+      .section { padding: 90px 15px 40px; }
+    }
+
+    @media (max-width: 480px) {
+      .date-gallery { grid-template-columns: repeat(2, 1fr); }
+      .activity-gallery { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ===== WHAT WE BELIEVE ===== */
+.believe-section {
+    margin-top: 60px;
+    background: #16395d;
+    border-radius: 30px;
+    padding: 50px 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+.believe-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.believe-subtitle {
+    text-align: center;
+    color: rgba(255,255,255,.75);
+    margin-bottom: 40px;
+    font-size: 1rem;
+}
+
+.believe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 25px;
+}
+
+.believe-card {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 22px;
+    padding: 30px 25px;
+    text-align: center;
+    transition: .35s ease;
+}
+
+.believe-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255,255,255,.13);
+}
+
+.believe-card i {
+    font-size: 60px;
+    color: #f5c842;
+    margin-bottom: 15px;
+}
+
+.believe-card h3 {
+    color: #f5c842;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.believe-card p {
+    color: rgba(255,255,255,.85);
+    line-height: 1.8;
+    font-size: .95rem;
+}
+
+@media(max-width:768px){
+
+    .believe-section{
+        padding:35px 25px;
+    }
+
+}
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header" id="mainHeader" role="banner">
+  <img src="Gospel.jpg" alt="Gospel Fellowship Church Logo" class="logo-img">
+  <a href="#homeSection" class="logo-text" aria-label="Gospel Fellowship Church Home">Gospel Fellowship Church</a>
+
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <ul>
+      <li><a href="#homeSection" class="active">Home</a></li>
+      <li><a href="#aboutSection">About</a></li>
+      <li><a href="#eventsSection">Events</a></li>
+      <li><a href="#sermonsSection">Sermons</a></li>
+      <li><a href="#contactSection">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="header-actions">
+    <div class="social-media">
+      <a href="https://www.facebook.com/profile.php?id=61590579395623" target="_blank" aria-label="Follow us on Facebook"><i class='bx bxl-facebook'></i></a>
+    </div>
+    <button id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
+  </div>
+
+  <div id="loginForm" class="login-form" role="dialog" aria-label="Sign In Form">
+    <div class="form-content">
+      <span id="closeForm" aria-label="Close login form">&times;</span>
+      <h2>Sign In</h2>
+      <form id="loginFormSubmit">
+        <input type="email" placeholder="Email" required aria-label="Email address">
+        <input type="password" placeholder="Password" required aria-label="Password">
+        <button type="submit">Sign In</button>
+        <div class="divider"><span>or continue with</span></div>
+        <button type="button" class="social-btn facebook"><i class="fab fa-facebook-f"></i> Facebook</button>
+        <button type="button" class="social-btn google"><i class="fab fa-google"></i> Google</button>
+        <a href="#" class="forgot">Forgot Password?</a>
+      </form>
+    </div>
+  </div>
+</header>
+
+<!-- ===== BACK TO TOP BUTTON ===== -->
+<button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- ===== MAIN ===== -->
+<main>
+
+  <!-- ===== HOME SECTION ===== -->
+  <section id="homeSection" class="section" aria-label="Home">
+    <div class="background">
+      <div class="background-img">
+        <div class="circle-logo">
+          <img src="Gospel.jpg" alt="Gospel Fellowship Church Logo">
+        </div>
+      </div>
+      <div class="background-content">
+        <h1>Welcome to</h1>
+        <h2>Gospel Fellowship Church</h2>
+        <p>Your spiritual home for faith, community, and growth.</p>
+      </div>
+    </div>
+
+    <div class="home">
+      <div class="home-content">
+        <div class="btn-container">
+          <a href="#getStartedSection" class="btn" role="button">Get Started</a>
+          <button class="btn-give" onclick="document.getElementById('giveModal').style.display='flex'">💝 Give</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="countdown-section">
+      <h3>⏰ Countdown to Next Sunday Service</h3>
+      <div class="countdown-timer" id="countdownTimer">
+        <div class="countdown-block"><span class="num" id="cdDays">00</span><span class="label">Days</span></div>
+        <div class="countdown-block"><span class="num" id="cdHours">00</span><span class="label">Hours</span></div>
+        <div class="countdown-block"><span class="num" id="cdMinutes">00</span><span class="label">Minutes</span></div>
+        <div class="countdown-block"><span class="num" id="cdSeconds">00</span><span class="label">Seconds</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GET STARTED SECTION ===== -->
+  <section id="getStartedSection" class="section" aria-label="Get Started">
+    <div class="events-container">
+      <h2 class="events-main-title">Get Started</h2>
+      <p class="events-main-subtitle">Hindi ka nag-iisa. Eto ang tatlong simpleng hakbang para makapagsimula ang iyong journey sa Gospel Fellowship Church.</p>
+      <div style="display:flex; gap:25px; justify-content:center; flex-wrap:wrap; margin:30px 0;">
+        <div style="background:rgba(255,255,255,0.85); padding:30px; border-radius:15px; max-width:300px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.05);">
+          <div style="width:40px;height:40px;background:#3895D3;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">1</div>
+          <i class='bx bx-church' style="font-size:40px;color:#3895D3;"></i>
+          <h3 style="margin:15px 0 10px;">Visit Us</h3>
+          <p style="color:#555;font-size:14px;">Sumama sa amin every Sunday, 8:30 AM.</p>
+          <a href="#eventsSection" class="btn-events" style="display:inline-block;text-decoration:none;padding:10px 28px;">See Schedule</a>
+        </div>
+        <div style="background:rgba(255,255,255,0.85); padding:30px; border-radius:15px; max-width:300px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.05);">
+          <div style="width:40px;height:40px;background:#28a745;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">2</div>
+          <i class='bx bx-user-plus' style="font-size:40px;color:#28a745;"></i>
+          <h3 style="margin:15px 0 10px;">Connect With Us</h3>
+          <p style="color:#555;font-size:14px;">Mag-register para makilala ka namin.</p>
+          <button id="gsRegisterBtn" class="btn-secondary" style="width:auto;padding:10px 28px;">Register Now</button>
+        </div>
+        <div style="background:rgba(255,255,255,0.85); padding:30px; border-radius:15px; max-width:300px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.05);">
+          <div style="width:40px;height:40px;background:#f5c842;color:#1a2a3a;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">3</div>
+          <i class='bx bx-book-open' style="font-size:40px;color:#f5c842;"></i>
+          <h3 style="margin:15px 0 10px;">Grow In Faith</h3>
+          <p style="color:#555;font-size:14px;">Sumali sa Bible Study, manood ng sermons.</p>
+          <a href="#sermonsSection" class="btn-events" style="display:inline-block;text-decoration:none;padding:10px 28px;">Watch Sermons</a>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:20px;">
+        <button onclick="document.getElementById('liveModal').style.display='flex'" class="btn-live">🔴 Watch Live</button>
+        <button onclick="document.getElementById('prayerModal').style.display='flex'" class="btn-prayer">🙏 Prayer Request</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="aboutSection" class="section" aria-label="About Us">
+    <div class="about-section">
+      <div class="about-box"><h2>MISION</h2><hr><p>Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit🙌☝️</p></div>
+      <div class="about-box"><h2>VISION</h2><hr><p>Be Multiplied</p></div>
+      <div class="about-box"><h2>COMMUNITY</h2><hr><p>Is to reflect the love of Jesus Christ by building strong relationships within our community</p></div>
+    </div>
+
+    <div class="believe-section">
+
+      <h2 class="believe-title">
+          What We Believe
+      </h2>
+
+      <p class="believe-subtitle">
+          Our faith is founded on Jesus Christ, the Holy Bible, and the unity of His Church.
+      </p>
+
+      <div class="believe-grid">
+        <div class="believe-card">
+          <i class='bx bx-cross'></i>
+            <h3>The Gospel</h3>
+                <p>
+                    Jesus Christ died for our sins, was buried, and rose again.
+                    Through Him we receive forgiveness, salvation,
+                    and eternal life by grace through faith.
+                </p>
+            </div>
+
+            <div class="believe-card">
+                <i class='bx bx-book-open'></i>
+
+                <h3>The Bible</h3>
+
+                <p>
+                    The Holy Bible is the inspired Word of God.
+                    It is our foundation for faith,
+                    spiritual growth, and everyday living.
+                </p>
+            </div>
+
+            <div class="believe-card">
+                <i class='bx bx-group'></i>
+
+                <h3>The Church</h3>
+
+                <p>
+                    We believe the Church is the family of God,
+                    called to worship Christ, make disciples,
+                    and share His love with the world.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="pastors-section"><h2>OUR LEADERS:</h2>
+      <div class="pastors-container">
+        <div class="pastor-card"><img src="Leaders/pastor10.jpg" alt="Pastor"><h3>Zaldy Bernaldo</h3><p class="role">Pastor</p><a href="#"><i class='bx bxl-facebook'></i></a></div>
+        <div class="pastor-card"><img src="Leaders/pastor13.jpg" alt="Oliver"><h3>Oliver Ricarpo</h3><p class="role">Associate Pastor</p><a href="#"><i class='bx bxl-facebook'></i></a></div>
+        <div class="pastor-card"><img src="Leaders/pastor14.jpg" alt="Jocelyn"><h3>Jocelyn Ricarpo</h3><p class="role">Deacon</p><a href="#"><i class='bx bxl-facebook'></i></a></div>
+        <div class="pastor-card"><img src="Leaders/pastor1.jpg" alt="Jericko"><h3>Jericko Bernaldo</h3><p class="role">Guitarist</p><a href="#"><i class='bx bxl-facebook'></i></a></div>
+        <div class="pastor-card"><img src="Leaders/pastor2.jpg" alt="Trixie"><h3>Trixie Nacional</h3><p class="role">Bassist</p><a href="#"><i class='bx bxl-facebook'></i></a></div>
+        <div class="pastor-card"><img src="Leaders/pastor3.jpg" alt="Vianca"><h3>Vianca Hernandez</h3><p class="role">Worship Leader</p><a href="#"><i class='bx bxl-facebook'></i></a></div>
+        <div class="pastor-card"><img src="Leaders/pastor4.jpg" alt="Trixie Mae"><h3>Trixie Mae Solano</h3><p class="role">Usherette</p><a href="#"><i class='bx bxl-facebook'></i></a></div>
+        <div class="pastor-card"><img src="Leaders/pastor5.jpg" alt="Kirlly"><h3>Kirlly Pagara</h3><p class="role">Worship Leader</p><a href="#"><i class='bx bxl-facebook'></i></a></div>
+        <div class="pastor-card"><img src="Leaders/pastor6.jpg" alt="Ramilyn"><h3>Ramilyn Engracia</h3><p class="role">Announcer</p><a href="#"><i class='bx bxl-facebook'></i></a></div>
+        <div class="pastor-card"><img src="Leaders/pastor7.jpg" alt="Yan"><h3>Ian Dela Cruz</h3><p class="role">Keyboardist</p><a href="#"><i class='bx bxl-facebook'></i></a></div>
+        <div class="pastor-card"><img src="Leaders/pastor8.jpg" alt="Marvin"><h3>Marvin Adlawan</h3><p class="role">Youth Leader</p><a href="#"><i class='bx bxl-facebook'></i></a></div>
+        <div class="pastor-card"><img src="Leaders/pastor9.jpg" alt="Reinz"><h3>Reinz Baylon</h3><p class="role">Leader</p><a href="#"><i class='bx bxl-facebook'></i></a></div>
+        <div class="pastor-card"><img src="Leaders/pastor11.jpg" alt="Jesh"><h3>Jeshurun Dy Ricarpo</h3><p class="role">Drummer</p><a href="#"><i class='bx bxl-facebook'></i></a></div>
+        <div class="pastor-card"><img src="Leaders/pastor12.jpg" alt="Daya"><h3>Jedidiah Sy Ricarpo</h3><p class="role">Media</p><a href="#"><i class='bx bxl-facebook'></i></a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EVENTS SECTION ===== -->
+  <section id="eventsSection" class="section" aria-label="Events">
+    <div class="events-container">
+      <h2 class="events-main-title">Our Events</h2>
+      <p class="events-main-subtitle">Join us for our Gospel Fellowship Church special gatherings.</p>
+      <div class="btn-group">
+        <button id="registerBtn" class="btn-events">Register</button>
+        <button id="addListBtn" class="btn-secondary">Add Attendee</button>
+        <button id="viewAttendeesBtn" class="btn-attendees">View Attendees</button>
+        <button id="liveBtn" class="btn-live">🔴 Watch Live</button>
+        <button id="prayerBtn" class="btn-prayer">🙏 Prayer Request</button>
+      </div>
+
+      <div class="events-grid">
+        <!-- ===== EVENT CARDS - MAY onclick ===== -->
+        <div class="event-card" onclick="showEventDetail('anniversary')">
+          <img src="Gospel.jpg" alt="Anniversaries">
+          <div class="event-card-content">
+            <h3>Anniversaries</h3>
+            <span class="event-tag">📅 God Victory</span>
+          </div>
+        </div>
+
+        <div class="event-card" onclick="showEventDetail('youth')">
+          <img src="Next Gen/Next Gen.jpg" alt="Next Generation Youth Fellowship">
+          <div class="event-card-content">
+            <h3>Next Generation</h3>
+            <p>Every Sunday • 7:00 PM</p>
+            <p class="event-location">📍 Gospel Fellowship Church</p>
+            <span class="event-tag">🌱 Next Gen</span>
+          </div>
+        </div>
+
+        <div class="event-card" onclick="showEventDetail('prayer')">
+          <img src="Prayer Meeting/prayer-meeting.jpg" alt="Prayer Meeting">
+          <div class="event-card-content">
+            <h3>Prayer Meeting</h3>
+            <p>Every Monday • 7:00 PM</p>
+            <p class="event-location">📍 Gospel Fellowship Church</p>
+            <span class="event-tag">🙏 Prayer</span>
+          </div>
+        </div>
+
+        <div class="event-card" onclick="showEventDetail('biblestudy')">
+          <img src="Bible Study/bible-study.jpg" alt="Bible Study">
+          <div class="event-card-content">
+            <h3>Bible Study</h3>
+            <p>Every Wednesday • 7:00 PM</p>
+            <p class="event-location">📍 Gospel Fellowship Church</p>
+            <span class="event-tag">📖 Bible Study</span>
+          </div>
+        </div>
+
+        <div class="event-card" onclick="showEventDetail('worship')">
+          <img src="Worship Night/worship-night.jpg" alt="Worship Night">
+          <div class="event-card-content">
+            <h3>Worship Night</h3>
+            <p>Every Friday • 7:00 PM</p>
+            <p class="event-location">📍 Gospel Fellowship Church</p>
+            <span class="event-tag">🎵 Worship</span>
+          </div>
+        </div>
+
+        <div class="event-card" onclick="showEventDetail('sunday')">
+          <img src="Sunday Service/sunday-service.jpg" alt="Sunday Service">
+          <div class="event-card-content">
+            <h3>Sunday Service</h3>
+            <p>Every Sunday • 8:30 AM</p>
+            <p class="event-location">📍 Gospel Fellowship Church</p>
+            <span class="event-tag">⛪ Sunday Service</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:30px;">
+        <button id="announcementsBtn" class="btn-announcements">📢 Announcements</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EVENT DETAIL MODAL ===== -->
+  <div id="eventDetailModal" class="event-modal">
+    <div class="event-modal-content">
+        <button class="event-modal-close" onclick="closeEventDetail()">&times;</button>
+        <div id="eventDetailContent"></div>
+    </div>
+</div>
+
+  <!-- ===== SERMONS SECTION ===== -->
+  <section id="sermonsSection" class="section" aria-label="Sermons">
+    <div class="events-container">
+      <h2 class="events-main-title">Sermons</h2>
+      <p class="events-main-subtitle">Catch up on past messages from Gospel Fellowship Church.</p>
+      <div class="sermons-grid">
+        <div class="sermon-card"><img src="Sunday Service/sunday-service.jpg" alt="Obedience"><div class="sermon-card-content"><h3>Obedience Over Sacrifice</h3><p>📅 July 12, 2026</p><p class="sermon-verse">"To obey is better than sacrifice" — 1 Samuel 15:22</p><a href="#" class="event-detail-btn">▶ Watch</a></div></div>
+        <div class="sermon-card"><img src="Worship Night/worship-night.jpg" alt="New Song"><div class="sermon-card-content"><h3>A New Song</h3><p>📅 July 17, 2026</p><p class="sermon-verse">"Sing to the Lord a new song" — Psalm 96:1</p><a href="#" class="event-detail-btn">▶ Watch</a></div></div>
+        <div class="sermon-card"><img src="Bible Study/bible-study.jpg" alt="Light"><div class="sermon-card-content"><h3>Light to My Path</h3><p>📅 July 16, 2026</p><p class="sermon-verse">"Your word is a lamp to my feet" — Psalm 119:105</p><a href="#" class="event-detail-btn">▶ Watch</a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contactSection" class="section" aria-label="Contact Us">
+    <div class="events-container" style="max-width:800px;">
+      <h2 class="events-main-title">Contact Us</h2>
+      <p class="events-main-subtitle">We'd love to hear from you!</p>
+      <div style="background:rgba(255,255,255,0.85);padding:30px;border-radius:20px;backdrop-filter:blur(4px);">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;text-align:center;">
+          <div><i class='bx bx-phone' style="font-size:40px;color:#3895D3;"></i><h3>Phone</h3><p>123-456-7890</p></div>
+          <div><i class='bx bx-envelope' style="font-size:40px;color:#3895D3;"></i><h3>Email</h3><p>gospelfellowshipchurch0923@gmail.com</p></div>
+          <div style="grid-column:1/-1;"><i class='bx bx-map' style="font-size:40px;color:#3895D3;"></i><h3>Address</h3><p>008 National Road SF. 2 Purok 1, Limay, Bataan</p></div>
+        </div>
+        <div class="map-embed-wrapper"><iframe src="https://www.google.com/maps?q=008+National+Road+SF.+2+Purok+1,+Limay,+Bataan&output=embed" loading="lazy" allowfullscreen></iframe></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== MODALS ===== -->
+<div id="giveModal" class="front-page"><div class="front-content"><h2>💝 Give / Donate</h2><p>Thank you for supporting the ministry.</p><div style="background:#f8f9fa;padding:18px;border-radius:10px;margin-top:15px;"><p><strong>GCash:</strong> 0912-345-6789</p><p><strong>Bank:</strong> BDO - Gospel Fellowship Church</p></div><button onclick="document.getElementById('giveModal').style.display='none'" class="close-btn">Close</button></div></div>
+
+<div id="prayerModal" class="front-page"><div class="front-content"><h2>🙏 Prayer Request</h2><p>Share your prayer need with us.</p><form class="prayer-form"><input type="text" placeholder="Your Name" required><textarea placeholder="Your Prayer Request" rows="4" required></textarea><button type="submit" class="btn-events" style="width:100%;">Submit Request</button></form><button onclick="document.getElementById('prayerModal').style.display='none'" class="close-btn">Close</button></div></div>
+
+<div id="liveModal" class="front-page"><div class="front-content"><h2>🔴 Watch Live</h2><p>Join our live worship service online!</p><a href="https://www.facebook.com/profile.php?id=61590579395623" target="_blank" class="btn-events" style="display:inline-block;text-decoration:none;margin-top:15px;">📘 Watch on Facebook Live</a><button onclick="document.getElementById('liveModal').style.display='none'" class="close-btn">Close</button></div></div>
+
+<div id="announcementsModal" class="front-page"><div class="front-content"><h2>📢 Announcements</h2><hr><div style="text-align:left;max-height:400px;overflow-y:auto;"><div style="background:#f8f9fa;padding:15px;border-radius:10px;margin-bottom:10px;"><h3 style="color:#dc3545;">🔥 Next Sunday: Baptismal Service</h3><p>📅 July 21, 2026 • 8:30 AM</p></div><div style="background:#f8f9fa;padding:15px;border-radius:10px;margin-bottom:10px;"><h3 style="color:#28a745;">🌱 Youth Camp 2026</h3><p>📅 July 20-22, 2026</p></div></div><button onclick="document.getElementById('announcementsModal').style.display='none'" class="close-btn">Close</button></div></div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <div><h3>ABOUT US</h3><p>We are Gospel centered</p><div class="social-icons"><a href="#"><i class='bx bxl-facebook'></i></a><a href="#"><i class='bx bxl-instagram'></i></a></div></div>
+      <div><h3>ADDRESS</h3><p>123-456-7890</p><p>008 National Road SF. 2 Purok 1 , Limay, Bataan</p></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 by Gospel Fellowship Church. All rights reserved.</p></div>
+</footer>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+  (function() {
+    'use strict';
+
+    // ============================================
+    // HEADER SCROLL EFFECT
+    // ============================================
+    const header = document.querySelector('.header');
+    const backToTop = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', function() {
+      if (header) {
+        header.classList.toggle('scrolled', window.scrollY > 10);
+      }
+      if (backToTop) {
+        backToTop.style.display = window.scrollY > 500 ? 'block' : 'none';
+      }
+    }, { passive: true });
+
+    // ============================================
+    // SMOOTH SCROLL PARA SA LAHAT NG NAV LINKS
+    // ============================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // ============================================
+    // ACTIVE NAV LINK ON SCROLL - AUTO HIGHLIGHT
+    // ============================================
+    const sections = document.querySelectorAll('.section');
+    const navLinks = document.querySelectorAll('.navbar ul li a');
+
+    function updateActiveNav() {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    updateActiveNav();
+
+    let ticking = false;
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(function() {
+          updateActiveNav();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    window.addEventListener('load', updateActiveNav);
+
+    // ============================================
+    // LOGIN FORM
+    // ============================================
+    document.getElementById('closeForm')?.addEventListener('click', function() {
+      document.getElementById('loginForm').style.display = 'none';
+    });
+
+    document.getElementById('loginForm')?.addEventListener('click', function(e) {
+      if (e.target === this) this.style.display = 'none';
+    });
+
+    document.getElementById('loginFormSubmit')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('✅ Login successful!');
+      document.getElementById('loginForm').style.display = 'none';
+    });
+
+    // ============================================
+    // MODALS
+    // ============================================
+    document.getElementById('prayerBtn')?.addEventListener('click', function() {
+      document.getElementById('prayerModal').style.display = 'flex';
+    });
+    document.getElementById('liveBtn')?.addEventListener('click', function() {
+      document.getElementById('liveModal').style.display = 'flex';
+    });
+    document.getElementById('announcementsBtn')?.addEventListener('click', function() {
+      document.getElementById('announcementsModal').style.display = 'flex';
+    });
+
+    document.querySelectorAll('.front-page').forEach(modal => {
+      modal.addEventListener('click', function(e) {
+        if (e.target === this) this.style.display = 'none';
+      });
+    });
+
+    // ============================================
+    // COUNTDOWN
+    // ============================================
+    function updateCountdown() {
+      const now = new Date();
+      let nextSunday = new Date(now);
+      nextSunday.setDate(now.getDate() + (7 - now.getDay()) % 7);
+      nextSunday.setHours(8, 30, 0, 0);
+      if (nextSunday < now) nextSunday.setDate(nextSunday.getDate() + 7);
+      const diff = Math.floor((nextSunday - now) / 1000);
+      if (diff <= 0) {
+        document.getElementById('cdDays').textContent = '00';
+        document.getElementById('cdHours').textContent = '00';
+        document.getElementById('cdMinutes').textContent = '00';
+        document.getElementById('cdSeconds').textContent = '00';
+        return;
+      }
+      const d = Math.floor(diff / 86400);
+      const h = Math.floor((diff % 86400) / 3600);
+      const m = Math.floor((diff % 3600) / 60);
+      const s = Math.floor(diff % 60);
+      document.getElementById('cdDays').textContent = String(d).padStart(2, '0');
+      document.getElementById('cdHours').textContent = String(h).padStart(2, '0');
+      document.getElementById('cdMinutes').textContent = String(m).padStart(2, '0');
+      document.getElementById('cdSeconds').textContent = String(s).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // ============================================
+    // DARK MODE
+    // ============================================
+    document.getElementById('darkModeToggle').addEventListener('click', function() {
+      const isDark = document.body.style.background === '#1a2a3a';
+      document.body.style.background = isDark ? '#f4f7fc' : '#1a2a3a';
+      document.body.style.color = isDark ? '#1a2a3a' : '#eee';
+      this.textContent = isDark ? '🌙' : '☀️';
+    });
+
+    // ============================================
+    // REGISTER / ATTENDEE MODALS
+    // ============================================
+    document.getElementById('gsRegisterBtn')?.addEventListener('click', function() {
+      document.getElementById('addListPage').style.display = 'flex';
+    });
+    document.getElementById('addListBtn')?.addEventListener('click', function() {
+      document.getElementById('addListPage').style.display = 'flex';
+    });
+    document.getElementById('registerBtn')?.addEventListener('click', function() {
+      document.getElementById('frontPage').style.display = 'flex';
+    });
+
+    // Ensure addList modal exists
+    (function ensureAddListModal() {
+      if (!document.getElementById('addListPage')) {
+        const div = document.createElement('div');
+        div.id = 'addListPage';
+        div.className = 'front-page';
+        div.innerHTML = `<div class="front-content"><h2>Add Attendee</h2><form class="addlist-form"><input type="text" id="fullName" placeholder="Full Name" required><input type="text" id="fbName" placeholder="Facebook Name" required><input type="text" id="contact" placeholder="Contact" required><input type="text" id="address" placeholder="Address" required><input type="number" id="age" placeholder="Age" required><button type="submit" class="btn-events">Save</button></form><button id="closeAddList" class="close-btn">Close</button></div>`;
+        document.body.appendChild(div);
+        document.getElementById('closeAddList')?.addEventListener('click', function() {
+          document.getElementById('addListPage').style.display = 'none';
+        });
+      }
+    })();
+
+    // Ensure register modal exists
+    (function ensureRegisterModal() {
+      if (!document.getElementById('frontPage')) {
+        const div = document.createElement('div');
+        div.id = 'frontPage';
+        div.className = 'front-page';
+        div.innerHTML = `<div class="front-content"><h2>Event Registration</h2><form class="register-form"><input type="text" placeholder="Full Name" required><input type="email" placeholder="Email" required><button type="submit" class="btn-events">Submit</button></form><button id="closeFrontPage" class="close-btn">Close</button></div>`;
+        document.body.appendChild(div);
+        document.getElementById('closeFrontPage')?.addEventListener('click', function() {
+          document.getElementById('frontPage').style.display = 'none';
+        });
+      }
+    })();
+
+    // ============================================
+    // EVENT DATA - WITH 10 IMAGES PER DATE
+    // ============================================
+    const eventData = {
+      sunday: {
+        title: 'Sunday Service',
+        description: 'Our main weekly worship service. Join us for praise, prayer, and the preaching of God\'s Word.',
+        date: 'Every Sunday • 8:30 AM',
+        location: '📍 Gospel Fellowship Church',
+        defaultVerse: '"I was glad when they said to me, "Let us go into the house of the Lord.""',
+        defaultVerseRef: 'Psalm 122:1',
+        dateEntries: [
+          { date: 'June 14', photos: ['sunday-0614-1.jpg','sunday-0614-2.jpg','sunday-0614-3.jpg','sunday-0614-4.jpg','sunday-0614-5.jpg','sunday-0614-6.jpg','sunday-0614-7.jpg','sunday-0614-8.jpg','sunday-0614-9.jpg','sunday-0614-10.jpg'] },
+          { date: 'June 28', photos: ['sunday-0628-1.jpg','sunday-0628-2.jpg','sunday-0628-3.jpg','sunday-0628-4.jpg','sunday-0628-5.jpg','sunday-0628-6.jpg','sunday-0628-7.jpg','sunday-0628-8.jpg','sunday-0628-9.jpg','sunday-0628-10.jpg'] },
+          { date: 'July 5', photos: ['sunday-0705-1.jpg','sunday-0705-2.jpg','sunday-0705-3.jpg','sunday-0705-4.jpg','sunday-0705-5.jpg','sunday-0705-6.jpg','sunday-0705-7.jpg','sunday-0705-8.jpg','sunday-0705-9.jpg','sunday-0705-10.jpg'] },
+          { date: 'July 12', photos: ['Sunday Service/S1.jpg','Sunday Service/S2.jpg','Sunday Service/S3.jpg','Sunday Service/S4.jpg','Sunday Service/S5.jpg','sunday-0712-6.jpg','sunday-0712-7.jpg','sunday-0712-8.jpg','sunday-0712-9.jpg','sunday-0712-10.jpg'], verse: 'Mas minamabuti ni Yahweh ang pagsunod kaysa paghahandog, at ang pakikinig kaysa taba ng mga tupang lalaki.', verseRef: '1 Samuel 15:22 (RTPV05)' },
+          { date: 'July 19', photos: ['sunday-0719-1.jpg','sunday-0719-2.jpg','sunday-0719-3.jpg','sunday-0719-4.jpg','sunday-0719-5.jpg','sunday-0719-6.jpg','sunday-0719-7.jpg','sunday-0719-8.jpg','sunday-0719-9.jpg','sunday-0719-10.jpg'] }
+        ]
+      },
+      youth: {
+        title: 'Next Generation Youth Fellowship',
+        description: 'A joyful time of fellowship, worship, and discipleship for the next generation.',
+        date: 'Every Sunday • 7:00 PM',
+        location: '📍 Gospel Fellowship Church',
+        defaultVerse: '"Let no one despise your youth, but set the believers an example."',
+        defaultVerseRef: '1 Timothy 4:12',
+        dateEntries: [
+          { date: 'June 7', photos: ['youth-0607-1.jpg','youth-0607-2.jpg','youth-0607-3.jpg','youth-0607-4.jpg','youth-0607-5.jpg','youth-0607-6.jpg','youth-0607-7.jpg','youth-0607-8.jpg','youth-0607-9.jpg','youth-0607-10.jpg'] },
+          { date: 'June 14', photos: ['youth-0614-1.jpg','youth-0614-2.jpg','youth-0614-3.jpg','youth-0614-4.jpg','youth-0614-5.jpg','youth-0614-6.jpg','youth-0614-7.jpg','youth-0614-8.jpg','youth-0614-9.jpg','youth-0614-10.jpg'] },
+          { date: 'June 21', photos: ['youth-0621-1.jpg','youth-0621-2.jpg','youth-0621-3.jpg','youth-0621-4.jpg','youth-0621-5.jpg','youth-0621-6.jpg','youth-0621-7.jpg','youth-0621-8.jpg','youth-0621-9.jpg','youth-0621-10.jpg'] }
+        ]
+      },
+      prayer: {
+        title: 'Prayer Meeting',
+        description: 'Come together as a community to pray for our church, our nation, and one another.',
+        date: 'Every Monday • 7:00 PM',
+        location: '📍 Gospel Fellowship Church',
+        defaultVerse: '"Pray without ceasing."',
+        defaultVerseRef: '1 Thessalonians 5:17',
+        dateEntries: [
+          { date: 'June 8', photos: ['prayer-0608-1.jpg','prayer-0608-2.jpg','prayer-0608-3.jpg','prayer-0608-4.jpg','prayer-0608-5.jpg','prayer-0608-6.jpg','prayer-0608-7.jpg','prayer-0608-8.jpg','prayer-0608-9.jpg','prayer-0608-10.jpg'] },
+          { date: 'June 15', photos: ['prayer-0615-1.jpg','prayer-0615-2.jpg','prayer-0615-3.jpg','prayer-0615-4.jpg','prayer-0615-5.jpg','prayer-0615-6.jpg','prayer-0615-7.jpg','prayer-0615-8.jpg','prayer-0615-9.jpg','prayer-0615-10.jpg'] },
+          { date: 'July 13', photos: ['Prayer Meeting/prayer.png','Prayer Meeting/1.png','Prayer Meeting/2.png','Prayer Meeting/3.png','Prayer Meeting/4.png','Prayer Meeting/5.png','Prayer Meeting/6.png','Prayer Meeting/7.png','Prayer Meeting/8.png','Prayer Meeting/9.png','Prayer Meeting/10.png','Prayer Meeting/11.png','Prayer Meeting/12.png','Prayer Meeting/14.png','Prayer Meeting/15.png',] }
+        ]
+      },
+      biblestudy: {
+        title: 'Bible Study',
+        description: 'Dive deeper into God\'s Word with our weekly Bible study.',
+        date: 'Every Wednesday • 7:00 PM',
+        location: '📍 Gospel Fellowship Church',
+        defaultVerse: '"Your word is a lamp to my feet and a light to my path."',
+        defaultVerseRef: 'Psalm 119:105',
+        dateEntries: [
+          { date: 'June 10', photos: ['biblestudy-0610-1.jpg','biblestudy-0610-2.jpg','biblestudy-0610-3.jpg','biblestudy-0610-4.jpg','biblestudy-0610-5.jpg','biblestudy-0610-6.jpg','biblestudy-0610-7.jpg','biblestudy-0610-8.jpg','biblestudy-0610-9.jpg','biblestudy-0610-10.jpg'] },
+          { date: 'June 17', photos: ['biblestudy-0617-1.jpg','biblestudy-0617-2.jpg','biblestudy-0617-3.jpg','biblestudy-0617-4.jpg','biblestudy-0617-5.jpg','biblestudy-0617-6.jpg','biblestudy-0617-7.jpg','biblestudy-0617-8.jpg','biblestudy-0617-9.jpg','biblestudy-0617-10.jpg'] },
+          { date: 'July 16', photos: ['biblestudy-0716-1.jpg','biblestudy-0716-2.jpg','biblestudy-0716-3.jpg','biblestudy-0716-4.jpg','biblestudy-0716-5.jpg','biblestudy-0716-6.jpg','biblestudy-0716-7.jpg','biblestudy-0716-8.jpg','biblestudy-0716-9.jpg','biblestudy-0716-10.jpg'] }
+        ]
+      },
+      worship: {
+        title: 'Worship Night',
+        description: 'A night dedicated to worship through music and song.',
+        date: 'Every Friday • 7:00 PM',
+        location: '📍 Gospel Fellowship Church',
+        defaultVerse: '"Sing to the Lord a new song; sing to the Lord, all the earth."',
+        defaultVerseRef: 'Psalm 96:1',
+        dateEntries: [
+          { date: 'June 12', photos: ['worship-0612-1.jpg','worship-0612-2.jpg','worship-0612-3.jpg','worship-0612-4.jpg','worship-0612-5.jpg','worship-0612-6.jpg','worship-0612-7.jpg','worship-0612-8.jpg','worship-0612-9.jpg','worship-0612-10.jpg'] },
+          { date: 'June 26', photos: ['worship-0626-1.jpg','worship-0626-2.jpg','worship-0626-3.jpg','worship-0626-4.jpg','worship-0626-5.jpg','worship-0626-6.jpg','worship-0626-7.jpg','worship-0626-8.jpg','worship-0626-9.jpg','worship-0626-10.jpg'] },
+          { date: 'July 17', photos: ['worship-0717-1.jpg','worship-0717-2.jpg','worship-0717-3.jpg','worship-0717-4.jpg','worship-0717-5.jpg','worship-0717-6.jpg','worship-0717-7.jpg','worship-0717-8.jpg','worship-0717-9.jpg','worship-0717-10.jpg'] }
+        ]
+      },
+      anniversary: {
+        title: 'Anniversaries',
+        description: 'Join us as we celebrate God\'s faithfulness!',
+        date: 'Every 2nd Sunday of the month',
+        location: '📍 Gospel Fellowship Church',
+        defaultVerse: '"I will bless the Lord at all times."',
+        defaultVerseRef: 'Psalm 34:1',
+        dateEntries: [
+          { date: '1st Year', photos: ['anniversary-0601-1.jpg','anniversary-0601-2.jpg','anniversary-0601-3.jpg','anniversary-0601-4.jpg','anniversary-0601-5.jpg','anniversary-0601-6.jpg','anniversary-0601-7.jpg','anniversary-0601-8.jpg','anniversary-0601-9.jpg','anniversary-0601-10.jpg'] },
+          { date: '2nd Year', photos: ['anniversary-0608-1.jpg','anniversary-0608-2.jpg','anniversary-0608-3.jpg','anniversary-0608-4.jpg','anniversary-0608-5.jpg','anniversary-0608-6.jpg','anniversary-0608-7.jpg','anniversary-0608-8.jpg','anniversary-0608-9.jpg','anniversary-0608-10.jpg'] },
+          { date: '3rd Year', photos: ['Anniversary/3rd Year.jpg','anniversary-0615-2.jpg','anniversary-0615-3.jpg','anniversary-0615-4.jpg','anniversary-0615-5.jpg','anniversary-0615-6.jpg','anniversary-0615-7.jpg','anniversary-0615-8.jpg','anniversary-0615-9.jpg','anniversary-0615-10.jpg'] }
+        ]
+      }
+    };
+
+    let currentEventId = null;
+
+    // ============================================
+    // SHOW EVENT DETAIL - opens modal with date gallery
+    // ============================================
+    window.showEventDetail = function(eventId) {
+      console.log('Event clicked:', eventId);
+      currentEventId = eventId;
+      const modal = document.getElementById('eventDetailModal');
+      const content = document.getElementById('eventDetailContent');
+      const data = eventData[eventId];
+
+      if (!data) {
+        console.error('Event data not found for:', eventId);
+        return;
+      }
+
+      // Build date gallery with thumbnails and date labels
+      let datesHTML = '';
+      if (data.dateEntries && data.dateEntries.length) {
+        datesHTML = `<div id="dateGallery" class="date-gallery">`;
+        data.dateEntries.forEach((d, idx) => {
+          const thumb = (d.photos && d.photos[0]) ? d.photos[0] : 'Gospel.jpg';
+          datesHTML += `
+            <div class="date-thumb" onclick="showActivityImages('${eventId}', ${idx})">
+              <img src="${thumb}" alt="${d.date}" onerror="this.src='Gospel.jpg'">
+              <span class="date-label">${d.date}</span>
+            </div>
+          `;
+        });
+        datesHTML += `</div>`;
+      }
+
+      content.innerHTML = `
+        <div class="event-detail-header">
+          <h2>${data.title}</h2>
+          <p><strong>${data.date}</strong></p>
+          <p class="event-location-detail">${data.location}</p>
+        </div>
+
+        <div id="eventDisplayArea">
+          ${datesHTML}
+          <div id="activityGallery" style="display:none;"></div>
+          <div id="backToDatesContainer" style="display:none;">
+            <button class="event-detail-btn" onclick="backToDates()">⬅ Back to dates</button>
+          </div>
+        </div>
+
+        <p class="event-detail-description">${data.description}</p>
+
+        <div class="event-detail-verse" id="eventDetailVerse">
+          <p class="verse-text">"${data.defaultVerse}"</p>
+          <span class="verse-ref">— ${data.defaultVerseRef}</span>
+        </div>
+
+        <button class="event-detail-btn" onclick="closeEventDetail()" style="margin-top:20px;">Close</button>
+      `;
+
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // ============================================
+    // SHOW ACTIVITY IMAGES - 10 images per date
+    // ============================================
+    window.showActivityImages = function showActivityImages(eventId, dateIndex) {
+      const data = eventData[eventId];
+      if (!data || !data.dateEntries || !data.dateEntries[dateIndex]) return;
+
+      const entry = data.dateEntries[dateIndex];
+      const dateGallery = document.getElementById('dateGallery');
+      const activityGallery = document.getElementById('activityGallery');
+      const backContainer = document.getElementById('backToDatesContainer');
+      const verseContainer = document.getElementById('eventDetailVerse');
+
+      // Get all photos (up to 10)
+      const photos = Array.isArray(entry.photos) ? entry.photos : [];
+
+      let galleryHtml = '';
+      if (photos.length === 0) {
+        galleryHtml = '<div class="no-photos">📸 No photos available for this date.</div>';
+      } else {
+        galleryHtml = `<div class="activity-gallery">`;
+        photos.forEach(p => {
+          galleryHtml += `
+            <div class="gallery-item">
+              <img src="${p}" alt="${entry.date}" onerror="this.src='Gospel.jpg'">
+            </div>
+          `;
+        });
+        galleryHtml += `</div>`;
+      }
+
+      activityGallery.innerHTML = galleryHtml;
+      activityGallery.style.display = 'block';
+
+      // Hide date gallery, show back button
+      if (dateGallery) dateGallery.style.display = 'none';
+      if (backContainer) backContainer.style.display = 'block';
+
+      // Update verse if available for this specific date
+      if (verseContainer) {
+        const verseText = entry.verse || data.defaultVerse || '';
+        const verseRef = entry.verseRef || data.defaultVerseRef || '';
+        verseContainer.innerHTML = `
+          <p class="verse-text">"${verseText}"</p>
+          <span class="verse-ref">— ${verseRef}</span>
+        `;
+      }
+    }
+
+    // ============================================
+    // BACK TO DATES
+    // ============================================
+    window.backToDates = function(){
+      const dateGallery = document.getElementById('dateGallery');
+      const activityGallery = document.getElementById('activityGallery');
+      const backContainer = document.getElementById('backToDatesContainer');
+      const verseContainer = document.getElementById('eventDetailVerse');
+
+      if (dateGallery) dateGallery.style.display = 'grid';
+      if (activityGallery) activityGallery.style.display = 'none';
+      if (backContainer) backContainer.style.display = 'none';
+
+      if (currentEventId && eventData[currentEventId] && verseContainer) {
+        const data = eventData[currentEventId];
+        verseContainer.innerHTML = `
+          <p class="verse-text">"${data.defaultVerse}"</p>
+          <span class="verse-ref">— ${data.defaultVerseRef}</span>
+        `;
+      }
+    }
+
+    // ============================================
+    // CLOSE EVENT DETAIL
+    // ============================================
+    window.closeEventDetail = function() {
+      const modal = document.getElementById('eventDetailModal');
+      modal.classList.remove('show');
+      document.body.style.overflow = 'auto';
+      
+      // Reset display states
+      const dateGallery = document.getElementById('dateGallery');
+      const activityGallery = document.getElementById('activityGallery');
+      const backContainer = document.getElementById('backToDatesContainer');
+      
+      if (dateGallery) dateGallery.style.display = 'grid';
+      if (activityGallery) activityGallery.style.display = 'none';
+      if (backContainer) backContainer.style.display = 'none';
+    }
+
+    // Close modal on outside click
+    document.addEventListener('click', function(e) {
+      const modal = document.getElementById('eventDetailModal');
+      if (e.target === modal) closeEventDetail();
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeEventDetail();
+    });
+
+    console.log('✅ Gospel Fellowship Church - Events with Date Gallery, 10 images per date, and Scroll functionality!');
+  })();
+</script>
+
+</body>
+</html>
