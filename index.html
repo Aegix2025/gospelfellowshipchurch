@@ -147,6 +147,44 @@
     body.dark-mode .pastor-card a { color: #ffffff; }
     body.dark-mode .pastor-card a:hover { color: #cccccc; }
 
+    /* ===== MINISTRIES DARK MODE ===== */
+    body.dark-mode .ministries-section {
+      background: #0a0a0a;
+    }
+    body.dark-mode .ministry-card {
+      background: #1a1a1a;
+      border-color: #333;
+    }
+    body.dark-mode .ministry-card::before { background: #ffffff; }
+    body.dark-mode .ministry-card i { color: #ffffff !important; }
+    body.dark-mode .ministry-card h3 { color: #ffffff; }
+    body.dark-mode .ministry-card p { color: #ffffff; }
+
+    /* ===== TESTIMONIES DARK MODE ===== */
+    body.dark-mode .testimonies-section {
+      background: #000000;
+    }
+    body.dark-mode .testimony-card {
+      background: #1a1a1a;
+      border-color: #333;
+    }
+    body.dark-mode .testimony-card::before { color: rgba(255,255,255,0.05); }
+    body.dark-mode .testimony-card .testimony-text { color: #ffffff; }
+    body.dark-mode .testimony-card .testimony-author { color: #ffffff; }
+    body.dark-mode .testimony-card .testimony-role { color: #999; }
+
+    /* ===== PRAYER WALL DARK MODE ===== */
+    body.dark-mode .prayer-wall-section {
+      background: #0a0a0a;
+    }
+    body.dark-mode .prayer-item {
+      background: #1a1a1a;
+      border-color: #333;
+    }
+    body.dark-mode .prayer-item .prayer-name { color: #ffffff; }
+    body.dark-mode .prayer-item .prayer-request { color: #ffffff; }
+    body.dark-mode .prayer-item .prayer-date { color: #666; }
+
     body.dark-mode #eventsSection { background: #000000; }
     body.dark-mode .events-main-title { color: #ffffff; }
     body.dark-mode .events-main-subtitle { color: #ffffff; }
@@ -492,7 +530,7 @@
       height: 90px; 
       width: auto; 
       border-radius: 50%; 
-      cursor: pointer; /* For admin access */
+      cursor: pointer;
     }
     .logo-text {
       font-size: 2rem;
@@ -713,7 +751,7 @@
       transform: translateY(0);
     }
 
-    /* ===== HOME SECTION WITH BACKGROUND IMAGE ===== */
+    /* ===== HOME SECTION ===== */
     #homeSection {
       background-image: url('Jesus.jpg');
       background-size: cover;
@@ -1282,7 +1320,7 @@
       color: #000000;
     }
 
-    /* ===== ABOUT ===== */
+    /* ===== ABOUT SECTION (with Ministries, Testimonies, Prayer Wall) ===== */
     #aboutSection {
       background: #f5f5f5;
       color: #000000;
@@ -1292,6 +1330,7 @@
     }
     body.dark-mode #aboutSection { background: #000000; }
 
+    /* ===== ABOUT BOXES ===== */
     .about-section {
       display: flex;
       flex-wrap: wrap;
@@ -1386,24 +1425,92 @@
     body.dark-mode .believe-card h3 { color: #ffffff !important; }
     body.dark-mode .believe-card p { color: #ffffff !important; }
 
-    /* ===== MINISTRIES SECTION ===== */
-    #ministriesSection {
-      background: #f0f0f0;
-      padding: 80px 0;
+    /* ===== PASTORS ===== */
+    .pastors-section { margin: 60px auto; max-width: 1200px; padding: 0 20px; }
+    .pastors-section h2 { color: #000000; text-align: center; font-size: 2.2rem; margin-bottom: 40px; font-weight: 700; transition: color 0.3s ease; }
+    body.dark-mode .pastors-section h2 { color: #ffffff; }
+
+    .pastors-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+    .pastor-card {
+      background: #ffffff;
+      backdrop-filter: blur(4px);
+      border: 1px solid #ddd;
+      border-radius: 24px;
+      padding: 30px 20px;
+      text-align: center;
+      transition: 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      position: relative;
+      overflow: hidden;
+    }
+    .pastor-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      background: #000000;
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+      z-index: 0;
       transition: background 0.3s ease;
     }
-    body.dark-mode #ministriesSection {
-      background: #0a0a0a;
+    .pastor-card:hover { transform: translateY(-8px); box-shadow: 0 12px 35px rgba(0,0,0,0.12); }
+    .pastor-card img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+    .pastor-card h3 { color: #000000; font-size: 1.25rem; margin-bottom: 8px; font-weight: 700; position: relative; z-index: 1; transition: color 0.3s ease; }
+    .pastor-card .role { color: #000000; font-size: 1rem; margin-bottom: 15px; position: relative; z-index: 1; transition: color 0.3s ease; }
+    .pastor-card a { color: #000000; font-size: 2rem; transition: .3s; position: relative; z-index: 1; }
+    .pastor-card a:hover { color: #555; }
+    body.dark-mode .pastor-card { background: #1a1a1a; border-color: #333; }
+    body.dark-mode .pastor-card::before { background: #ffffff; }
+    body.dark-mode .pastor-card h3 { color: #ffffff; }
+    body.dark-mode .pastor-card .role { color: #ffffff; }
+    body.dark-mode .pastor-card a { color: #ffffff; }
+    body.dark-mode .pastor-card a:hover { color: #cccccc; }
+
+    /* ===== MINISTRIES (inside About) ===== */
+    .ministries-section {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    .ministries-section h2 {
+      color: #000000;
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+    body.dark-mode .ministries-section h2 {
+      color: #ffffff;
+    }
+    .ministries-section .subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    body.dark-mode .ministries-section .subtitle {
+      color: #999;
     }
     .ministries-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
     }
     .ministry-card {
       background: #ffffff;
-      padding: 30px 20px;
+      padding: 25px 20px;
       border-radius: 20px;
       text-align: center;
       transition: all 0.3s ease;
@@ -1428,24 +1535,24 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
     .ministry-card i {
-      font-size: 50px;
+      font-size: 40px;
       color: #000000;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       position: relative;
       z-index: 1;
       transition: color 0.3s ease;
     }
     .ministry-card h3 {
       color: #000000;
-      font-size: 1.2rem;
-      margin-bottom: 8px;
+      font-size: 1.1rem;
+      margin-bottom: 6px;
       position: relative;
       z-index: 1;
       transition: color 0.3s ease;
     }
     .ministry-card p {
-      color: #000000;
-      font-size: 0.9rem;
+      color: #666;
+      font-size: 0.85rem;
       position: relative;
       z-index: 1;
       transition: color 0.3s ease;
@@ -1464,23 +1571,40 @@
       color: #ffffff;
     }
     body.dark-mode .ministry-card p {
-      color: #ffffff;
+      color: #999;
     }
 
-    /* ===== TESTIMONIES SECTION ===== */
-    #testimoniesSection {
-      background: #f5f5f5;
-      padding: 80px 0;
-      transition: background 0.3s ease;
+    /* ===== TESTIMONIES (inside About) ===== */
+    .testimonies-section {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
     }
-    body.dark-mode #testimoniesSection {
-      background: #000000;
+    .testimonies-section h2 {
+      color: #000000;
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+    body.dark-mode .testimonies-section h2 {
+      color: #ffffff;
+    }
+    .testimonies-section .subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    body.dark-mode .testimonies-section .subtitle {
+      color: #999;
     }
     .testimonies-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
-      margin-top: 30px;
     }
     .testimony-card {
       background: #ffffff;
@@ -1546,20 +1670,37 @@
       color: #999;
     }
 
-    /* ===== PRAYER WALL SECTION ===== */
-    #prayerWallSection {
-      background: #f0f0f0;
-      padding: 80px 0;
-      transition: background 0.3s ease;
+    /* ===== PRAYER WALL (inside About) ===== */
+    .prayer-wall-section {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
     }
-    body.dark-mode #prayerWallSection {
-      background: #0a0a0a;
+    .prayer-wall-section h2 {
+      color: #000000;
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+    body.dark-mode .prayer-wall-section h2 {
+      color: #ffffff;
+    }
+    .prayer-wall-section .subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    body.dark-mode .prayer-wall-section .subtitle {
+      color: #999;
     }
     .prayer-wall-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      margin-top: 30px;
     }
     .prayer-item {
       background: #ffffff;
@@ -1613,57 +1754,29 @@
     body.dark-mode .prayer-item .prayer-date {
       color: #666;
     }
-
-    /* ===== PASTORS ===== */
-    .pastors-section { margin: 60px auto; max-width: 1200px; padding: 0 20px; }
-    .pastors-section h2 { color: #000000; text-align: center; font-size: 2.2rem; margin-bottom: 40px; font-weight: 700; transition: color 0.3s ease; }
-    body.dark-mode .pastors-section h2 { color: #ffffff; }
-
-    .pastors-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
-    .pastor-card {
-      background: #ffffff;
-      backdrop-filter: blur(4px);
-      border: 1px solid #ddd;
-      border-radius: 24px;
-      padding: 30px 20px;
-      text-align: center;
-      transition: 0.3s ease, background 0.3s ease, border-color 0.3s ease;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-      position: relative;
-      overflow: hidden;
-    }
-    .pastor-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 30px;
-      height: 30px;
+    .prayer-wall-section .add-prayer-btn {
+      display: inline-block;
       background: #000000;
-      clip-path: polygon(0 0, 100% 0, 0 100%);
-      z-index: 0;
-      transition: background 0.3s ease;
+      color: #ffffff;
+      padding: 12px 35px;
+      border: none;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-bottom: 20px;
     }
-    .pastor-card:hover { transform: translateY(-8px); box-shadow: 0 12px 35px rgba(0,0,0,0.12); }
-    .pastor-card img {
-      width: 140px;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 18px;
-      position: relative;
-      z-index: 1;
+    .prayer-wall-section .add-prayer-btn:hover {
+      opacity: 0.8;
+      transform: scale(1.02);
     }
-    .pastor-card h3 { color: #000000; font-size: 1.25rem; margin-bottom: 8px; font-weight: 700; position: relative; z-index: 1; transition: color 0.3s ease; }
-    .pastor-card .role { color: #000000; font-size: 1rem; margin-bottom: 15px; position: relative; z-index: 1; transition: color 0.3s ease; }
-    .pastor-card a { color: #000000; font-size: 2rem; transition: .3s; position: relative; z-index: 1; }
-    .pastor-card a:hover { color: #555; }
-    body.dark-mode .pastor-card { background: #1a1a1a; border-color: #333; }
-    body.dark-mode .pastor-card::before { background: #ffffff; }
-    body.dark-mode .pastor-card h3 { color: #ffffff; }
-    body.dark-mode .pastor-card .role { color: #ffffff; }
-    body.dark-mode .pastor-card a { color: #ffffff; }
-    body.dark-mode .pastor-card a:hover { color: #cccccc; }
+    body.dark-mode .prayer-wall-section .add-prayer-btn {
+      background: #ffffff;
+      color: #000000;
+    }
+    body.dark-mode .prayer-wall-section .add-prayer-btn:hover {
+      background: #cccccc;
+    }
 
     /* ===== EVENTS ===== */
     #eventsSection { background: #f5f5f5; margin: 0 auto; transition: background 0.3s ease; }
@@ -2037,6 +2150,7 @@
       .home-overlay { margin-top: -180px; }
       .slider-container { aspect-ratio: 16/8; }
       .slider-slide .slide-caption { font-size: 1rem; padding: 10px 18px; bottom: 20px; left: 20px; }
+      .testimonies-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 768px) {
@@ -2094,7 +2208,6 @@
         text-overflow: ellipsis;
         margin-left: 0;
       }
-      .logo-text small { display: none; }
 
       .mobile-menu-toggle {
         display: flex !important;
@@ -2301,11 +2414,8 @@
     <ul>
       <li><a href="#homeSection" class="active">Home</a></li>
       <li><a href="#aboutSection">About</a></li>
-      <li><a href="#ministriesSection">Ministries</a></li>
       <li><a href="#eventsSection">Events</a></li>
       <li><a href="#sermonsSection">Sermons</a></li>
-      <li><a href="#testimoniesSection">Testimonies</a></li>
-      <li><a href="#prayerWallSection">Prayer Wall</a></li>
       <li><a href="#contactSection">Contact</a></li>
     </ul>
     <div class="mobile-theme-toggle">
@@ -2495,14 +2605,17 @@
     </div>
   </div>
 
-  <!-- ===== ABOUT SECTION ===== -->
+  <!-- ===== ABOUT SECTION (with Ministries, Testimonies, Prayer Wall) ===== -->
   <section id="aboutSection" class="section page-transition" aria-label="About Us">
+    
+    <!-- ===== ABOUT BOXES ===== -->
     <div class="about-section">
       <div class="about-box"><h2>MISION</h2><hr><p>Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit🙌☝️</p></div>
       <div class="about-box"><h2>VISION</h2><hr><p>Be Multiplied</p></div>
       <div class="about-box"><h2>COMMUNITY</h2><hr><p>Is to reflect the love of Jesus Christ by building strong relationships within our community</p></div>
     </div>
 
+    <!-- ===== WHAT WE BELIEVE ===== -->
     <div class="believe-section">
       <div class="believe-inner">
         <h2 class="believe-title">What We Believe</h2>
@@ -2527,6 +2640,7 @@
       </div>
     </div>
 
+    <!-- ===== PASTORS ===== -->
     <div class="pastors-section">
       <h2>OUR LEADERS:</h2>
       <div class="pastors-container">
@@ -2546,13 +2660,11 @@
         <div class="pastor-card"><img src="Leaders/pastor12.jpg" alt="Daya"><h3>Jedidiah Sy Ricarpo</h3><p class="role">Media</p><a href="#"><i class='bx bxl-facebook'></i></a></div>
       </div>
     </div>
-  </section>
 
-  <!-- ===== MINISTRIES SECTION ===== -->
-  <section id="ministriesSection" class="section page-transition" aria-label="Ministries">
-    <div class="events-container">
-      <h2 class="events-main-title">Our Ministries</h2>
-      <p class="events-main-subtitle">Serving God and the community through these ministries.</p>
+    <!-- ===== MINISTRIES (inside About) ===== -->
+    <div class="ministries-section">
+      <h2>🙌 Our Ministries</h2>
+      <p class="subtitle">Serving God and the community through these ministries.</p>
       <div class="ministries-grid">
         <div class="ministry-card">
           <i class='bx bx-child'></i>
@@ -2586,6 +2698,56 @@
         </div>
       </div>
     </div>
+
+    <!-- ===== TESTIMONIES (inside About) ===== -->
+    <div class="testimonies-section">
+      <h2>🗣️ Testimonies</h2>
+      <p class="subtitle">Hear what God has done in the lives of our members.</p>
+      <div class="testimonies-grid">
+        <div class="testimony-card">
+          <p class="testimony-text">"Gospel Fellowship Church has been my spiritual home. I found Jesus here and my life was completely transformed."</p>
+          <p class="testimony-author">— Maria Santos</p>
+          <p class="testimony-role">Member since 2024</p>
+        </div>
+        <div class="testimony-card">
+          <p class="testimony-text">"The community here is like family. They prayed for me during my darkest times and God answered."</p>
+          <p class="testimony-author">— Juan Dela Cruz</p>
+          <p class="testimony-role">Youth Leader</p>
+        </div>
+        <div class="testimony-card">
+          <p class="testimony-text">"I came to this church broken and lost. Now I'm serving God with joy and purpose. Thank you, Jesus!"</p>
+          <p class="testimony-author">— Ana Reyes</p>
+          <p class="testimony-role">Worship Team</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PRAYER WALL (inside About) ===== -->
+    <div class="prayer-wall-section">
+      <h2>🙏 Prayer Wall</h2>
+      <p class="subtitle">Share your prayer requests and pray for others.</p>
+      <div style="text-align:center;">
+        <button class="add-prayer-btn" onclick="document.getElementById('prayerModal').style.display='flex'">➕ Add Prayer Request</button>
+      </div>
+      <div class="prayer-wall-grid" id="prayerWallGrid">
+        <div class="prayer-item">
+          <p class="prayer-name">Anonymous</p>
+          <p class="prayer-request">Please pray for my family's health and protection.</p>
+          <p class="prayer-date">📅 2 days ago</p>
+        </div>
+        <div class="prayer-item">
+          <p class="prayer-name">Bro. Mark</p>
+          <p class="prayer-request">Pray for the upcoming Youth Camp, that many souls will be saved.</p>
+          <p class="prayer-date">📅 3 days ago</p>
+        </div>
+        <div class="prayer-item">
+          <p class="prayer-name">Sis. Grace</p>
+          <p class="prayer-request">Healing for my mother who is in the hospital.</p>
+          <p class="prayer-date">📅 5 days ago</p>
+        </div>
+      </div>
+    </div>
+
   </section>
 
   <!-- ===== EVENTS SECTION ===== -->
@@ -2705,59 +2867,6 @@
       </div>
       <div class="more-btn-container">
         <button class="more-btn" id="moreSermonsBtn" onclick="toggleMoreSermons()">Show More Sermons ↓</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== TESTIMONIES SECTION ===== -->
-  <section id="testimoniesSection" class="section page-transition" aria-label="Testimonies">
-    <div class="events-container">
-      <h2 class="events-main-title">Testimonies</h2>
-      <p class="events-main-subtitle">Hear what God has done in the lives of our members.</p>
-      <div class="testimonies-grid">
-        <div class="testimony-card">
-          <p class="testimony-text">"Gospel Fellowship Church has been my spiritual home. I found Jesus here and my life was completely transformed."</p>
-          <p class="testimony-author">— Maria Santos</p>
-          <p class="testimony-role">Member since 2024</p>
-        </div>
-        <div class="testimony-card">
-          <p class="testimony-text">"The community here is like family. They prayed for me during my darkest times and God answered."</p>
-          <p class="testimony-author">— Juan Dela Cruz</p>
-          <p class="testimony-role">Youth Leader</p>
-        </div>
-        <div class="testimony-card">
-          <p class="testimony-text">"I came to this church broken and lost. Now I'm serving God with joy and purpose. Thank you, Jesus!"</p>
-          <p class="testimony-author">— Ana Reyes</p>
-          <p class="testimony-role">Worship Team</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PRAYER WALL SECTION ===== -->
-  <section id="prayerWallSection" class="section page-transition" aria-label="Prayer Wall">
-    <div class="events-container">
-      <h2 class="events-main-title">🙏 Prayer Wall</h2>
-      <p class="events-main-subtitle">Share your prayer requests and pray for others.</p>
-      <div style="text-align:center; margin-bottom:20px;">
-        <button onclick="document.getElementById('prayerModal').style.display='flex'" class="btn-prayer" style="background:#000000; color:#ffffff; border:none; padding:12px 35px; border-radius:40px; font-weight:600; cursor:pointer;">➕ Add Prayer Request</button>
-      </div>
-      <div class="prayer-wall-grid" id="prayerWallGrid">
-        <div class="prayer-item">
-          <p class="prayer-name">Anonymous</p>
-          <p class="prayer-request">Please pray for my family's health and protection.</p>
-          <p class="prayer-date">📅 2 days ago</p>
-        </div>
-        <div class="prayer-item">
-          <p class="prayer-name">Bro. Mark</p>
-          <p class="prayer-request">Pray for the upcoming Youth Camp, that many souls will be saved.</p>
-          <p class="prayer-date">📅 3 days ago</p>
-        </div>
-        <div class="prayer-item">
-          <p class="prayer-name">Sis. Grace</p>
-          <p class="prayer-request">Healing for my mother who is in the hospital.</p>
-          <p class="prayer-date">📅 5 days ago</p>
-        </div>
       </div>
     </div>
   </section>
@@ -3058,12 +3167,12 @@
 
       const searchData = [
         { title: 'Home', desc: 'Welcome to Gospel Fellowship Church', link: '#homeSection' },
-        { title: 'About Us', desc: 'Mission, Vision, Community', link: '#aboutSection' },
-        { title: 'Ministries', desc: 'Children, Youth, Worship, Ushering, Media, Prayer', link: '#ministriesSection' },
+        { title: 'About Us', desc: 'Mission, Vision, Community, Ministries, Testimonies, Prayer Wall', link: '#aboutSection' },
+        { title: 'Ministries', desc: 'Children, Youth, Worship, Ushering, Media, Prayer', link: '#aboutSection' },
+        { title: 'Testimonies', desc: 'Stories of God\'s faithfulness', link: '#aboutSection' },
+        { title: 'Prayer Wall', desc: 'Prayer requests from the community', link: '#aboutSection' },
         { title: 'Events', desc: 'Sunday Service, Prayer Meeting, Bible Study, Worship Night, Youth', link: '#eventsSection' },
         { title: 'Sermons', desc: 'Obedience Over Sacrifice, A New Song, Light to My Path', link: '#sermonsSection' },
-        { title: 'Testimonies', desc: 'Stories of God\'s faithfulness', link: '#testimoniesSection' },
-        { title: 'Prayer Wall', desc: 'Prayer requests from the community', link: '#prayerWallSection' },
         { title: 'Contact', desc: 'Get in touch with us', link: '#contactSection' },
         { title: 'Sunday Service', desc: 'Every Sunday • 8:30 AM', link: '#eventsSection' },
         { title: 'Prayer Meeting', desc: 'Every Monday • 7:00 PM', link: '#eventsSection' },
@@ -3612,10 +3721,11 @@
     // INITIALIZE
     // ============================================
     updateThemeIcons();
-    console.log('✅ Gospel Fellowship Church - Full Website with all features!');
+    console.log('✅ Gospel Fellowship Church - Full Website with 5 Navbar Items!');
     console.log('🔐 Admin Access: Click logo 5 times | Username: admin | Password: admin123');
+    console.log('📌 Navbar: Home | About | Events | Sermons | Contact');
+    console.log('📌 About section includes: Ministries, Testimonies, Prayer Wall');
     console.log('📌 Keyboard Shortcuts: ESC to close modals, Ctrl+K to search');
-    console.log('📌 PWA Ready - Installable on mobile devices');
   })();
 </script>
 
