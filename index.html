@@ -1284,169 +1284,507 @@
     }
 
     /* ============================================ */
-    /* ===== RESPONSIVE ===== */
-    /* ============================================ */
-    @media (max-width: 768px) {
-      .header { 
-        flex-direction: column; 
-        align-items: stretch; 
-        padding: 10px 15px;
-        width: 95%;
-      }
-      .navbar ul { justify-content: center; }
-      .header-actions { justify-content: center; }
-      
-      .home-overlay {
-        margin-top: -50px;
-      }
-      .home {
-        padding: 20px 15px;
-        max-width: 100%;
-        border-radius: 35px;
-      }
-      .countdown-section {
-        padding: 20px 15px;
-        max-width: 100%;
-        border-radius: 35px;
-      }
-      .countdown-block .num {
-        font-size: 1.8rem;
-        min-width: 45px;
-        padding: 6px 10px;
-      }
-      .countdown-timer {
-        gap: 12px;
-      }
-      .background {
-        min-height: 250px;
-        padding: 30px 20px;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .background-content h2 {
-        font-size: 2rem;
-      }
-      .background-content {
-        text-align: left;
-        padding-left: 0;
-      }
-      .circle-logo {
-        width: 130px;
-        height: 130px;
-      }
-      .background-img {
-        flex: 0 0 130px;
-      }
-      
-      .gs-cards {
-        flex-direction: column;
-        align-items: center;
-      }
-      .gs-card {
-        max-width: 350px;
-      }
-      .events-main-title {
-        font-size: 2rem;
-      }
-      
-      .event-modal-content { padding: 25px; }
-      .date-gallery { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
-      .activity-gallery { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
-      .section { padding: 90px 0 40px; }
-      .pastors-container {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .believe-section .believe-inner {
-        padding: 35px 25px;
-      }
-    }
+/* ===== RESPONSIVE ===== */
+/* ============================================ */
 
-    @media (max-width: 480px) {
-      .home-overlay {
-        margin-top: -30px;
-      }
-      .home {
-        padding: 15px 12px;
-        border-radius: 25px;
-      }
-      .btn-container .btn,
-      .btn-container .btn-give {
-        padding: 10px 25px;
-        font-size: 0.9rem;
-      }
-      .countdown-section {
-        padding: 15px 12px;
-        border-radius: 25px;
-      }
-      .countdown-block .num {
-        font-size: 1.4rem;
-        min-width: 35px;
-        padding: 4px 8px;
-      }
-      .countdown-block .label {
-        font-size: 0.55rem;
-      }
-      .countdown-timer {
-        gap: 8px;
-      }
-      .background {
-        flex-direction: column;
-        text-align: center;
-        min-height: 200px;
-        padding: 20px 15px;
-        gap: 15px;
-      }
-      .background-content {
-        text-align: center;
-      }
-      .background-content h1 {
-        font-size: 1.3rem;
-      }
-      .background-content h2 {
-        font-size: 1.5rem;
-      }
-      .background-content p {
-        font-size: 0.9rem;
-      }
-      .circle-logo {
-        width: 100px;
-        height: 100px;
-      }
-      .background-img {
-        flex: 0 0 100px;
-      }
-      
-      .gs-card {
-        padding: 20px 15px;
-        max-width: 100%;
-      }
-      .events-main-title {
-        font-size: 1.6rem;
-      }
-      .events-main-subtitle {
-        font-size: 0.9rem;
-      }
-      .gs-bottom-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-      .gs-bottom-buttons .btn-live,
-      .gs-bottom-buttons .btn-prayer {
-        width: 100%;
-        max-width: 250px;
-      }
-      
-      .date-gallery { grid-template-columns: repeat(2, 1fr); }
-      .activity-gallery { grid-template-columns: 1fr 1fr; }
-      .pastors-container {
-        grid-template-columns: 1fr;
-      }
-      .pastor-card img {
-        width: 120px;
-        height: 120px;
-      }
-    }
+/* ===== TABLET (max-width: 992px) ===== */
+@media (max-width: 992px) {
+  .pastors-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .background-text h1 {
+    font-size: 3rem;
+  }
+  .background-text h2 {
+    font-size: 3.5rem;
+  }
+  .background-text p {
+    font-size: 1.5rem;
+  }
+  .circle-logo {
+    width: 200px;
+    height: 200px;
+  }
+  .background-img {
+    flex: 0 0 200px;
+  }
+  .home-overlay {
+    margin-top: -180px;
+  }
+}
+
+/* ===== MOBILE (max-width: 768px) ===== */
+@media (max-width: 768px) {
+  /* ===== HEADER ===== */
+  .header { 
+    flex-direction: column; 
+    align-items: stretch; 
+    padding: 10px 15px;
+    width: 95%;
+    top: 10px;
+  }
+  .logo-img {
+    height: 60px;
+  }
+  .logo-text {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .navbar ul { 
+    justify-content: center; 
+  }
+  .navbar ul li a {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+  .header-actions { 
+    justify-content: center; 
+  }
+  
+  /* ===== HOME SECTION ===== */
+  #homeSection {
+    padding: 80px 0 0;
+    min-height: 80vh;
+  }
+  .background-content-wrapper {
+    min-height: 350px;
+    padding: 30px 20px;
+    gap: 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .background-text {
+    text-align: center;
+    padding-left: 0;
+    margin-top: 0;
+    order: 2;
+  }
+  .background-text h1 {
+    font-size: 2rem;
+  }
+  .background-text h2 {
+    font-size: 2.2rem;
+  }
+  .background-text p {
+    font-size: 1.1rem;
+  }
+  .background-img {
+    flex: 0 0 150px;
+    margin-top: 0;
+    margin-right: 0;
+    order: 1;
+  }
+  .circle-logo {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .home-overlay {
+    margin-top: -40px;
+    padding: 0 5px;
+  }
+  .home {
+    padding: 20px 15px;
+    max-width: 100%;
+    border-radius: 35px;
+  }
+  .btn-container .btn,
+  .btn-container .btn-give {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+  .countdown-section {
+    padding: 20px 15px;
+    max-width: 100%;
+    border-radius: 35px;
+  }
+  .countdown-section h3 {
+    font-size: 0.95rem;
+  }
+  .countdown-block .num {
+    font-size: 1.6rem;
+    min-width: 40px;
+    padding: 6px 10px;
+  }
+  .countdown-block .label {
+    font-size: 0.6rem;
+  }
+  .countdown-timer {
+    gap: 10px;
+  }
+  
+  /* ===== ABOUT SECTION ===== */
+  #aboutSection {
+    padding: 60px 0;
+  }
+  .about-section {
+    gap: 15px;
+    padding: 0 15px;
+  }
+  .about-box {
+    flex: 1 1 100%;
+    padding: 25px 20px;
+  }
+  .about-box h2 {
+    font-size: 1.3rem;
+  }
+  .about-box p {
+    font-size: 0.95rem;
+  }
+  
+  /* ===== BELIEVE SECTION ===== */
+  .believe-section {
+    padding: 0 15px;
+  }
+  .believe-section .believe-inner {
+    padding: 30px 20px;
+  }
+  .believe-title {
+    font-size: 1.6rem;
+  }
+  .believe-subtitle {
+    font-size: 0.9rem;
+  }
+  .believe-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .believe-card {
+    padding: 25px 20px;
+  }
+  .believe-card i {
+    font-size: 45px;
+  }
+  .believe-card h3 {
+    font-size: 1.1rem;
+  }
+  .believe-card p {
+    font-size: 0.9rem;
+  }
+  
+  /* ===== PASTORS SECTION ===== */
+  .pastors-section {
+    padding: 0 15px;
+  }
+  .pastors-section h2 {
+    font-size: 1.8rem;
+  }
+  .pastors-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  .pastor-card {
+    padding: 20px 15px;
+  }
+  .pastor-card img {
+    width: 100px;
+    height: 100px;
+  }
+  .pastor-card h3 {
+    font-size: 1rem;
+  }
+  .pastor-card .role {
+    font-size: 0.85rem;
+  }
+  
+  /* ===== EVENTS SECTION ===== */
+  #eventsSection .events-container {
+    padding: 0 15px;
+  }
+  .events-main-title {
+    font-size: 1.8rem;
+  }
+  .events-main-subtitle {
+    font-size: 0.95rem;
+    padding: 0 10px;
+  }
+  .events-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  .event-card img {
+    height: 120px;
+  }
+  .event-card-content {
+    padding: 12px;
+  }
+  .event-card-content h3 {
+    font-size: 0.95rem;
+  }
+  .btn-group {
+    gap: 10px;
+  }
+  .btn-group button {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+  
+  /* ===== SERMONS SECTION ===== */
+  #sermonsSection .events-container {
+    padding: 0 15px;
+  }
+  .sermons-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  /* ===== CONTACT SECTION ===== */
+  #contactSection .events-container {
+    padding: 0 15px;
+  }
+  #contactSection .events-container > div {
+    padding: 20px 15px !important;
+  }
+  #contactSection .events-container > div > div {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+  
+  /* ===== GET STARTED MODAL ===== */
+  .gs-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .gs-card {
+    max-width: 100%;
+    padding: 20px 15px;
+  }
+  .events-main-title {
+    font-size: 1.6rem;
+  }
+  
+  /* ===== MODALS ===== */
+  .modal-content {
+    padding: 25px 15px;
+    margin: 20px auto;
+    width: 95%;
+  }
+  .event-modal-content {
+    padding: 25px 20px;
+  }
+  .event-detail-header h2 {
+    font-size: 1.5rem;
+  }
+  .date-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+  }
+  .activity-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+  
+  /* ===== FOOTER ===== */
+  .footer-container {
+    padding: 0 15px;
+  }
+  .footer-column {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* ===== SECTION PADDING ===== */
+  .section {
+    padding: 60px 0 40px;
+  }
+}
+
+/* ===== SMALL MOBILE (max-width: 480px) ===== */
+@media (max-width: 480px) {
+  /* ===== HEADER ===== */
+  .logo-img {
+    height: 50px;
+  }
+  .logo-text {
+    font-size: 1rem;
+  }
+  .navbar ul li a {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+  
+  /* ===== HOME ===== */
+  .background-content-wrapper {
+    min-height: 280px;
+    padding: 20px 15px;
+  }
+  .background-text h1 {
+    font-size: 1.5rem;
+  }
+  .background-text h2 {
+    font-size: 1.8rem;
+  }
+  .background-text p {
+    font-size: 0.95rem;
+  }
+  .circle-logo {
+    width: 120px;
+    height: 120px;
+  }
+  .background-img {
+    flex: 0 0 120px;
+  }
+  .home-overlay {
+    margin-top: -30px;
+  }
+  .home {
+    padding: 15px 12px;
+    border-radius: 25px;
+  }
+  .btn-container .btn,
+  .btn-container .btn-give {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+  .countdown-section {
+    padding: 15px 12px;
+    border-radius: 25px;
+  }
+  .countdown-block .num {
+    font-size: 1.2rem;
+    min-width: 32px;
+    padding: 4px 8px;
+  }
+  .countdown-block .label {
+    font-size: 0.5rem;
+  }
+  .countdown-timer {
+    gap: 6px;
+  }
+  
+  /* ===== ABOUT ===== */
+  .about-box {
+    padding: 20px 15px;
+  }
+  .about-box h2 {
+    font-size: 1.1rem;
+  }
+  .about-box p {
+    font-size: 0.85rem;
+  }
+  
+  /* ===== BELIEVE ===== */
+  .believe-section .believe-inner {
+    padding: 20px 15px;
+  }
+  .believe-title {
+    font-size: 1.3rem;
+  }
+  .believe-subtitle {
+    font-size: 0.85rem;
+  }
+  .believe-card {
+    padding: 20px 15px;
+  }
+  .believe-card i {
+    font-size: 35px;
+  }
+  .believe-card h3 {
+    font-size: 1rem;
+  }
+  .believe-card p {
+    font-size: 0.85rem;
+  }
+  
+  /* ===== PASTORS ===== */
+  .pastors-section h2 {
+    font-size: 1.4rem;
+  }
+  .pastors-container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .pastor-card {
+    padding: 15px 12px;
+  }
+  .pastor-card img {
+    width: 100px;
+    height: 100px;
+  }
+  .pastor-card h3 {
+    font-size: 0.95rem;
+  }
+  .pastor-card .role {
+    font-size: 0.8rem;
+  }
+  
+  /* ===== EVENTS ===== */
+  .events-main-title {
+    font-size: 1.3rem;
+  }
+  .events-main-subtitle {
+    font-size: 0.85rem;
+  }
+  .events-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .event-card img {
+    height: 100px;
+  }
+  .btn-group {
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn-group button {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  /* ===== SERMONS ===== */
+  .sermons-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  /* ===== GET STARTED MODAL ===== */
+  .gs-card {
+    padding: 15px 12px;
+  }
+  .events-main-title {
+    font-size: 1.3rem;
+  }
+  .events-main-subtitle {
+    font-size: 0.85rem;
+  }
+  .gs-bottom-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .gs-bottom-buttons .btn-live,
+  .gs-bottom-buttons .btn-prayer {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  /* ===== MODALS ===== */
+  .modal-content {
+    padding: 20px 12px;
+    margin: 15px auto;
+  }
+  .event-modal-content {
+    padding: 20px 15px;
+  }
+  .event-detail-header h2 {
+    font-size: 1.2rem;
+  }
+  .date-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .date-thumb img {
+    height: 70px;
+  }
+  .activity-gallery {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  
+  /* ===== SECTION PADDING ===== */
+  .section {
+    padding: 50px 0 30px;
+  }
+}
   </style>
 </head>
 <body>
