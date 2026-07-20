@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <title>Gospel Fellowship Church</title>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -15,12 +15,24 @@
       font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
       scrollbar-width: none;
       -ms-overflow-style: none;
+      touch-action: manipulation;
     }
     *::-webkit-scrollbar { display: none; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; padding: 0; overflow-x: hidden; }
+    html { 
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      -moz-text-size-adjust: 100%;
+    }
+    body { 
+      margin: 0; 
+      padding: 0; 
+      overflow-x: hidden;
+      touch-action: pan-y;
+      position: relative;
+    }
 
-    /* ===== HEADER (CENTERED WITH MAX-WIDTH) ===== */
+    /* ===== HEADER - GLOBAL ===== */
     .header {
       display: flex;
       align-items: center;
@@ -764,267 +776,268 @@
     @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
 
     /* ============================================ */
-/* ===== RESPONSIVE ===== */
-/* ============================================ */
-@media (max-width: 992px) {
-  .pastors-container { grid-template-columns: repeat(2, 1fr); }
-  .background-text h1 { font-size: 3rem; }
-  .background-text h2 { font-size: 3.5rem; }
-  .background-text p { font-size: 1.5rem; }
-  .circle-logo { width: 200px; height: 200px; }
-  .background-img { flex: 0 0 200px; }
-  .home-overlay { margin-top: -180px; }
-}
+    /* ===== RESPONSIVE ===== */
+    /* ============================================ */
+    @media (max-width: 992px) {
+      .pastors-container { grid-template-columns: repeat(2, 1fr); }
+      .background-text h1 { font-size: 3rem; }
+      .background-text h2 { font-size: 3.5rem; }
+      .background-text p { font-size: 1.5rem; }
+      .circle-logo { width: 200px; height: 200px; }
+      .background-img { flex: 0 0 200px; }
+      .home-overlay { margin-top: -180px; }
+    }
 
-@media (max-width: 768px) {
-  /* ===== HEADER - MOBILE (isang line: logo + text + menu button) ===== */
-  .header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 15px;
-  width: 70%;
-  max-width: 900px;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 30px;
-  gap: 8px;
-  /* BLUR EFFECT - transparent na may blur */
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  position: fixed;
-  z-index: 1000;
-  height: 65px;
-  transition: all 0.3s ease;
-}
+    @media (max-width: 768px) {
+      /* ===== HEADER - MOBILE (Logo + Text + Menu sa iisang line) ===== */
+      .header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 15px;
+        width: 92%;
+        max-width: 500px;
+        top: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 30px;
+        gap: 6px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        position: fixed;
+        z-index: 1000;
+        height: 60px;
+        transition: all 0.3s ease;
+        flex-wrap: nowrap;
+      }
 
-/* Kapag nag-scroll - mas solid para sa readability */
-.header.scrolled {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
+      .header.scrolled {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
 
-  /* LEFT SECTION: Logo + Text (magkadikit) */
-  .header-left {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
-    min-width: 0;
-  }
+      /* Logo maliit */
+      .logo-img {
+        height: 32px;
+        width: 32px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 0;
+      }
 
-  .logo-img {
-    height: 35px;
-    width: 35px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    object-fit: cover;
-  }
+      /* Text - katabi ng logo */
+      .logo-text {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #ffffff;
+        white-space: nowrap;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+        line-height: 1.2;
+        text-decoration: none;
+        flex-shrink: 1;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-left: 0;
+      }
+      .logo-text small {
+        display: none;
+      }
 
-  .logo-text {
-    font-size: 0.9rem;
-    font-weight: 800;
-    color: #ffffff;
-    white-space: nowrap;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    line-height: 1.2;
-    text-decoration: none;
-    flex-shrink: 1;
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .logo-text small {
-    display: block;
-    font-size: 0.45rem;
-    font-weight: 400;
-    letter-spacing: 1.5px;
-    color: #c9a84c;
-    text-transform: uppercase;
-    margin-top: -2px;
-  }
+      /* MOBILE MENU BUTTON - nasa kanan, katabi ng text */
+      .mobile-menu-toggle {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        cursor: pointer;
+        padding: 4px 6px;
+        background: none;
+        border: none;
+        flex-shrink: 0;
+        min-width: 36px;
+        min-height: 36px;
+        margin-left: auto;
+      }
+      .mobile-menu-toggle span {
+        display: block;
+        width: 22px;
+        height: 2.5px;
+        background: #ffffff;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+        transform-origin: center;
+      }
+      .mobile-menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(4px, 4px);
+      }
+      .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+      .mobile-menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(4px, -4px);
+      }
 
-  /* MOBILE MENU BUTTON - kanan */
-  .mobile-menu-toggle {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    cursor: pointer;
-    padding: 6px 8px;
-    background: none;
-    border: none;
-    flex-shrink: 0;
-    min-width: 40px;
-    min-height: 40px;
-    margin-left: auto;
-  }
-  .mobile-menu-toggle span {
-    display: block;
-    width: 24px;
-    height: 2.5px;
-    background: #ffffff;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-    transform-origin: center;
-  }
-  .mobile-menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(4px, 4px);
-  }
-  .mobile-menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-    transform: scaleX(0);
-  }
-  .mobile-menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(4px, -4px);
-  }
+      /* HIDE desktop elements sa mobile */
+      .header-actions {
+        display: none !important;
+      }
+      .social-media {
+        display: none !important;
+      }
+      #darkModeToggle {
+        display: none !important;
+      }
 
-  /* HIDE desktop elements sa mobile */
-  .header-actions {
-    display: none !important;
-  }
-  .social-media {
-    display: none !important;
-  }
-  #darkModeToggle {
-    display: none !important;
-  }
+      /* NAVBAR - dropdown sa baba */
+      .navbar {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: #0a1628;
+        padding: 15px 20px 25px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        border-top: 2px solid #c9a84c;
+        border-radius: 0 0 20px 20px;
+      }
+      .navbar.open {
+        display: block;
+        animation: slideDown 0.3s ease forwards;
+      }
+      @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .navbar ul {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        align-items: stretch;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .navbar ul li {
+        width: 100%;
+      }
+      .navbar ul li a {
+        display: block;
+        padding: 12px 18px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border-radius: 6px;
+        text-align: left;
+        transition: all 0.3s ease;
+        background: transparent;
+        color: #ffffff;
+        text-decoration: none;
+        letter-spacing: 0.5px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .navbar ul li a:hover,
+      .navbar ul li a.active {
+        background: rgba(201, 168, 76, 0.15);
+        color: #c9a84c;
+        padding-left: 24px;
+        border-bottom-color: #c9a84c;
+      }
 
-  /* NAVBAR - dropdown sa baba */
-  .navbar {
-    display: none;
-    position: absolute;
-    top: 65px;
-    left: 0;
-    right: 0;
-    background: #0a1628;
-    padding: 15px 20px 25px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-    border-top: 2px solid #c9a84c;
-  }
-  .navbar.open {
-    display: block;
-    animation: slideDown 0.3s ease forwards;
-  }
-  @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .navbar ul {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    align-items: stretch;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .navbar ul li {
-    width: 100%;
-  }
-  .navbar ul li a {
-    display: block;
-    padding: 12px 18px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border-radius: 6px;
-    text-align: left;
-    transition: all 0.3s ease;
-    background: transparent;
-    color: #ffffff;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  }
-  .navbar ul li a:hover,
-  .navbar ul li a.active {
-    background: rgba(201, 168, 76, 0.15);
-    color: #c9a84c;
-    padding-left: 24px;
-    border-bottom-color: #c9a84c;
-  }
+      /* ===== HOME ===== */
+      #homeSection { padding-top: 80px; }
+      .background-content-wrapper { flex-direction: column; text-align: center; padding: 30px 20px; }
+      .background-text { text-align: center; padding-left: 0; margin-top: 0; order: 2; }
+      .background-text h1 { font-size: 2.5rem; }
+      .background-text h2 { font-size: 2.8rem; }
+      .background-text p { font-size: 1.2rem; }
+      .circle-logo { width: 120px; height: 120px; }
+      .background-img { order: 1; margin-top: 0; margin-right: 0; flex: 0 0 120px; }
+      .home-overlay { margin-top: -30px; }
+      .home { padding: 15px 12px; border-radius: 25px; }
+      .btn-container .btn, .btn-container .btn-give { padding: 10px 20px; font-size: 0.85rem; }
+      .countdown-section { padding: 15px 12px; border-radius: 25px; }
+      .countdown-block .num { font-size: 1.2rem; min-width: 32px; padding: 4px 8px; }
+      .countdown-block .label { font-size: 0.5rem; }
+      .countdown-timer { gap: 6px; }
 
-  /* ===== HOME ===== */
-  #homeSection { padding-top: 80px; }
-  .background-content-wrapper { flex-direction: column; text-align: center; padding: 30px 20px; }
-  .background-text { text-align: center; padding-left: 0; margin-top: 0; order: 2; }
-  .circle-logo { width: 120px; height: 120px; }
-  .background-img { order: 1; margin-top: 0; margin-right: 0; }
-  .home-overlay { margin-top: -30px; }
-  .home { padding: 15px 12px; border-radius: 25px; }
-  .btn-container .btn, .btn-container .btn-give { padding: 10px 20px; font-size: 0.85rem; }
-  .countdown-section { padding: 15px 12px; border-radius: 25px; }
-  .countdown-block .num { font-size: 1.2rem; min-width: 32px; padding: 4px 8px; }
-  .countdown-block .label { font-size: 0.5rem; }
-  .countdown-timer { gap: 6px; }
+      /* ===== ABOUT ===== */
+      .about-box { padding: 20px 15px; }
+      .about-box h2 { font-size: 1.1rem; }
+      .about-box p { font-size: 0.85rem; }
 
-  /* ===== ABOUT ===== */
-  .about-box { padding: 20px 15px; }
-  .about-box h2 { font-size: 1.1rem; }
-  .about-box p { font-size: 0.85rem; }
+      /* ===== BELIEVE ===== */
+      .believe-section .believe-inner { padding: 20px 15px; }
+      .believe-title { font-size: 1.3rem; }
+      .believe-subtitle { font-size: 0.85rem; }
+      .believe-card { padding: 20px 15px; }
+      .believe-card i { font-size: 35px; }
+      .believe-card h3 { font-size: 1rem; }
+      .believe-card p { font-size: 0.85rem; }
 
-  /* ===== BELIEVE ===== */
-  .believe-section .believe-inner { padding: 20px 15px; }
-  .believe-title { font-size: 1.3rem; }
-  .believe-subtitle { font-size: 0.85rem; }
-  .believe-card { padding: 20px 15px; }
-  .believe-card i { font-size: 35px; }
-  .believe-card h3 { font-size: 1rem; }
-  .believe-card p { font-size: 0.85rem; }
+      /* ===== PASTORS ===== */
+      .pastors-section h2 { font-size: 1.4rem; }
+      .pastors-container { grid-template-columns: 1fr; gap: 12px; }
+      .pastor-card { padding: 15px 12px; }
+      .pastor-card img { width: 100px; height: 100px; }
+      .pastor-card h3 { font-size: 0.95rem; }
+      .pastor-card .role { font-size: 0.8rem; }
 
-  /* ===== PASTORS ===== */
-  .pastors-section h2 { font-size: 1.4rem; }
-  .pastors-container { grid-template-columns: 1fr; gap: 12px; }
-  .pastor-card { padding: 15px 12px; }
-  .pastor-card img { width: 100px; height: 100px; }
-  .pastor-card h3 { font-size: 0.95rem; }
-  .pastor-card .role { font-size: 0.8rem; }
+      /* ===== EVENTS ===== */
+      .events-main-title { font-size: 1.3rem; }
+      .events-main-subtitle { font-size: 0.85rem; }
+      .events-grid { grid-template-columns: 1fr; gap: 12px; }
+      .event-card img { height: 100px; }
+      .btn-group { flex-direction: column; align-items: center; }
+      .btn-group button { width: 100%; max-width: 250px; }
 
-  /* ===== EVENTS ===== */
-  .events-main-title { font-size: 1.3rem; }
-  .events-main-subtitle { font-size: 0.85rem; }
-  .events-grid { grid-template-columns: 1fr; gap: 12px; }
-  .event-card img { height: 100px; }
-  .btn-group { flex-direction: column; align-items: center; }
-  .btn-group button { width: 100%; max-width: 250px; }
+      /* ===== SERMONS ===== */
+      .sermons-grid { grid-template-columns: 1fr; gap: 15px; }
 
-  /* ===== SERMONS ===== */
-  .sermons-grid { grid-template-columns: 1fr; gap: 15px; }
+      /* ===== GET STARTED MODAL ===== */
+      .gs-card { padding: 15px 12px; }
+      .gs-bottom-buttons { flex-direction: column; align-items: center; }
+      .gs-bottom-buttons .btn-live,
+      .gs-bottom-buttons .btn-prayer { width: 100%; max-width: 250px; }
 
-  /* ===== GET STARTED MODAL ===== */
-  .gs-card { padding: 15px 12px; }
-  .gs-bottom-buttons { flex-direction: column; align-items: center; }
-  .gs-bottom-buttons .btn-live,
-  .gs-bottom-buttons .btn-prayer { width: 100%; max-width: 250px; }
-
-  /* ===== MODALS ===== */
-  .modal-content { padding: 20px 12px; margin: 15px auto; }
-  .event-modal-content { padding: 20px 15px; }
-  .event-detail-header h2 { font-size: 1.2rem; }
-  .date-gallery { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-  .date-thumb img { height: 70px; }
-  .activity-gallery { grid-template-columns: 1fr 1fr; gap: 8px; }
-  .section { padding: 50px 0 30px; }
-}
+      /* ===== MODALS ===== */
+      .modal-content { padding: 20px 12px; margin: 15px auto; }
+      .event-modal-content { padding: 20px 15px; }
+      .event-detail-header h2 { font-size: 1.2rem; }
+      .date-gallery { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .date-thumb img { height: 70px; }
+      .activity-gallery { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .section { padding: 50px 0 30px; }
+    }
   </style>
 </head>
 <body>
 
 <!-- ===== HEADER ===== -->
 <header class="header" id="mainHeader" role="banner">
+  <!-- LEFT: Logo + Text -->
   <img src="Gospel.jpg" alt="Gospel Fellowship Church Logo" class="logo-img">
   <a href="#homeSection" class="logo-text" aria-label="Gospel Fellowship Church Home">Gospel Fellowship Church</a>
 
+  <!-- MOBILE MENU BUTTON (KANAN - katabi ng text) -->
+  <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- NAVBAR (desktop at mobile dropdown) -->
   <nav class="navbar" role="navigation" aria-label="Main Navigation">
     <ul>
       <li><a href="#homeSection" class="active">Home</a></li>
@@ -1035,18 +1048,12 @@
     </ul>
   </nav>
 
+  <!-- HEADER ACTIONS (desktop only) -->
   <div class="header-actions">
     <div class="social-media">
       <a href="https://www.facebook.com/profile.php?id=61590579395623" target="_blank" aria-label="Follow us on Facebook"><i class='bx bxl-facebook'></i></a>
     </div>
     <button id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
-
-    <!-- ===== MOBILE MENU BUTTON (HAMBURGER) ===== -->
-    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
   </div>
 
   <div id="loginForm" class="login-form" role="dialog" aria-label="Sign In Form">
@@ -1075,7 +1082,6 @@
   <!-- ===== HOME SECTION ===== -->
   <section id="homeSection" class="section" aria-label="Home">
     <div class="home-wrapper">
-      <!-- BACKGROUND CONTENT - Logo at Text -->
       <div class="background-content-wrapper">
         <div class="background-img">
           <div class="circle-logo">
@@ -1089,7 +1095,6 @@
         </div>
       </div>
 
-      <!-- OVERLAY - GUMAGALAW (normal scroll) -->
       <div class="home-overlay">
         <div class="home">
           <div class="home-content">
@@ -1123,10 +1128,7 @@
         <div class="events-container">
           <h2 class="events-main-title">Get Started</h2>
           <p class="events-main-subtitle">Hindi ka nag-iisa. Eto ang tatlong simpleng hakbang para makapagsimula ang iyong journey sa Gospel Fellowship Church.</p>
-          
-          <!-- Cards - Isang line lang -->
           <div class="gs-cards">
-            <!-- Card 1 -->
             <div class="gs-card">
               <div class="gs-number" style="background:#3895D3;">1</div>
               <i class='bx bx-church' style="font-size:40px;color:#3895D3;"></i>
@@ -1134,7 +1136,6 @@
               <p>Sumama sa amin every Sunday, 8:30 AM.</p>
               <a href="#eventsSection" class="btn-events" onclick="closeGetStarted()">See Schedule</a>
             </div>
-            <!-- Card 2 -->
             <div class="gs-card">
               <div class="gs-number" style="background:#28a745;">2</div>
               <i class='bx bx-user-plus' style="font-size:40px;color:#28a745;"></i>
@@ -1142,7 +1143,6 @@
               <p>Mag-register para makilala ka namin.</p>
               <button id="gsRegisterBtn" class="btn-secondary" onclick="closeGetStarted()">Register Now</button>
             </div>
-            <!-- Card 3 -->
             <div class="gs-card">
               <div class="gs-number" style="background:#f5c842;color:#1a2a3a;">3</div>
               <i class='bx bx-book-open' style="font-size:40px;color:#f5c842;"></i>
@@ -1151,8 +1151,6 @@
               <a href="#sermonsSection" class="btn-events" onclick="closeGetStarted()">Watch Sermons</a>
             </div>
           </div>
-
-          <!-- Watch Live at Prayer Request - NASA BABA -->
           <div class="gs-bottom-buttons">
             <button onclick="document.getElementById('liveModal').style.display='flex'" class="btn-live">🔴 Watch Live</button>
             <button onclick="document.getElementById('prayerModal').style.display='flex'" class="btn-prayer">🙏 Prayer Request</button>
@@ -1354,6 +1352,19 @@
     'use strict';
 
     // ============================================
+    // PIGILAN ANG ZOOM SA BUONG WEBSITE
+    // ============================================
+    document.addEventListener('gesturestart', function(e) { e.preventDefault(); });
+    document.addEventListener('gesturechange', function(e) { e.preventDefault(); });
+    document.addEventListener('gestureend', function(e) { e.preventDefault(); });
+    document.addEventListener('dblclick', function(e) { e.preventDefault(); }, { passive: false });
+    document.addEventListener('keydown', function(e) {
+      if (e.ctrlKey && (e.key === '+' || e.key === '-' || e.key === '=' || e.key === '0')) {
+        e.preventDefault();
+      }
+    });
+
+    // ============================================
     // MOBILE MENU TOGGLE
     // ============================================
     const mobileToggle = document.getElementById('mobileMenuToggle');
@@ -1366,7 +1377,6 @@
         navbar.classList.toggle('open');
       });
 
-      // Close menu when clicking a link
       navbar.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', function() {
           mobileToggle.classList.remove('active');
@@ -1374,7 +1384,6 @@
         });
       });
 
-      // Close menu when clicking outside
       document.addEventListener('click', function(e) {
         if (!navbar.contains(e.target) && !mobileToggle.contains(e.target)) {
           mobileToggle.classList.remove('active');
@@ -1657,16 +1666,11 @@
     // SHOW EVENT DETAIL
     // ============================================
     window.showEventDetail = function(eventId) {
-      console.log('Event clicked:', eventId);
       currentEventId = eventId;
       const modal = document.getElementById('eventDetailModal');
       const content = document.getElementById('eventDetailContent');
       const data = eventData[eventId];
-
-      if (!data) {
-        console.error('Event data not found for:', eventId);
-        return;
-      }
+      if (!data) return;
 
       let datesHTML = '';
       if (data.dateEntries && data.dateEntries.length) {
