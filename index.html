@@ -58,18 +58,29 @@
     body.dark-mode .social-media a:hover { color: #cccccc; }
     body.dark-mode #darkModeToggle { color: #ffffff; }
 
-    /* Dark mode mobile navbar */
-    body.dark-mode .navbar { background: #1a1a1a; }
-    body.dark-mode .navbar ul li a { color: #ffffff; border-bottom-color: rgba(255,255,255,0.05); }
+    /* Dark mode mobile navbar - WALANG BOXES */
+    body.dark-mode .navbar { background: transparent; }
+    body.dark-mode .navbar ul li a { 
+      color: #ffffff; 
+      border-bottom: none;
+      background: transparent;
+    }
     body.dark-mode .navbar ul li a:hover,
-    body.dark-mode .navbar ul li a.active { background: rgba(255,255,255,0.1); color: #ffffff; border-bottom-color: #ffffff; }
+    body.dark-mode .navbar ul li a.active { 
+      background: #ffffff; /* White background pag hover/active */
+      color: #000000; /* Black text pag hover/active */
+      padding-left: 18px;
+      border-bottom: none;
+    }
     body.dark-mode .navbar .mobile-theme-toggle { border-top-color: rgba(255,255,255,0.1); }
     body.dark-mode .navbar .mobile-theme-toggle button { color: #ffffff; }
     body.dark-mode .navbar .mobile-theme-toggle button:hover { background: rgba(255,255,255,0.1); }
 
+    /* ===== BACKGROUND TEXT - DARK MODE (WHITE) ===== */
     body.dark-mode .background-text h1 { color: #ffffff; }
     body.dark-mode .background-text h2 { color: #ffffff; }
     body.dark-mode .background-text p { color: #ffffff; }
+
     body.dark-mode .countdown-section { color: #ffffff; border-color: rgba(255,255,255,0.25); }
     body.dark-mode .countdown-block .num { background: rgba(255,255,255,0.08); color: #ffffff; }
     body.dark-mode .countdown-block .label { color: #ffffff; }
@@ -444,7 +455,7 @@
 
     /* ===== HOME SECTION WITH BACKGROUND IMAGE ===== */
     #homeSection {
-      background-image: url('Gospel.jpg');
+      background-image: url('Jesus.jpg');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -464,7 +475,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(255, 255, 255, 0.3);
       z-index: 0;
     }
     #homeSection .home-wrapper {
@@ -500,28 +511,29 @@
       margin-top: -40px;
       order: 1;
     }
+    /* ===== BACKGROUND TEXT - LIGHT MODE (BLACK) ===== */
     .background-text h1 { 
       font-size: 4rem; 
       font-weight: 300; 
-      margin-bottom: 0; 
-      color: #ffffff; 
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+      margin-bottom: 0;
+      color: #000000;
+      text-shadow: none;
       transition: color 0.3s ease; 
     }
     .background-text h2 {
       font-size: 5rem;
       font-weight: 700;
-      color: #ffffff;
+      color: #000000;
       font-family: 'Times New Roman', Times, serif;
       margin-top: 0;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+      text-shadow: none;
       transition: color 0.3s ease;
     }
     .background-text p { 
       font-size: 2rem; 
-      color: #ffffff; 
-      margin-top: 10px; 
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+      color: #000000;
+      margin-top: 10px;
+      text-shadow: none;
       transition: color 0.3s ease; 
     }
     .background-img {
@@ -550,15 +562,19 @@
       padding: 0 10px; 
     }
     .home {
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(255, 255, 255, 0.7);
       backdrop-filter: blur(4px);
       padding: 25px 20px;
       border-radius: 50px;
       text-align: center;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
       max-width: 450px;
       margin: 0 auto 20px;
-      border: 1px solid rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    body.dark-mode .home {
+      background: rgba(0, 0, 0, 0.4);
+      border-color: rgba(255,255,255,0.2);
     }
     .btn-container {
       display: flex;
@@ -578,35 +594,49 @@
       text-decoration: none;
       display: inline-block;
     }
-    .btn-container .btn { background: #ffffff; color: #000000; }
-    .btn-container .btn:hover { background: #cccccc; transform: scale(1.02); }
-    .btn-container .btn-give { background: #ffffff; color: #000000; border: 2px solid #ffffff; }
-    .btn-container .btn-give:hover { background: #cccccc; }
+    .btn-container .btn { background: #000000; color: #ffffff; }
+    .btn-container .btn:hover { background: #333; transform: scale(1.02); }
+    .btn-container .btn-give { background: #000000; color: #ffffff; border: 2px solid #000000; }
+    .btn-container .btn-give:hover { background: #333; }
+    body.dark-mode .btn-container .btn { background: #ffffff; color: #000000; }
+    body.dark-mode .btn-container .btn:hover { background: #cccccc; }
+    body.dark-mode .btn-container .btn-give { background: #ffffff; color: #000000; border-color: #ffffff; }
+    body.dark-mode .btn-container .btn-give:hover { background: #cccccc; }
+
     .countdown-section {
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(255, 255, 255, 0.7);
       backdrop-filter: blur(4px);
-      color: #ffffff;
+      color: #000000;
       padding: 25px 20px;
       border-radius: 40px;
       text-align: center;
       max-width: 650px;
       margin: 0 auto;
-      border: 1px solid rgba(255,255,255,0.2);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-      transition: color 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+      transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+    }
+    body.dark-mode .countdown-section {
+      background: rgba(0, 0, 0, 0.4);
+      color: #ffffff;
+      border-color: rgba(255,255,255,0.2);
     }
     .countdown-section h3 { font-weight: 300; letter-spacing: 1px; margin-bottom: 15px; font-size: 1.1rem; }
     .countdown-timer { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
     .countdown-block .num {
       font-size: 2.2rem;
       font-weight: 700;
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(0, 0, 0, 0.08);
       padding: 8px 14px;
       border-radius: 16px;
       display: inline-block;
       min-width: 55px;
-      color: #ffffff;
+      color: #000000;
       transition: background 0.3s ease, color 0.3s ease;
+    }
+    body.dark-mode .countdown-block .num {
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
     }
     .countdown-block .label {
       display: block;
@@ -614,8 +644,11 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       margin-top: 4px;
-      color: #ffffff;
+      color: #000000;
       transition: color 0.3s ease;
+    }
+    body.dark-mode .countdown-block .label {
+      color: #ffffff;
     }
 
     /* ===== GET STARTED ===== */
@@ -623,6 +656,9 @@
     .events-container { max-width: 1200px; margin: 0 auto; }
     .events-main-title { font-size: 2.5rem; text-align: center; margin-bottom: 10px; color: #000000; transition: color 0.3s ease; }
     .events-main-subtitle { text-align: center; color: #000000; max-width: 700px; margin: 0 auto 30px; font-size: 1.05rem; transition: color 0.3s ease; }
+    body.dark-mode .events-main-title { color: #ffffff; }
+    body.dark-mode .events-main-subtitle { color: #ffffff; }
+
     .gs-cards { display: flex; gap: 25px; justify-content: center; flex-wrap: wrap; margin: 30px 0 20px; }
     .gs-card {
       background: #ffffff;
@@ -650,6 +686,7 @@
       z-index: 0;
       transition: background 0.3s ease;
     }
+    body.dark-mode .gs-card::before { background: #ffffff; }
     .gs-card .gs-number {
       width: 40px;
       height: 40px;
@@ -666,9 +703,14 @@
       z-index: 1;
       transition: background 0.3s ease, color 0.3s ease;
     }
+    body.dark-mode .gs-card .gs-number { background: #ffffff; color: #000000; }
     .gs-card h3 { margin: 15px 0 10px; font-size: 1.2rem; color: #000000; position: relative; z-index: 1; transition: color 0.3s ease; }
     .gs-card p { color: #000000; font-size: 14px; margin-bottom: 15px; position: relative; z-index: 1; transition: color 0.3s ease; }
     .gs-card i { position: relative; z-index: 1; transition: color 0.3s ease; }
+    body.dark-mode .gs-card { background: #1a1a1a; border-color: #333; }
+    body.dark-mode .gs-card h3 { color: #ffffff; }
+    body.dark-mode .gs-card p { color: #ffffff; }
+    body.dark-mode .gs-card i { color: #ffffff !important; }
     .gs-card .btn-events, .gs-card .btn-secondary {
       display: inline-block;
       text-decoration: none;
@@ -686,6 +728,11 @@
     .gs-card .btn-events:hover { background: #333; }
     .gs-card .btn-secondary { background: #444; color: #ffffff; }
     .gs-card .btn-secondary:hover { background: #555; }
+    body.dark-mode .gs-card .btn-events { background: #ffffff; color: #000000; }
+    body.dark-mode .gs-card .btn-events:hover { background: #cccccc; }
+    body.dark-mode .gs-card .btn-secondary { background: #ffffff; color: #000000; }
+    body.dark-mode .gs-card .btn-secondary:hover { background: #cccccc; }
+
     .gs-bottom-buttons {
       display: flex;
       gap: 15px;
@@ -709,6 +756,11 @@
     .gs-bottom-buttons .btn-live:hover { background: #333; }
     .gs-bottom-buttons .btn-prayer { background: #444; color: #ffffff; }
     .gs-bottom-buttons .btn-prayer:hover { background: #555; }
+    body.dark-mode .gs-bottom-buttons { border-top-color: #333; }
+    body.dark-mode .gs-bottom-buttons .btn-live { background: #ffffff; color: #000000; }
+    body.dark-mode .gs-bottom-buttons .btn-live:hover { background: #cccccc; }
+    body.dark-mode .gs-bottom-buttons .btn-prayer { background: #ffffff; color: #000000; }
+    body.dark-mode .gs-bottom-buttons .btn-prayer:hover { background: #cccccc; }
 
     /* ===== MODAL ===== */
     .modal {
@@ -774,6 +826,19 @@
     .btn-prayer:hover { background: #555; }
     .btn-announcements { background: #000000; color: #ffffff; }
     .btn-announcements:hover { background: #333; }
+    body.dark-mode .btn-events { background: #ffffff; color: #000000; }
+    body.dark-mode .btn-events:hover { background: #cccccc; }
+    body.dark-mode .btn-secondary { background: #ffffff; color: #000000; }
+    body.dark-mode .btn-secondary:hover { background: #cccccc; }
+    body.dark-mode .btn-attendees { background: #ffffff; color: #000000; }
+    body.dark-mode .btn-attendees:hover { background: #cccccc; }
+    body.dark-mode .btn-live { background: #ffffff; color: #000000; }
+    body.dark-mode .btn-live:hover { background: #cccccc; }
+    body.dark-mode .btn-prayer { background: #ffffff; color: #000000; }
+    body.dark-mode .btn-prayer:hover { background: #cccccc; }
+    body.dark-mode .btn-announcements { background: #ffffff; color: #000000; }
+    body.dark-mode .btn-announcements:hover { background: #cccccc; }
+
     .btn-group {
       display: flex;
       flex-wrap: wrap;
@@ -822,6 +887,11 @@
       color: #000000;
       transition: background 0.3s ease, color 0.3s ease;
     }
+    body.dark-mode .event-card { background: #1a1a1a; }
+    body.dark-mode .event-card::before { background: #ffffff; }
+    body.dark-mode .event-card-content h3 { color: #ffffff; }
+    body.dark-mode .event-card-content p { color: #ffffff; }
+    body.dark-mode .event-tag { background: #333; color: #ffffff; }
 
     /* ===== ABOUT ===== */
     #aboutSection {
@@ -831,6 +901,8 @@
       padding: 80px 0;
       transition: background 0.3s ease, color 0.3s ease;
     }
+    body.dark-mode #aboutSection { background: #000000; }
+
     .about-section {
       display: flex;
       flex-wrap: wrap;
@@ -869,6 +941,11 @@
     .about-box h2 { color: #000000; font-size: 1.6rem; font-weight: 700; position: relative; z-index: 1; transition: color 0.3s ease; }
     .about-box hr { margin: 12px 0; border: 2px solid #000000; width: 40px; position: relative; z-index: 1; transition: border-color 0.3s ease; }
     .about-box p { color: #000000; line-height: 1.6; font-size: 1rem; position: relative; z-index: 1; transition: color 0.3s ease; }
+    body.dark-mode .about-box { background: #1a1a1a; border-color: #333; }
+    body.dark-mode .about-box::before { background: #ffffff; }
+    body.dark-mode .about-box h2 { color: #ffffff; }
+    body.dark-mode .about-box hr { border-color: #ffffff; }
+    body.dark-mode .about-box p { color: #ffffff; }
 
     /* ===== WHAT WE BELIEVE ===== */
     .believe-section { margin: 60px auto; max-width: 1200px; padding: 0 20px; }
@@ -880,8 +957,13 @@
       border: none;
       transition: background 0.3s ease !important;
     }
+    body.dark-mode .believe-section .believe-inner { background: #ffffff !important; }
+
     .believe-title { text-align: center; font-size: 2rem; color: #ffffff !important; margin-bottom: 10px; font-weight: 700; transition: color 0.3s ease !important; }
     .believe-subtitle { text-align: center; color: #ffffff !important; margin-bottom: 40px; font-size: 1rem; transition: color 0.3s ease !important; }
+    body.dark-mode .believe-title { color: #000000 !important; }
+    body.dark-mode .believe-subtitle { color: #000000 !important; }
+
     .believe-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 25px; }
     .believe-card {
       background: #fff;
@@ -909,10 +991,17 @@
     .believe-card i { font-size: 60px; color: #000000 !important; margin-bottom: 15px; position: relative; z-index: 1; transition: color 0.3s ease !important; }
     .believe-card h3 { color: #000000 !important; margin-bottom: 15px; font-size: 1.3rem; font-weight: 700; position: relative; z-index: 1; transition: color 0.3s ease !important; }
     .believe-card p { color: #000000 !important; line-height: 1.8; font-size: .95rem; position: relative; z-index: 1; transition: color 0.3s ease !important; }
+    body.dark-mode .believe-card { background: #1a1a1a; border-color: #333; }
+    body.dark-mode .believe-card::before { background: #ffffff; }
+    body.dark-mode .believe-card i { color: #ffffff !important; }
+    body.dark-mode .believe-card h3 { color: #ffffff !important; }
+    body.dark-mode .believe-card p { color: #ffffff !important; }
 
     /* ===== PASTORS ===== */
     .pastors-section { margin: 60px auto; max-width: 1200px; padding: 0 20px; }
     .pastors-section h2 { color: #000000; text-align: center; font-size: 2.2rem; margin-bottom: 40px; font-weight: 700; transition: color 0.3s ease; }
+    body.dark-mode .pastors-section h2 { color: #ffffff; }
+
     .pastors-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
     .pastor-card {
       background: #ffffff;
@@ -952,14 +1041,23 @@
     .pastor-card .role { color: #000000; font-size: 1rem; margin-bottom: 15px; position: relative; z-index: 1; transition: color 0.3s ease; }
     .pastor-card a { color: #000000; font-size: 2rem; transition: .3s; position: relative; z-index: 1; }
     .pastor-card a:hover { color: #555; }
+    body.dark-mode .pastor-card { background: #1a1a1a; border-color: #333; }
+    body.dark-mode .pastor-card::before { background: #ffffff; }
+    body.dark-mode .pastor-card h3 { color: #ffffff; }
+    body.dark-mode .pastor-card .role { color: #ffffff; }
+    body.dark-mode .pastor-card a { color: #ffffff; }
+    body.dark-mode .pastor-card a:hover { color: #cccccc; }
 
     /* ===== EVENTS ===== */
     #eventsSection { background: #f5f5f5; margin: 0 auto; transition: background 0.3s ease; }
     #eventsSection .events-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    body.dark-mode #eventsSection { background: #000000; }
 
     /* ===== SERMONS ===== */
     #sermonsSection { background: #e8e8e8; margin: 0 auto; transition: background 0.3s ease; }
     #sermonsSection .events-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    body.dark-mode #sermonsSection { background: #0a0a0a; }
+
     .sermons-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin: 30px 0; }
     .sermon-card { 
       background: #fff; 
@@ -986,11 +1084,17 @@
     .sermon-card-content h3 { color: #000000; transition: color 0.3s ease; }
     .sermon-card-content p { color: #000000; transition: color 0.3s ease; }
     .sermon-verse { font-style: italic; color: #000000; margin: 10px 0; transition: color 0.3s ease; }
+    body.dark-mode .sermon-card { background: #1a1a1a; }
+    body.dark-mode .sermon-card::before { background: #ffffff; }
+    body.dark-mode .sermon-card-content h3 { color: #ffffff; }
+    body.dark-mode .sermon-card-content p { color: #ffffff; }
+    body.dark-mode .sermon-verse { color: #ffffff; }
 
     /* ===== CONTACT ===== */
     #contactSection { background: #f5f5f5; margin: 0 auto; transition: background 0.3s ease; }
     #contactSection .events-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
     .map-embed-wrapper iframe { width: 100%; height: 220px; border: 0; border-radius: 16px; }
+    body.dark-mode #contactSection { background: #000000; }
 
     /* ===== FOOTER ===== */
     .site-footer { background: #000000; color: #ffffff; padding: 40px 20px 20px; margin-top: 0; transition: background 0.3s ease, color 0.3s ease; }
@@ -1000,6 +1104,7 @@
     .footer-column p { color: #ffffff; }
     .social-icons a { color: #ffffff; font-size: 1.6rem; margin-right: 12px; }
     .footer-bottom { border-top: 1px solid #333; padding-top: 20px; text-align: center; margin-top: 30px; color: #ffffff; }
+    body.dark-mode .site-footer { background: #0a0a0a; }
 
     /* ===== FRONT MODALS ===== */
     .front-page {
@@ -1032,6 +1137,19 @@
       border: 1px solid #ddd;
       border-radius: 30px;
     }
+    body.dark-mode .front-content { background: #1a1a1a; }
+    body.dark-mode .front-content h2 { color: #ffffff; }
+    body.dark-mode .front-content p { color: #ffffff; }
+    body.dark-mode .close-btn { background: #333; color: #ffffff; }
+    body.dark-mode .close-btn:hover { background: #444; }
+    body.dark-mode .register-form input,
+    body.dark-mode .addlist-form input,
+    body.dark-mode .prayer-form input,
+    body.dark-mode .prayer-form textarea { background: #000000; color: #ffffff; border-color: #333; }
+    body.dark-mode .register-form input::placeholder,
+    body.dark-mode .addlist-form input::placeholder,
+    body.dark-mode .prayer-form input::placeholder,
+    body.dark-mode .prayer-form textarea::placeholder { color: #999; }
 
     /* ===== EVENT MODAL ===== */
     .event-modal {
@@ -1101,6 +1219,19 @@
       cursor: pointer;
     }
     .event-detail-btn:hover { background: #333; transform: scale(1.02); }
+    body.dark-mode .event-modal-content { background: #1a1a1a; }
+    body.dark-mode .event-modal-close { color: #ffffff; }
+    body.dark-mode .event-modal-close:hover { color: #cccccc; }
+    body.dark-mode .event-detail-header h2 { color: #ffffff; }
+    body.dark-mode .event-detail-header p { color: #ffffff; }
+    body.dark-mode .event-detail-header .event-location-detail { color: #ffffff; }
+    body.dark-mode .event-detail-description { color: #ffffff; }
+    body.dark-mode .event-detail-verse { background: #000000; border-left-color: #ffffff; }
+    body.dark-mode .event-detail-verse .verse-text { color: #ffffff; }
+    body.dark-mode .event-detail-verse .verse-ref { color: #ffffff; }
+    body.dark-mode .event-detail-btn { background: #ffffff; color: #000000; }
+    body.dark-mode .event-detail-btn:hover { background: #cccccc; }
+
     .date-gallery {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
@@ -1133,6 +1264,10 @@
     .activity-gallery .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
     .activity-gallery .no-photos { color: #777; text-align: center; padding: 30px; grid-column: 1 / -1; font-size: 1.1rem; transition: color 0.3s ease; }
     #backToDatesContainer { text-align: center; margin-top: 15px; }
+    body.dark-mode .date-thumb { background: #000000; border-color: #333; }
+    body.dark-mode .date-thumb:hover { border-color: #ffffff; background: #2a2a2a; }
+    body.dark-mode .date-label { color: #ffffff; }
+    body.dark-mode .no-photos { color: #ffffff; }
 
     /* ===== BACK TO TOP ===== */
     #backToTop {
@@ -1153,6 +1288,9 @@
       transition: all 0.3s;
     }
     #backToTop:hover { transform: scale(1.1); background: #333; }
+    body.dark-mode #backToTop { background: #ffffff; color: #000000; }
+    body.dark-mode #backToTop:hover { background: #cccccc; }
+
     @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
 
     /* ============================================ */
@@ -1328,7 +1466,7 @@
         min-height: 100vh;
       }
       #homeSection::before {
-        background: rgba(0, 0, 0, 0.6);
+        background: rgba(255, 255, 255, 0.4);
       }
       body.dark-mode #homeSection::before {
         background: rgba(0, 0, 0, 0.8);
@@ -1342,9 +1480,11 @@
       .circle-logo { width: 120px; height: 120px; border: 3px solid #ffffff; }
       .background-img { order: 1; margin-top: 0; margin-right: 0; flex: 0 0 120px; }
       .home-overlay { margin-top: -30px; }
-      .home { padding: 15px 12px; border-radius: 25px; background: rgba(0,0,0,0.5); }
+      .home { padding: 15px 12px; border-radius: 25px; background: rgba(255,255,255,0.8); }
+      body.dark-mode .home { background: rgba(0,0,0,0.5); }
       .btn-container .btn, .btn-container .btn-give { padding: 10px 20px; font-size: 0.85rem; }
-      .countdown-section { padding: 15px 12px; border-radius: 25px; background: rgba(0,0,0,0.5); }
+      .countdown-section { padding: 15px 12px; border-radius: 25px; background: rgba(255,255,255,0.8); }
+      body.dark-mode .countdown-section { background: rgba(0,0,0,0.5); }
       .countdown-block .num { font-size: 1.2rem; min-width: 32px; padding: 4px 8px; }
       .countdown-block .label { font-size: 0.5rem; }
       .countdown-timer { gap: 6px; }
@@ -1749,7 +1889,7 @@
         body.classList.toggle('dark-mode');
         updateThemeIcons();
 
-        // Close mobile menu after toggle (optional)
+        // Close mobile menu after toggle
         const navbar = document.querySelector('.navbar');
         const mobileToggle = document.getElementById('mobileMenuToggle');
         if (navbar && mobileToggle) {
@@ -2236,7 +2376,7 @@
     // INITIALIZE
     // ============================================
     updateThemeIcons();
-    console.log('✅ Gospel Fellowship Church - Full Background Image with Mobile Theme Toggle!');
+    console.log('✅ Gospel Fellowship Church - Full Background Image with Dark/Light Mode!');
   })();
 </script>
 
