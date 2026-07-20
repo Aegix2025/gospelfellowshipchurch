@@ -31,9 +31,7 @@
       overflow-x: hidden;
     }
 
-    /* ============================================ */
-    /* ===== HEADER ===== */
-    /* ============================================ */
+    /* ===== HEADER (CENTERED WITH MAX-WIDTH) ===== */
     .header {
       display: flex;
       align-items: center;
@@ -60,45 +58,34 @@
       background: rgba(255, 255, 255, 0.95);
     }
 
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
     .logo-img {
-      height: 48px;
+      height: 90px;
       width: auto;
       border-radius: 50%;
     }
 
     .logo-text {
-      font-size: 1.4rem;
+      font-size: 2rem;
       font-weight: 700;
       color: #1a2a3a;
       text-decoration: none;
       letter-spacing: -0.5px;
+      margin-left: 8px;
       cursor: pointer;
-    }
-
-    /* ===== NAVBAR (Desktop) ===== */
-    .navbar {
-      display: flex;
-      align-items: center;
     }
 
     .navbar ul {
       display: flex;
       list-style: none;
-      gap: 12px;
+      gap: 12px;          /* ← Dinagdagan ang gap */
       flex-wrap: wrap;
     }
 
     .navbar ul li a {
-      padding: 12px 24px;
+      padding: 12px 24px;  /* ← Mas malaking padding */
       border-radius: 30px;
-      font-weight: 700;
-      font-size: 1.05rem;
+      font-weight: 700;    /* ← Mas bold */
+      font-size: 1.05rem;  /* ← Mas malaking font */
       cursor: pointer;
       color: #1a2a3a;
       transition: 0.3s;
@@ -112,7 +99,15 @@
       color: #fff;
     }
 
-    /* ===== HEADER ACTIONS ===== */
+    #darkModeToggle {
+      background: transparent;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      padding: 0 8px;
+      line-height: 1;
+    }
+
     .header-actions {
       display: flex;
       align-items: center;
@@ -127,1004 +122,6 @@
     }
     .social-media a:hover { color: #3895D3; }
 
-    #darkModeToggle {
-      background: transparent;
-      border: none;
-      font-size: 1.4rem;
-      cursor: pointer;
-      padding: 0 8px;
-      line-height: 1;
-    }
-
-    /* ===== HAMBURGER - HIDDEN BY DEFAULT ===== */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 5px;
-      z-index: 1000;
-    }
-
-    .hamburger span {
-      display: block;
-      width: 25px;
-      height: 3px;
-      background: #1a2a3a;
-      border-radius: 3px;
-      transition: all 0.3s ease;
-    }
-
-    .hamburger.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .hamburger.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    /* ===== MOBILE ACTIONS - HIDDEN BY DEFAULT ===== */
-    .mobile-actions {
-      display: none;
-    }
-
-    /* ============================================ */
-    /* ===== FULL WIDTH SECTIONS ===== */
-    /* ============================================ */
-    .section {
-      width: 100%;
-      padding: 80px 0;
-      margin: 0;
-      scroll-margin-top: 80px;
-      min-height: 100vh;
-    }
-
-    /* ============================================ */
-    /* ===== HOME SECTION ===== */
-    /* ============================================ */
-    #homeSection {
-      background: linear-gradient(145deg, #dce8f5, #f0f5fc);
-      padding: 100px 0 0;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      position: relative;
-      min-height: 90vh;
-    }
-
-    .home-wrapper {
-      position: relative;
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .background-content-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-      padding: 50px 40px;
-      border-radius: 40px;
-      width: 100%;
-      min-height: 520px;
-      position: sticky;
-      top: 80px;
-      z-index: 1;
-    }
-
-    .background-text {
-      flex: 1 1 300px;
-      text-align: left;
-      padding-left: 10px;
-      margin-top: -40px;
-      order: 1;
-    }
-
-    .background-text h1 { 
-      font-size: 4rem; 
-      font-weight: 300; 
-      margin-bottom: 0;
-    }
-    .background-text h2 { 
-      font-size: 5rem; 
-      font-weight: 700; 
-      color: #1a2a3a; 
-      font-family: 'Times New Roman', Times, serif;
-      margin-top: 0;
-    }
-    .background-text p { 
-      font-size: 2rem; 
-      color: #2c3e50; 
-      margin-top: 10px; 
-    }
-
-    .background-img {
-      flex: 0 0 220px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: -40px;
-      margin-right: -50px;
-      order: 2;
-    }
-
-    .circle-logo {
-      width: 270px;
-      height: 270px;
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      border: 4px solid #fff;
-      flex-shrink: 0;
-    }
-    .circle-logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .home-overlay {
-      position: relative;
-      margin-top: -280px;
-      z-index: 2;
-      padding: 0 10px;
-    }
-
-    .home {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(2px);
-      -webkit-backdrop-filter: blur(2px);
-      padding: 25px 20px;
-      border-radius: 50px;
-      text-align: center;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-      max-width: 450px;
-      margin: 0 auto 20px;
-      border: 1px solid rgba(255,255,255,0.25);
-    }
-
-    .btn-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .btn-container .btn,
-    .btn-container .btn-give {
-      padding: 14px 40px;
-      border-radius: 60px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      border: none;
-      cursor: pointer;
-      transition: 0.3s;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn-container .btn {
-      background: #3895D3;
-      color: #fff;
-    }
-    .btn-container .btn:hover { background: #1f7bb5; transform: scale(1.02); }
-    .btn-container .btn-give {
-      background: #f5c842;
-      color: #1a2a3a;
-      border: 2px solid #f5c842;
-    }
-    .btn-container .btn-give:hover { background: #e0b330; }
-
-    .countdown-section {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(2px);
-      -webkit-backdrop-filter: blur(2px);
-      color: #000000;
-      padding: 25px 20px;
-      border-radius: 40px;
-      text-align: center;
-      max-width: 650px;
-      margin: 0 auto;
-      border: 1px solid rgba(255,255,255,0.25);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-    }
-
-    .countdown-section h3 {
-      font-weight: 300;
-      letter-spacing: 1px;
-      margin-bottom: 15px;
-      font-size: 1.1rem;
-    }
-
-    .countdown-timer {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .countdown-block .num {
-      font-size: 2.2rem;
-      font-weight: 700;
-      background: rgba(3, 3, 3, 0.08);
-      padding: 8px 14px;
-      border-radius: 16px;
-      display: inline-block;
-      min-width: 55px;
-    }
-
-    .countdown-block .label {
-      display: block;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-top: 4px;
-      color: #000000;
-    }
-
-    /* ============================================ */
-    /* ===== ABOUT SECTION ===== */
-    /* ============================================ */
-    #aboutSection {
-      background: #f0f4f8;
-      color: #1a2a3a;
-      margin: 0 auto;
-      padding: 80px 0;
-    }
-
-    .about-section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 25px;
-      justify-content: center;
-      margin: 0 auto 40px;
-      max-width: 1200px;
-      padding: 0 20px;
-    }
-
-    .about-box {
-      background: rgba(255, 255, 255, 0.95);
-      padding: 35px 30px;
-      border-radius: 24px;
-      flex: 1 1 220px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(0,0,0,0.06);
-      color: #1a2a3a;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .about-box:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.10);
-    }
-
-    .about-box h2 { 
-      color: #1a2a3a;
-      font-size: 1.6rem;
-      font-weight: 700;
-    }
-
-    .about-box hr { 
-      margin: 12px 0; 
-      border: 2px solid #3895D3; 
-      width: 40px; 
-    }
-
-    .about-box p { 
-      color: #444;
-      line-height: 1.6;
-      font-size: 1rem;
-    }
-
-    /* ============================================ */
-    /* ===== WHAT WE BELIEVE ===== */
-    /* ============================================ */
-    .believe-section {
-      margin: 60px auto;
-      max-width: 1200px;
-      padding: 0 20px;
-    }
-
-    .believe-section .believe-inner {
-      background: #3895D3;
-      border-radius: 30px;
-      padding: 50px 40px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      border: none;
-    }
-
-    .believe-title {
-      text-align: center;
-      font-size: 2rem;
-      color: #ffffff;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-
-    .believe-subtitle {
-      text-align: center;
-      color: rgba(255,255,255,0.9);
-      margin-bottom: 40px;
-      font-size: 1rem;
-    }
-
-    .believe-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-      gap: 25px;
-    }
-
-    .believe-card {
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 22px;
-      padding: 30px 25px;
-      text-align: center;
-      transition: .35s ease;
-      backdrop-filter: blur(10px);
-    }
-
-    .believe-card:hover {
-      transform: translateY(-8px);
-      background: rgba(255,255,255,0.25);
-    }
-
-    .believe-card i {
-      font-size: 60px;
-      color: #ffffff;
-      margin-bottom: 15px;
-    }
-
-    .believe-card h3 {
-      color: #ffffff;
-      margin-bottom: 15px;
-      font-size: 1.3rem;
-      font-weight: 700;
-    }
-
-    .believe-card p {
-      color: rgba(255,255,255,0.9);
-      line-height: 1.8;
-      font-size: .95rem;
-    }
-
-    /* ============================================ */
-    /* ===== PASTORS SECTION ===== */
-    /* ============================================ */
-    .pastors-section {
-      margin: 60px auto;
-      max-width: 1200px;
-      padding: 0 20px;
-    }
-
-    .pastors-section h2 {
-      color: #1a2a3a;
-      text-align: center;
-      font-size: 2.2rem;
-      margin-bottom: 40px;
-      font-weight: 700;
-    }
-
-    .pastors-container {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 30px;
-    }
-
-    .pastor-card {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(0,0,0,0.06);
-      border-radius: 24px;
-      padding: 30px 20px;
-      text-align: center;
-      transition: 0.3s ease;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-    }
-
-    .pastor-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 35px rgba(0,0,0,0.12);
-    }
-
-    .pastor-card img {
-      width: 140px;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #3895D3;
-      margin-bottom: 18px;
-    }
-
-    .pastor-card h3 {
-      color: #1a2a3a;
-      font-size: 1.25rem;
-      margin-bottom: 8px;
-      font-weight: 700;
-    }
-
-    .pastor-card .role {
-      color: #666;
-      font-size: 1rem;
-      margin-bottom: 15px;
-    }
-
-    .pastor-card a {
-      color: #3895D3;
-      font-size: 2rem;
-      transition: .3s;
-    }
-
-    .pastor-card a:hover {
-      color: #1a2a3a;
-    }
-
-    /* ============================================ */
-    /* ===== EVENTS ===== */
-    /* ============================================ */
-    #eventsSection {
-      background: linear-gradient(145deg, #dce8f5, #f0f5fc);
-      margin: 0 auto;
-    }
-
-    #eventsSection .events-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .events-main-title { 
-      font-size: 2.5rem; 
-      text-align: center; 
-      margin-bottom: 10px;
-    }
-    .events-main-subtitle { 
-      text-align: center; 
-      color: #555; 
-      max-width: 700px; 
-      margin: 0 auto 30px; 
-      font-size: 1.05rem;
-    }
-
-    .btn-events, .btn-secondary, .btn-attendees, .btn-live, .btn-prayer, .btn-announcements {
-      padding: 12px 28px;
-      border: none;
-      border-radius: 40px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.3s;
-      font-size: 0.95rem;
-    }
-    .btn-events { background: #3895D3; color: #fff; }
-    .btn-events:hover { background: #1f7bb5; }
-    .btn-secondary { background: #28a745; color: #fff; }
-    .btn-secondary:hover { background: #1e7e34; }
-    .btn-attendees { background: #6c757d; color: #fff; }
-    .btn-attendees:hover { background: #5a6268; }
-    .btn-live { background: #e63946; color: #fff; }
-    .btn-live:hover { background: #c62833; }
-    .btn-prayer { background: #6c63ff; color: #fff; }
-    .btn-prayer:hover { background: #5a52d5; }
-    .btn-announcements { background: #dc3545; color: #fff; }
-    .btn-announcements:hover { background: #bd2130; }
-
-    .btn-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-      margin: 30px 0 40px;
-    }
-
-    .events-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 25px;
-    }
-    .event-card {
-      background: #fff;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .event-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
-    .event-card img { width: 100%; height: 160px; object-fit: cover; }
-    .event-card-content { padding: 18px; }
-    .event-tag {
-      display: inline-block;
-      background: #eef2f7;
-      padding: 4px 14px;
-      border-radius: 30px;
-      font-size: 0.75rem;
-      font-weight: 600;
-    }
-
-    /* ============================================ */
-    /* ===== SERMONS ===== */
-    /* ============================================ */
-    #sermonsSection {
-      background: #c6e2ff;
-      margin: 0 auto;
-    }
-
-    #sermonsSection .events-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .sermons-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin: 30px 0;
-    }
-    .sermon-card {
-      background: #fff;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    }
-    .sermon-card img { width: 100%; height: 170px; object-fit: cover; }
-    .sermon-card-content { padding: 20px; }
-    .sermon-verse { font-style: italic; color: #555; margin: 10px 0; }
-
-    /* ============================================ */
-    /* ===== CONTACT ===== */
-    /* ============================================ */
-    #contactSection {
-      background: linear-gradient(145deg, #dce8f5, #f0f5fc);
-      margin: 0 auto;
-    }
-
-    #contactSection .events-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .map-embed-wrapper iframe {
-      width: 100%;
-      height: 220px;
-      border: 0;
-      border-radius: 16px;
-    }
-
-    /* ============================================ */
-    /* ===== FOOTER ===== */
-    /* ============================================ */
-    .site-footer {
-      background: #1a2a3a;
-      color: #ccc;
-      padding: 40px 20px 20px;
-      margin-top: 0;
-    }
-    .footer-container { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; padding: 0 20px; }
-    .footer-column { display: flex; flex-wrap: wrap; gap: 40px; }
-    .footer-column h3 { color: #fff; font-weight: 600; margin-bottom: 12px; }
-    .social-icons a { color: #ccc; font-size: 1.6rem; margin-right: 12px; }
-    .footer-bottom { border-top: 1px solid #2a3a4a; padding-top: 20px; text-align: center; margin-top: 30px; }
-
-    /* ============================================ */
-    /* ===== GET STARTED MODAL ===== */
-    /* ============================================ */
-    #getStartedSection {
-      background: transparent;
-      padding: 0;
-      min-height: auto;
-    }
-
-    .events-container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .gs-cards {
-      display: flex;
-      gap: 25px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 30px 0 20px;
-    }
-
-    .gs-card {
-      background: rgba(255,255,255,0.85);
-      padding: 30px 25px;
-      border-radius: 15px;
-      max-width: 280px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      flex: 1 1 200px;
-    }
-
-    .gs-card .gs-number {
-      width: 40px;
-      height: 40px;
-      color: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 12px;
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-
-    .gs-card h3 {
-      margin: 15px 0 10px;
-      font-size: 1.2rem;
-      color: #1a2a3a;
-    }
-
-    .gs-card p {
-      color: #555;
-      font-size: 14px;
-      margin-bottom: 15px;
-    }
-
-    .gs-card .btn-events,
-    .gs-card .btn-secondary {
-      display: inline-block;
-      text-decoration: none;
-      padding: 10px 28px;
-      border: none;
-      border-radius: 40px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.3s;
-      font-size: 0.9rem;
-    }
-
-    .gs-card .btn-events {
-      background: #3895D3;
-      color: #fff;
-    }
-    .gs-card .btn-events:hover { background: #1f7bb5; }
-
-    .gs-card .btn-secondary {
-      background: #28a745;
-      color: #fff;
-    }
-    .gs-card .btn-secondary:hover { background: #1e7e34; }
-
-    .gs-bottom-buttons {
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 20px;
-      padding-top: 20px;
-      border-top: 1px solid #eee;
-    }
-
-    .gs-bottom-buttons .btn-live,
-    .gs-bottom-buttons .btn-prayer {
-      padding: 12px 30px;
-      border: none;
-      border-radius: 40px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.3s;
-      font-size: 0.95rem;
-    }
-
-    .gs-bottom-buttons .btn-live {
-      background: #e63946;
-      color: #fff;
-    }
-    .gs-bottom-buttons .btn-live:hover { background: #c62833; }
-
-    .gs-bottom-buttons .btn-prayer {
-      background: #6c63ff;
-      color: #fff;
-    }
-    .gs-bottom-buttons .btn-prayer:hover { background: #5a52d5; }
-
-    /* ============================================ */
-    /* ===== MODALS ===== */
-    /* ============================================ */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(5px);
-      overflow-y: auto;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .modal-content {
-      background: #fff;
-      margin: 40px auto;
-      padding: 40px 30px;
-      max-width: 1000px;
-      width: 90%;
-      border-radius: 20px;
-      position: relative;
-      animation: modalFadeIn 0.3s ease;
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 15px;
-      right: 25px;
-      font-size: 35px;
-      font-weight: bold;
-      color: #999;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .modal-close:hover {
-      color: #333;
-    }
-
-    @keyframes modalFadeIn {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .front-page {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(4px);
-      justify-content: center;
-      align-items: center;
-      z-index: 99999;
-    }
-    .front-content {
-      background: #fff;
-      padding: 35px 30px;
-      border-radius: 28px;
-      max-width: 500px;
-      width: 92%;
-      position: relative;
-    }
-    .close-btn {
-      background: #eee;
-      border: none;
-      padding: 10px 25px;
-      border-radius: 40px;
-      font-weight: 600;
-      margin-top: 20px;
-      cursor: pointer;
-    }
-    .close-btn:hover { background: #ddd; }
-
-    .register-form input, .addlist-form input, .prayer-form input, .prayer-form textarea {
-      width: 100%;
-      padding: 12px 16px;
-      margin: 8px 0;
-      border: 1px solid #ddd;
-      border-radius: 30px;
-    }
-
-    /* ============================================ */
-    /* ===== EVENT MODAL ===== */
-    /* ============================================ */
-    .event-modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(5px);
-      z-index: 9999;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-
-    .event-modal.show {
-      display: flex;
-    }
-
-    .event-modal-content {
-      background: #fff;
-      border-radius: 20px;
-      max-width: 700px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      padding: 40px;
-      position: relative;
-      animation: fadeIn 0.3s ease;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-    .event-modal-content::-webkit-scrollbar {
-      display: none;
-    }
-
-    .event-modal-close {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 30px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: #999;
-      transition: color 0.3s;
-    }
-    .event-modal-close:hover {
-      color: #333;
-    }
-
-    .event-detail-header {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-    .event-detail-header h2 { font-size: 2rem; color: #1a2a3a; }
-    .event-detail-header p { color: #555; margin: 5px 0; }
-    .event-detail-header .event-location-detail { color: #777; margin: 5px 0; }
-
-    .event-detail-description {
-      color: #555;
-      line-height: 1.7;
-      margin: 15px 0;
-    }
-
-    .event-detail-verse {
-      background: #f5f0e8;
-      padding: 25px;
-      border-radius: 10px;
-      border-left: 5px solid #f5c842;
-      margin-top: 20px;
-    }
-    .event-detail-verse .verse-text {
-      font-size: 1.2rem;
-      font-style: italic;
-      color: #1a2a3a;
-      line-height: 1.8;
-    }
-    .event-detail-verse .verse-ref {
-      display: block;
-      text-align: right;
-      font-weight: 600;
-      color: #555;
-      margin-top: 10px;
-    }
-
-    .event-detail-btn {
-      display: inline-block;
-      background: #3895D3;
-      color: white;
-      padding: 10px 30px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-      margin-top: 10px;
-      border: none;
-      cursor: pointer;
-    }
-    .event-detail-btn:hover {
-      background: #2c7bbf;
-      transform: scale(1.02);
-    }
-
-    .date-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-      gap: 15px;
-      margin: 20px 0;
-    }
-
-    .date-thumb {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      cursor: pointer;
-      gap: 6px;
-      transition: transform 0.3s, border-color 0.3s;
-      padding: 8px;
-      border-radius: 12px;
-      background: #f8f9fa;
-      border: 2px solid transparent;
-    }
-    .date-thumb:hover {
-      transform: scale(1.05);
-      border-color: #3895D3;
-      background: #eef4fa;
-    }
-    .date-thumb img {
-      width: 100%;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    .date-label {
-      font-weight: 700;
-      font-size: 0.85rem;
-      color: #1a2a3a;
-      margin-top: 4px;
-    }
-
-    .activity-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 12px;
-      margin: 20px 0;
-    }
-    .activity-gallery .gallery-item {
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-      aspect-ratio: 4/3;
-    }
-    .activity-gallery .gallery-item:hover { transform: scale(1.03); }
-    .activity-gallery .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .activity-gallery .no-photos {
-      color: #777;
-      text-align: center;
-      padding: 30px;
-      grid-column: 1 / -1;
-      font-size: 1.1rem;
-    }
-
-    #backToDatesContainer {
-      text-align: center;
-      margin-top: 15px;
-    }
-
-    /* ============================================ */
-    /* ===== BACK TO TOP ===== */
-    /* ============================================ */
-    #backToTop {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 50px;
-      height: 50px;
-      background: #3895D3;
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      font-size: 24px;
-      cursor: pointer;
-      display: none;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      z-index: 999;
-      transition: all 0.3s;
-    }
-    #backToTop:hover {
-      transform: scale(1.1);
-      background: #1f7bb5;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    /* ============================================ */
-    /* ===== LOGIN FORM ===== */
-    /* ============================================ */
     .login-form {
       display: none;
       position: fixed;
@@ -1195,214 +192,1655 @@
     .forgot { display: block; text-align: center; margin-top: 15px; color: #3895D3; text-decoration: none; }
 
     /* ============================================ */
-    /* ===== RESPONSIVE ===== */
+    /* ===== FULL WIDTH SECTIONS ===== */
     /* ============================================ */
-
-    /* Tablet (max-width: 992px) */
-    @media (max-width: 992px) {
-      .pastors-container {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .background-text h1 { font-size: 3rem; }
-      .background-text h2 { font-size: 3.5rem; }
-      .background-text p { font-size: 1.5rem; }
-      .circle-logo { width: 200px; height: 200px; }
-      .background-img { flex: 0 0 200px; }
-      .home-overlay { margin-top: -180px; }
+    .section {
+      width: 100%;
+      padding: 80px 0;
+      margin: 0;
+      scroll-margin-top: 80px;
+      min-height: 100vh;
     }
 
-    /* Mobile (max-width: 768px) */
-    @media (max-width: 768px) {
-      .header {
-        padding: 8px 12px;
-        width: 95%;
-        top: 10px;
-        border-radius: 30px;
-        flex-wrap: wrap;
-      }
-
-      .header-left {
-        flex: 1;
-        justify-content: center;
-      }
-
-      .logo-img { height: 35px; }
-      .logo-text { font-size: 0.9rem; }
-
-      /* Show hamburger */
-      .hamburger { display: flex !important; }
-
-      /* Hide desktop navbar */
-      .navbar { display: none !important; }
-
-      /* Hide desktop social media & dark mode */
-      .header-actions .social-media { display: none !important; }
-      #darkModeToggle { display: none !important; }
-
-      /* Mobile menu */
-      .navbar.open { display: flex !important; }
-
-      /* Home */
-      .background-content-wrapper {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px 20px;
-        min-height: 300px;
-      }
-      .background-text {
-        text-align: center;
-        padding-left: 0;
-        margin-top: 0;
-        order: 2;
-      }
-      .background-text h1 { font-size: 2rem; }
-      .background-text h2 { font-size: 2.2rem; }
-      .background-text p { font-size: 1.1rem; }
-      .circle-logo { width: 130px; height: 130px; }
-      .background-img {
-        order: 1;
-        margin-top: 0;
-        margin-right: 0;
-        flex: 0 0 130px;
-      }
-      .home-overlay { margin-top: -40px; }
-      .home {
-        padding: 20px 15px;
-        border-radius: 30px;
-        max-width: 100%;
-      }
-      .btn-container .btn,
-      .btn-container .btn-give {
-        padding: 12px 25px;
-        font-size: 0.9rem;
-      }
-      .countdown-section {
-        padding: 20px 15px;
-        border-radius: 30px;
-        max-width: 100%;
-      }
-      .countdown-block .num {
-        font-size: 1.6rem;
-        min-width: 40px;
-        padding: 6px 10px;
-      }
-      .countdown-timer { gap: 10px; }
-
-      /* About */
-      .about-box { flex: 1 1 100%; padding: 25px 20px; }
-      .about-box h2 { font-size: 1.3rem; }
-
-      /* Believe */
-      .believe-section .believe-inner { padding: 30px 20px; }
-      .believe-title { font-size: 1.5rem; }
-      .believe-grid { grid-template-columns: 1fr; gap: 15px; }
-
-      /* Pastors */
-      .pastors-section h2 { font-size: 1.6rem; }
-      .pastors-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-      }
-      .pastor-card { padding: 20px 15px; }
-      .pastor-card img { width: 100px; height: 100px; }
-      .pastor-card h3 { font-size: 1rem; }
-
-      /* Events */
-      .events-main-title { font-size: 1.6rem; }
-      .events-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-      }
-      .event-card img { height: 120px; }
-      .btn-group button {
-        padding: 10px 20px;
-        font-size: 0.85rem;
-      }
-
-      /* Sermons */
-      .sermons-grid { grid-template-columns: 1fr; gap: 20px; }
-
-      /* Modals */
-      .modal-content { padding: 25px 15px; margin: 20px auto; width: 95%; }
-      .event-modal-content { padding: 25px 20px; }
-      .date-gallery { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 10px; }
-      .activity-gallery { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
-
-      /* Footer */
-      .footer-column { flex-direction: column; gap: 20px; }
-
-      .section { padding: 60px 0 40px; }
+    /* ===== CONTENT CONTAINER (Limited & Centered) ===== */
+    .container,
+    .events-container,
+    .about-container,
+    .sermons-container,
+    .contact-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
-    /* Small Mobile (max-width: 480px) */
-    @media (max-width: 480px) {
-      .header { padding: 6px 10px; width: 97%; border-radius: 25px; top: 8px; }
-      .logo-img { height: 30px; }
-      .logo-text { font-size: 0.75rem; }
-      .hamburger span { width: 18px; height: 2px; }
-
-      .background-text h1 { font-size: 1.5rem; }
-      .background-text h2 { font-size: 1.8rem; }
-      .background-text p { font-size: 0.95rem; }
-      .circle-logo { width: 100px; height: 100px; }
-      .background-img { flex: 0 0 100px; }
-      .home-overlay { margin-top: -30px; }
-      .home { padding: 15px 12px; border-radius: 25px; }
-      .btn-container .btn,
-      .btn-container .btn-give {
-        padding: 10px 18px;
-        font-size: 0.8rem;
-      }
-      .countdown-section { padding: 15px 12px; border-radius: 25px; }
-      .countdown-block .num {
-        font-size: 1.2rem;
-        min-width: 32px;
-        padding: 4px 8px;
-      }
-      .countdown-timer { gap: 6px; }
-
-      .about-box { padding: 20px 15px; }
-      .about-box h2 { font-size: 1.1rem; }
-
-      .believe-section .believe-inner { padding: 20px 15px; }
-      .believe-title { font-size: 1.3rem; }
-      .believe-card { padding: 20px 15px; }
-      .believe-card i { font-size: 35px; }
-
-      .pastors-section h2 { font-size: 1.4rem; }
-      .pastors-container { grid-template-columns: 1fr; gap: 12px; }
-      .pastor-card { padding: 15px 12px; }
-      .pastor-card img { width: 100px; height: 100px; }
-
-      .events-main-title { font-size: 1.3rem; }
-      .events-grid { grid-template-columns: 1fr; gap: 12px; }
-      .event-card img { height: 100px; }
-      .btn-group { flex-direction: column; align-items: center; }
-      .btn-group button { width: 100%; max-width: 250px; }
-
-      .sermons-grid { grid-template-columns: 1fr; gap: 15px; }
-
-      .modal-content { padding: 20px 12px; margin: 15px auto; }
-      .event-modal-content { padding: 20px 15px; }
-      .date-gallery { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-      .date-thumb img { height: 70px; }
-      .activity-gallery { grid-template-columns: 1fr 1fr; gap: 8px; }
-
-      .section { padding: 50px 0 30px; }
+    /* ============================================ */
+    /* ===== HOME SECTION ===== */
+    /* ============================================ */
+    #homeSection {
+      background: linear-gradient(145deg, #dce8f5, #f0f5fc);  /* ← Isang background lang */
+      padding: 100px 0 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      min-height: 90vh;
     }
+
+    .home-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== BACKGROUND CONTENT - STEADY (naka-sticky) ===== */
+    .background-content-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      padding: 50px 40px;
+      border-radius: 40px;
+      width: 100%;
+      min-height: 520px;
+      position: sticky;  /* ← STEADY / FIXED */
+      top: 80px;
+      z-index: 1;
+    }
+
+    /* ===== TEXT - LEFT side ===== */
+    .background-text {
+      flex: 1 1 300px;
+      text-align: left;
+      padding-left: 10px;
+      margin-top: -40px;
+      order: 1;
+    }
+
+    .background-text h1 { 
+      font-size: 4rem; 
+      font-weight: 300; 
+      margin-bottom: 0;
+    }
+    .background-text h2 { 
+      font-size: 5rem; 
+      font-weight: 700; 
+      color: #1a2a3a; 
+      font-family: 'Times New Roman', Times, serif;
+      margin-top: 0;
+    }
+    .background-text p { 
+      font-size: 2rem; 
+      color: #2c3e50; 
+      margin-top: 10px; 
+    }
+
+    /* ===== LOGO - RIGHT side ===== */
+    .background-img {
+    flex: 0 0 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -40px;
+    margin-right: -50px;  /* ← Ilipat sa right */
+    order: 2;
+  }
+
+  .circle-logo {
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border: 4px solid #fff;
+    flex-shrink: 0;
+  }
+  .circle-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+    /* ===== OVERLAY - GUMAGALAW (normal scroll) ===== */
+    .home-overlay {
+      position: relative;
+      margin-top: -280px;
+      z-index: 2;
+      padding: 0 10px;
+    }
+
+    /* ===== GET STARTED & GIVE BUTTONS ===== */
+    .home {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      padding: 25px 20px;
+      border-radius: 50px;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+      max-width: 450px;
+      margin: 0 auto 20px;
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .btn-container .btn,
+    .btn-container .btn-give {
+      padding: 14px 40px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-container .btn {
+      background: #3895D3;
+      color: #fff;
+    }
+    .btn-container .btn:hover { background: #1f7bb5; transform: scale(1.02); }
+    .btn-container .btn-give {
+      background: #f5c842;
+      color: #1a2a3a;
+      border: 2px solid #f5c842;
+    }
+    .btn-container .btn-give:hover { background: #e0b330; }
+
+    /* ===== COUNTDOWN ===== */
+    .countdown-section {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    color: #000000;
+    padding: 25px 20px;
+    border-radius: 40px;
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto;
+    border: 1px solid rgba(255,255,255,0.25);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  }
+
+    .countdown-section h3 {
+      font-weight: 300;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    .countdown-timer {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .countdown-block .num {
+      font-size: 2.2rem;
+      font-weight: 700;
+      background: rgba(3, 3, 3, 0.08);
+      padding: 8px 14px;
+      border-radius: 16px;
+      display: inline-block;
+      min-width: 55px;
+    }
+
+    .countdown-block .label {
+      display: block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 4px;
+      color: #000000;
+    }
+
+    /* ============================================ */
+    /* ===== GET STARTED MODAL ===== */
+    /* ============================================ */
+    #getStartedSection {
+      background: transparent;
+      padding: 0;
+      min-height: auto;
+    }
+
+    .events-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .events-main-title { 
+      font-size: 2.5rem; 
+      text-align: center; 
+      margin-bottom: 10px;
+    }
+    .events-main-subtitle { 
+      text-align: center; 
+      color: #555; 
+      max-width: 700px; 
+      margin: 0 auto 30px; 
+      font-size: 1.05rem;
+    }
+
+    /* ===== GET STARTED CARDS ===== */
+    .gs-cards {
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 30px 0 20px;
+    }
+
+    .gs-card {
+      background: rgba(255,255,255,0.85);
+      padding: 30px 25px;
+      border-radius: 15px;
+      max-width: 280px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      flex: 1 1 200px;
+    }
+
+    .gs-card .gs-number {
+      width: 40px;
+      height: 40px;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .gs-card h3 {
+      margin: 15px 0 10px;
+      font-size: 1.2rem;
+      color: #1a2a3a;
+    }
+
+    .gs-card p {
+      color: #555;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .gs-card .btn-events,
+    .gs-card .btn-secondary {
+      display: inline-block;
+      text-decoration: none;
+      padding: 10px 28px;
+      border: none;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 0.9rem;
+    }
+
+    .gs-card .btn-events {
+      background: #3895D3;
+      color: #fff;
+    }
+    .gs-card .btn-events:hover { background: #1f7bb5; }
+
+    .gs-card .btn-secondary {
+      background: #28a745;
+      color: #fff;
+    }
+    .gs-card .btn-secondary:hover { background: #1e7e34; }
+
+    /* ===== BOTTOM BUTTONS ===== */
+    .gs-bottom-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+
+    .gs-bottom-buttons .btn-live,
+    .gs-bottom-buttons .btn-prayer {
+      padding: 12px 30px;
+      border: none;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 0.95rem;
+    }
+
+    .gs-bottom-buttons .btn-live {
+      background: #e63946;
+      color: #fff;
+    }
+    .gs-bottom-buttons .btn-live:hover { background: #c62833; }
+
+    .gs-bottom-buttons .btn-prayer {
+      background: #6c63ff;
+      color: #fff;
+    }
+    .gs-bottom-buttons .btn-prayer:hover { background: #5a52d5; }
+
+    /* ============================================ */
+    /* ===== MODAL STYLES ===== */
+    /* ============================================ */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      overflow-y: auto;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background: #fff;
+      margin: 40px auto;
+      padding: 40px 30px;
+      max-width: 1000px;
+      width: 90%;
+      border-radius: 20px;
+      position: relative;
+      animation: modalFadeIn 0.3s ease;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 35px;
+      font-weight: bold;
+      color: #999;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .modal-close:hover {
+      color: #333;
+    }
+
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .btn-events, .btn-secondary, .btn-attendees, .btn-live, .btn-prayer, .btn-announcements {
+      padding: 12px 28px;
+      border: none;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 0.95rem;
+    }
+    .btn-events { background: #3895D3; color: #fff; }
+    .btn-events:hover { background: #1f7bb5; }
+    .btn-secondary { background: #28a745; color: #fff; }
+    .btn-secondary:hover { background: #1e7e34; }
+    .btn-attendees { background: #6c757d; color: #fff; }
+    .btn-attendees:hover { background: #5a6268; }
+    .btn-live { background: #e63946; color: #fff; }
+    .btn-live:hover { background: #c62833; }
+    .btn-prayer { background: #6c63ff; color: #fff; }
+    .btn-prayer:hover { background: #5a52d5; }
+    .btn-announcements { background: #dc3545; color: #fff; }
+    .btn-announcements:hover { background: #bd2130; }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin: 30px 0 40px;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+    }
+    .event-card {
+      background: #fff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .event-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+    .event-card img { width: 100%; height: 160px; object-fit: cover; }
+    .event-card-content { padding: 18px; }
+    .event-tag {
+      display: inline-block;
+      background: #eef2f7;
+      padding: 4px 14px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    /* ============================================ */
+/* ===== ABOUT SECTION ===== */
+/* ============================================ */
+#aboutSection {
+  background: #f0f4f8;
+  color: #1a2a3a;
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  margin: 0 auto 40px;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.about-box {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 35px 30px;
+  border-radius: 24px;
+  flex: 1 1 220px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(0,0,0,0.06);
+  color: #1a2a3a;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.10);
+}
+
+.about-box h2 { 
+  color: #1a2a3a;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.about-box hr { 
+  margin: 12px 0; 
+  border: 2px solid #3895D3; 
+  width: 40px; 
+}
+
+.about-box p { 
+  color: #444;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* ============================================ */
+/* ===== WHAT WE BELIEVE ===== */
+/* ============================================ */
+.believe-section {
+  margin: 60px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.believe-section .believe-inner {
+  background: #3895D3 !important;  /* ← Force change */
+  border-radius: 30px;
+  padding: 50px 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border: none;
+}
+
+.believe-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #000000 !important;  /* ← Force white */
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.believe-subtitle {
+  text-align: center;
+  color: rgba(3, 3, 3, 0.9) !important;
+  margin-bottom: 40px;
+  font-size: 1rem;
+}
+
+.believe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 25px;
+}
+
+.believe-card {
+  background: #fff;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 22px;
+  padding: 30px 25px;
+  text-align: center;
+  transition: .35s ease;
+}
+
+.believe-card:hover {
+  transform: translateY(-8px);
+  background: #fff;
+}
+
+.believe-card i {
+  font-size: 60px;
+  color: #000000 !important;
+  margin-bottom: 15px;
+}
+
+.believe-card h3 {
+  color: #000000 !important;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.believe-card p {
+  color: rgba(0, 0, 0, 0.9) !important;
+  line-height: 1.8;
+  font-size: .95rem;
+}
+
+/* ============================================ */
+/* ===== PASTORS SECTION ===== */
+/* ============================================ */
+.pastors-section {
+  margin: 60px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.pastors-section h2 {
+  color: #1a2a3a;
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.pastors-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.pastor-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 24px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.pastor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+}
+
+.pastor-card img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #3895D3;
+  margin-bottom: 18px;
+}
+
+.pastor-card h3 {
+  color: #1a2a3a;
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.pastor-card .role {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.pastor-card a {
+  color: #3895D3;
+  font-size: 2rem;
+  transition: .3s;
+}
+
+.pastor-card a:hover {
+  color: #1a2a3a;
+}
+
+/* ============================================ */
+/* ===== RESPONSIVE ===== */
+/* ============================================ */
+@media (max-width: 992px) {
+  .pastors-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .believe-section .believe-inner {
+    padding: 35px 25px;
+  }
+  .pastors-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .pastors-container {
+    grid-template-columns: 1fr;
+  }
+  .pastor-card img {
+    width: 120px;
+    height: 120px;
+  }
+  .about-box {
+    flex: 1 1 100%;
+  }
+  .believe-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+    /* ===== EVENTS ===== */
+    #eventsSection {
+      background: linear-gradient(145deg, #dce8f5, #f0f5fc);
+      margin: 0 auto;
+    }
+
+    #eventsSection .events-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== SERMONS ===== */
+    #sermonsSection {
+      background: #c6e2ff;
+      margin: 0 auto;
+    }
+
+    #sermonsSection .events-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .sermons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin: 30px 0;
+    }
+    .sermon-card {
+      background: #fff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .sermon-card img { width: 100%; height: 170px; object-fit: cover; }
+    .sermon-card-content { padding: 20px; }
+    .sermon-verse { font-style: italic; color: #555; margin: 10px 0; }
+
+    /* ===== CONTACT ===== */
+    #contactSection {
+      background: linear-gradient(145deg, #dce8f5, #f0f5fc);
+      margin: 0 auto;
+    }
+
+    #contactSection .events-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .map-embed-wrapper iframe {
+      width: 100%;
+      height: 220px;
+      border: 0;
+      border-radius: 16px;
+    }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background: #1a2a3a;
+      color: #ccc;
+      padding: 40px 20px 20px;
+      margin-top: 0;
+    }
+    .footer-container { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; padding: 0 20px; }
+    .footer-column { display: flex; flex-wrap: wrap; gap: 40px; }
+    .footer-column h3 { color: #fff; font-weight: 600; margin-bottom: 12px; }
+    .social-icons a { color: #ccc; font-size: 1.6rem; margin-right: 12px; }
+    .footer-bottom { border-top: 1px solid #2a3a4a; padding-top: 20px; text-align: center; margin-top: 30px; }
+
+    /* ===== MODALS ===== */
+    .front-page {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+    }
+    .front-content {
+      background: #fff;
+      padding: 35px 30px;
+      border-radius: 28px;
+      max-width: 500px;
+      width: 92%;
+      position: relative;
+    }
+    .close-btn {
+      background: #eee;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 40px;
+      font-weight: 600;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    .close-btn:hover { background: #ddd; }
+
+    .register-form input, .addlist-form input, .prayer-form input, .prayer-form textarea {
+      width: 100%;
+      padding: 12px 16px;
+      margin: 8px 0;
+      border: 1px solid #ddd;
+      border-radius: 30px;
+    }
+
+    /* ===== EVENT MODAL ===== */
+    .event-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .event-modal.show {
+      display: flex;
+    }
+
+    .event-modal-content {
+      background: #fff;
+      border-radius: 20px;
+      max-width: 700px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 40px;
+      position: relative;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .event-modal-content {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .event-modal-content::-webkit-scrollbar {
+      display: none;
+    }
+
+    .event-modal-close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 30px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #999;
+      transition: color 0.3s;
+    }
+
+    .event-modal-close:hover {
+      color: #333;
+    }
+
+    .event-detail-header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .event-detail-header h2 {
+      font-size: 2rem;
+      color: #1a2a3a;
+    }
+
+    .event-detail-header p {
+      color: #555;
+      margin: 5px 0;
+    }
+
+    .event-detail-header .event-location-detail {
+      color: #777;
+      margin: 5px 0;
+    }
+
+    .event-detail-description {
+      color: #555;
+      line-height: 1.7;
+      margin: 15px 0;
+    }
+
+    .event-detail-verse {
+      background: #f5f0e8;
+      padding: 25px;
+      border-radius: 10px;
+      border-left: 5px solid #f5c842;
+      margin-top: 20px;
+    }
+
+    .event-detail-verse .verse-text {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #1a2a3a;
+      line-height: 1.8;
+    }
+
+    .event-detail-verse .verse-ref {
+      display: block;
+      text-align: right;
+      font-weight: 600;
+      color: #555;
+      margin-top: 10px;
+    }
+
+    .event-detail-btn {
+      display: inline-block;
+      background: #3895D3;
+      color: white;
+      padding: 10px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      margin-top: 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .event-detail-btn:hover {
+      background: #2c7bbf;
+      transform: scale(1.02);
+    }
+
+    /* ===== DATE GALLERY ===== */
+    .date-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .date-thumb {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      gap: 6px;
+      transition: transform 0.3s, border-color 0.3s;
+      padding: 8px;
+      border-radius: 12px;
+      background: #f8f9fa;
+      border: 2px solid transparent;
+    }
+
+    .date-thumb:hover {
+      transform: scale(1.05);
+      border-color: #3895D3;
+      background: #eef4fa;
+    }
+
+    .date-thumb img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .date-label {
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #1a2a3a;
+      margin-top: 4px;
+    }
+
+    /* ===== ACTIVITY GALLERY ===== */
+    .activity-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .activity-gallery .gallery-item {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      aspect-ratio: 4/3;
+    }
+
+    .activity-gallery .gallery-item:hover {
+      transform: scale(1.03);
+    }
+
+    .activity-gallery .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .activity-gallery .no-photos {
+      color: #777;
+      text-align: center;
+      padding: 30px;
+      grid-column: 1 / -1;
+      font-size: 1.1rem;
+    }
+
+    /* ===== BACK TO DATES ===== */
+    #backToDatesContainer {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    /* ===== BACK TO TOP ===== */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: #3895D3;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      z-index: 999;
+      transition: all 0.3s;
+    }
+    #backToTop:hover {
+      transform: scale(1.1);
+      background: #1f7bb5;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* ===== WHAT WE BELIEVE ===== */
+    .believe-section {
+      margin: 60px auto;
+      max-width: 1200px;
+      padding: 0 20px;
+    }
+
+    .believe-section .believe-inner {
+      background: #16395d;
+      border-radius: 30px;
+      padding: 50px 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.15);
+    }
+
+    .believe-title {
+      text-align: center;
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .believe-subtitle {
+      text-align: center;
+      color: rgba(255,255,255,.75);
+      margin-bottom: 40px;
+      font-size: 1rem;
+    }
+
+    .believe-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      gap: 25px;
+    }
+
+    .believe-card {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 22px;
+      padding: 30px 25px;
+      text-align: center;
+      transition: .35s ease;
+    }
+
+    .believe-card:hover {
+      transform: translateY(-8px);
+      background: rgba(255,255,255,.13);
+    }
+
+    .believe-card i {
+      font-size: 60px;
+      color: #f5c842;
+      margin-bottom: 15px;
+    }
+
+    .believe-card h3 {
+      color: #f5c842;
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+
+    .believe-card p {
+      color: rgba(255,255,255,.85);
+      line-height: 1.8;
+      font-size: .95rem;
+    }
+
+    /* ============================================ */
+/* ===== RESPONSIVE ===== */
+/* ============================================ */
+
+/* ===== TABLET (max-width: 992px) ===== */
+@media (max-width: 992px) {
+  .pastors-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .background-text h1 {
+    font-size: 3rem;
+  }
+  .background-text h2 {
+    font-size: 3.5rem;
+  }
+  .background-text p {
+    font-size: 1.5rem;
+  }
+  .circle-logo {
+    width: 200px;
+    height: 200px;
+  }
+  .background-img {
+    flex: 0 0 200px;
+  }
+  .home-overlay {
+    margin-top: -180px;
+  }
+}
+
+/* ===== MOBILE (max-width: 768px) ===== */
+@media (max-width: 768px) {
+  /* ===== HEADER ===== */
+  .header { 
+    flex-direction: column; 
+    align-items: stretch; 
+    padding: 10px 15px;
+    width: 95%;
+    top: 10px;
+  }
+  .logo-img {
+    height: 60px;
+  }
+  .logo-text {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .navbar ul { 
+    justify-content: center; 
+  }
+  .navbar ul li a {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+  .header-actions { 
+    justify-content: center; 
+  }
+  
+  /* ===== HOME SECTION ===== */
+  #homeSection {
+    padding: 80px 0 0;
+    min-height: 80vh;
+  }
+  .background-content-wrapper {
+    min-height: 350px;
+    padding: 30px 20px;
+    gap: 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .background-text {
+    text-align: center;
+    padding-left: 0;
+    margin-top: 0;
+    order: 2;
+  }
+  .background-text h1 {
+    font-size: 2rem;
+  }
+  .background-text h2 {
+    font-size: 2.2rem;
+  }
+  .background-text p {
+    font-size: 1.1rem;
+  }
+  .background-img {
+    flex: 0 0 150px;
+    margin-top: 0;
+    margin-right: 0;
+    order: 1;
+  }
+  .circle-logo {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .home-overlay {
+    margin-top: -40px;
+    padding: 0 5px;
+  }
+  .home {
+    padding: 20px 15px;
+    max-width: 100%;
+    border-radius: 35px;
+  }
+  .btn-container .btn,
+  .btn-container .btn-give {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+  .countdown-section {
+    padding: 20px 15px;
+    max-width: 100%;
+    border-radius: 35px;
+  }
+  .countdown-section h3 {
+    font-size: 0.95rem;
+  }
+  .countdown-block .num {
+    font-size: 1.6rem;
+    min-width: 40px;
+    padding: 6px 10px;
+  }
+  .countdown-block .label {
+    font-size: 0.6rem;
+  }
+  .countdown-timer {
+    gap: 10px;
+  }
+  
+  /* ===== ABOUT SECTION ===== */
+  #aboutSection {
+    padding: 60px 0;
+  }
+  .about-section {
+    gap: 15px;
+    padding: 0 15px;
+  }
+  .about-box {
+    flex: 1 1 100%;
+    padding: 25px 20px;
+  }
+  .about-box h2 {
+    font-size: 1.3rem;
+  }
+  .about-box p {
+    font-size: 0.95rem;
+  }
+  
+  /* ===== BELIEVE SECTION ===== */
+  .believe-section {
+    padding: 0 15px;
+  }
+  .believe-section .believe-inner {
+    padding: 30px 20px;
+  }
+  .believe-title {
+    font-size: 1.6rem;
+  }
+  .believe-subtitle {
+    font-size: 0.9rem;
+  }
+  .believe-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .believe-card {
+    padding: 25px 20px;
+  }
+  .believe-card i {
+    font-size: 45px;
+  }
+  .believe-card h3 {
+    font-size: 1.1rem;
+  }
+  .believe-card p {
+    font-size: 0.9rem;
+  }
+  
+  /* ===== PASTORS SECTION ===== */
+  .pastors-section {
+    padding: 0 15px;
+  }
+  .pastors-section h2 {
+    font-size: 1.8rem;
+  }
+  .pastors-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  .pastor-card {
+    padding: 20px 15px;
+  }
+  .pastor-card img {
+    width: 100px;
+    height: 100px;
+  }
+  .pastor-card h3 {
+    font-size: 1rem;
+  }
+  .pastor-card .role {
+    font-size: 0.85rem;
+  }
+  
+  /* ===== EVENTS SECTION ===== */
+  #eventsSection .events-container {
+    padding: 0 15px;
+  }
+  .events-main-title {
+    font-size: 1.8rem;
+  }
+  .events-main-subtitle {
+    font-size: 0.95rem;
+    padding: 0 10px;
+  }
+  .events-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  .event-card img {
+    height: 120px;
+  }
+  .event-card-content {
+    padding: 12px;
+  }
+  .event-card-content h3 {
+    font-size: 0.95rem;
+  }
+  .btn-group {
+    gap: 10px;
+  }
+  .btn-group button {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+  
+  /* ===== SERMONS SECTION ===== */
+  #sermonsSection .events-container {
+    padding: 0 15px;
+  }
+  .sermons-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  /* ===== CONTACT SECTION ===== */
+  #contactSection .events-container {
+    padding: 0 15px;
+  }
+  #contactSection .events-container > div {
+    padding: 20px 15px !important;
+  }
+  #contactSection .events-container > div > div {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+  
+  /* ===== GET STARTED MODAL ===== */
+  .gs-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .gs-card {
+    max-width: 100%;
+    padding: 20px 15px;
+  }
+  .events-main-title {
+    font-size: 1.6rem;
+  }
+  
+  /* ===== MODALS ===== */
+  .modal-content {
+    padding: 25px 15px;
+    margin: 20px auto;
+    width: 95%;
+  }
+  .event-modal-content {
+    padding: 25px 20px;
+  }
+  .event-detail-header h2 {
+    font-size: 1.5rem;
+  }
+  .date-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+  }
+  .activity-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+  
+  /* ===== FOOTER ===== */
+  .footer-container {
+    padding: 0 15px;
+  }
+  .footer-column {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* ===== SECTION PADDING ===== */
+  .section {
+    padding: 60px 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* ===== HEADER - COMPACT MOBILE ===== */
+  .header { 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    width: 95%;
+    top: 10px;
+    border-radius: 30px;
+    gap: 4px;
+  }
+  
+  .logo-img {
+    height: 35px;
+    width: auto;
+    flex-shrink: 0;
+  }
+  
+  .logo-text {
+    font-size: 0.8rem;
+    margin-left: 4px;
+    flex-shrink: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+  }
+  
+  .navbar ul {
+    display: flex;
+    gap: 3px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .navbar ul li a {
+    padding: 4px 8px;
+    font-size: 0.65rem;
+    border-radius: 20px;
+  }
+  
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .social-media a {
+    font-size: 1rem;
+  }
+  
+  #darkModeToggle {
+    font-size: 1rem;
+    padding: 0 4px;
+  }
+  
+  /* ===== HOME ===== */
+  .background-content-wrapper {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+  .background-text {
+    text-align: center;
+    padding-left: 0;
+    margin-top: 0;
+    order: 2;
+  }
+  .circle-logo {
+    width: 120px;
+    height: 120px;
+  }
+  .background-img {
+    order: 1;
+    margin-top: 0;
+    margin-right: 0;
+  }
+
+  .home-overlay {
+    margin-top: -30px;
+  }
+  .home {
+    padding: 15px 12px;
+    border-radius: 25px;
+  }
+  .btn-container .btn,
+  .btn-container .btn-give {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+  .countdown-section {
+    padding: 15px 12px;
+    border-radius: 25px;
+  }
+  .countdown-block .num {
+    font-size: 1.2rem;
+    min-width: 32px;
+    padding: 4px 8px;
+  }
+  .countdown-block .label {
+    font-size: 0.5rem;
+  }
+  .countdown-timer {
+    gap: 6px;
+  }
+  
+  /* ===== ABOUT ===== */
+  .about-box {
+    padding: 20px 15px;
+  }
+  .about-box h2 {
+    font-size: 1.1rem;
+  }
+  .about-box p {
+    font-size: 0.85rem;
+  }
+  
+  /* ===== BELIEVE ===== */
+  .believe-section .believe-inner {
+    padding: 20px 15px;
+  }
+  .believe-title {
+    font-size: 1.3rem;
+  }
+  .believe-subtitle {
+    font-size: 0.85rem;
+  }
+  .believe-card {
+    padding: 20px 15px;
+  }
+  .believe-card i {
+    font-size: 35px;
+  }
+  .believe-card h3 {
+    font-size: 1rem;
+  }
+  .believe-card p {
+    font-size: 0.85rem;
+  }
+  
+  /* ===== PASTORS ===== */
+  .pastors-section h2 {
+    font-size: 1.4rem;
+  }
+  .pastors-container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .pastor-card {
+    padding: 15px 12px;
+  }
+  .pastor-card img {
+    width: 100px;
+    height: 100px;
+  }
+  .pastor-card h3 {
+    font-size: 0.95rem;
+  }
+  .pastor-card .role {
+    font-size: 0.8rem;
+  }
+  
+  /* ===== EVENTS ===== */
+  .events-main-title {
+    font-size: 1.3rem;
+  }
+  .events-main-subtitle {
+    font-size: 0.85rem;
+  }
+  .events-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .event-card img {
+    height: 100px;
+  }
+  .btn-group {
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn-group button {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  /* ===== SERMONS ===== */
+  .sermons-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  /* ===== GET STARTED MODAL ===== */
+  .gs-card {
+    padding: 15px 12px;
+  }
+  .events-main-title {
+    font-size: 1.3rem;
+  }
+  .events-main-subtitle {
+    font-size: 0.85rem;
+  }
+  .gs-bottom-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .gs-bottom-buttons .btn-live,
+  .gs-bottom-buttons .btn-prayer {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  /* ===== MODALS ===== */
+  .modal-content {
+    padding: 20px 12px;
+    margin: 15px auto;
+  }
+  .event-modal-content {
+    padding: 20px 15px;
+  }
+  .event-detail-header h2 {
+    font-size: 1.2rem;
+  }
+  .date-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .date-thumb img {
+    height: 70px;
+  }
+  .activity-gallery {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  
+  /* ===== SECTION PADDING ===== */
+  .section {
+    padding: 50px 0 30px;
+  }
+}
+
+
   </style>
 </head>
 <body>
 
 <!-- ===== HEADER ===== -->
 <header class="header" id="mainHeader" role="banner">
-  <!-- LEFT: Logo and Text -->
-  <div class="header-left">
-    <img src="Gospel.jpg" alt="Gospel Fellowship Church Logo" class="logo-img">
-    <a href="#homeSection" class="logo-text" aria-label="Gospel Fellowship Church Home">Gospel Fellowship Church</a>
-  </div>
+  <img src="Gospel.jpg" alt="Gospel Fellowship Church Logo" class="logo-img">
+  <a href="#homeSection" class="logo-text" aria-label="Gospel Fellowship Church Home">Gospel Fellowship Church</a>
 
-  <!-- DESKTOP NAVBAR -->
   <nav class="navbar" role="navigation" aria-label="Main Navigation">
     <ul>
       <li><a href="#homeSection" class="active">Home</a></li>
@@ -1411,32 +1849,15 @@
       <li><a href="#sermonsSection">Sermons</a></li>
       <li><a href="#contactSection">Contact</a></li>
     </ul>
-    
-    <!-- MOBILE ACTIONS (lalabas lang sa mobile) -->
-    <div class="mobile-actions">
-      <div class="social-media">
-        <a href="https://www.facebook.com/profile.php?id=61590579395623" target="_blank" aria-label="Follow us on Facebook"><i class='bx bxl-facebook'></i></a>
-      </div>
-      <button id="darkModeToggleMobile" aria-label="Toggle dark mode">🌙</button>
-    </div>
   </nav>
 
-  <!-- RIGHT: Social Media, Dark Mode, and Hamburger -->
   <div class="header-actions">
     <div class="social-media">
       <a href="https://www.facebook.com/profile.php?id=61590579395623" target="_blank" aria-label="Follow us on Facebook"><i class='bx bxl-facebook'></i></a>
     </div>
     <button id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
-    
-    <!-- HAMBURGER MENU BUTTON (lalabas lang sa mobile) -->
-    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
   </div>
 
-  <!-- LOGIN FORM -->
   <div id="loginForm" class="login-form" role="dialog" aria-label="Sign In Form">
     <div class="form-content">
       <span id="closeForm" aria-label="Close login form">&times;</span>
@@ -1463,6 +1884,7 @@
   <!-- ===== HOME SECTION ===== -->
   <section id="homeSection" class="section" aria-label="Home">
     <div class="home-wrapper">
+      <!-- BACKGROUND CONTENT - Logo at Text -->
       <div class="background-content-wrapper">
         <div class="background-img">
           <div class="circle-logo">
@@ -1476,6 +1898,7 @@
         </div>
       </div>
 
+      <!-- OVERLAY - GUMAGALAW (normal scroll) -->
       <div class="home-overlay">
         <div class="home">
           <div class="home-content">
@@ -1510,7 +1933,9 @@
           <h2 class="events-main-title">Get Started</h2>
           <p class="events-main-subtitle">Hindi ka nag-iisa. Eto ang tatlong simpleng hakbang para makapagsimula ang iyong journey sa Gospel Fellowship Church.</p>
           
+          <!-- Cards - Isang line lang -->
           <div class="gs-cards">
+            <!-- Card 1 -->
             <div class="gs-card">
               <div class="gs-number" style="background:#3895D3;">1</div>
               <i class='bx bx-church' style="font-size:40px;color:#3895D3;"></i>
@@ -1518,6 +1943,7 @@
               <p>Sumama sa amin every Sunday, 8:30 AM.</p>
               <a href="#eventsSection" class="btn-events" onclick="closeGetStarted()">See Schedule</a>
             </div>
+            <!-- Card 2 -->
             <div class="gs-card">
               <div class="gs-number" style="background:#28a745;">2</div>
               <i class='bx bx-user-plus' style="font-size:40px;color:#28a745;"></i>
@@ -1525,6 +1951,7 @@
               <p>Mag-register para makilala ka namin.</p>
               <button id="gsRegisterBtn" class="btn-secondary" onclick="closeGetStarted()">Register Now</button>
             </div>
+            <!-- Card 3 -->
             <div class="gs-card">
               <div class="gs-number" style="background:#f5c842;color:#1a2a3a;">3</div>
               <i class='bx bx-book-open' style="font-size:40px;color:#f5c842;"></i>
@@ -1534,6 +1961,7 @@
             </div>
           </div>
 
+          <!-- Watch Live at Prayer Request - NASA BABA -->
           <div class="gs-bottom-buttons">
             <button onclick="document.getElementById('liveModal').style.display='flex'" class="btn-live">🔴 Watch Live</button>
             <button onclick="document.getElementById('prayerModal').style.display='flex'" class="btn-prayer">🙏 Prayer Request</button>
