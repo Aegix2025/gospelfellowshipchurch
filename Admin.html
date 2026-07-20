@@ -931,28 +931,6 @@
       background: #444;
     }
 
-    /* ===== EMPTY STATE ===== */
-    .empty-state {
-      text-align: center;
-      padding: 40px 20px;
-      color: #999;
-    }
-    .empty-state i {
-      font-size: 3.5rem;
-      margin-bottom: 12px;
-      display: block;
-    }
-    .empty-state h4 {
-      color: #666;
-      margin-bottom: 4px;
-    }
-    body.dark-mode .empty-state h4 {
-      color: #888;
-    }
-    .empty-state p {
-      font-size: 0.9rem;
-    }
-
     /* ===== AUTO-REFRESH TOGGLE ===== */
     .auto-refresh-toggle {
       display: flex;
@@ -1684,7 +1662,6 @@
       </div>
 
       <div style="margin-top:15px;padding:20px;background:#f8f9fa;border-radius:12px;border:1px solid #ddd;transition:background 0.3s ease,border-color 0.3s ease;">
-        <body.dark-mode style="background:#1a1a1a;border-color:#333;"></body.dark-mode>
         <h4 style="color:#000000;transition:color 0.3s ease;">📊 Database Info</h4>
         <div style="font-size:0.9rem;color:#666;transition:color 0.3s ease;">
           <p>Total Events: <strong id="dbEvents">6</strong></p>
@@ -1693,7 +1670,6 @@
           <p>Total Prayers: <strong id="dbPrayers">3</strong></p>
           <p>Total Attendees: <strong id="dbAttendees">5</strong></p>
         </div>
-        <body.dark-mode style="color:#999;"></body.dark-mode>
       </div>
     </div>
 
@@ -1764,12 +1740,10 @@
       feed.prepend(item);
       activityCount++;
       
-      // Limit to 20 items
       while (feed.children.length > 20) {
         feed.removeChild(feed.lastChild);
       }
       
-      // Update notification badge
       updateBellBadge();
     }
 
@@ -1778,7 +1752,6 @@
       addActivity(random);
     }
 
-    // Add initial activities
     const initialActivities = [
       { icon: '📊', text: 'Dashboard loaded successfully' },
       { icon: '🕐', text: 'Live monitoring started' },
@@ -1786,7 +1759,6 @@
     ];
     initialActivities.forEach(msg => addActivity(msg));
 
-    // Auto-generate activity every 8 seconds
     let activityInterval = setInterval(generateRandomActivity, 8000);
 
     // ============================================
@@ -1826,7 +1798,7 @@
     };
 
     // ============================================
-    // ANIMATED NUMBERS (Count Up)
+    // ANIMATED NUMBERS
     // ============================================
     function animateNumbers() {
       document.querySelectorAll('.stat-number.animated').forEach(el => {
@@ -1848,7 +1820,6 @@
       });
     }
 
-    // Run animation after page load
     setTimeout(animateNumbers, 300);
 
     // ============================================
@@ -1941,7 +1912,6 @@
         if (row) {
           row.remove();
           updateBadges();
-          // Add to activity feed
           addActivity({ icon: '🗑️', text: `${type} "${name}" was deleted` });
           showToast(`🗑️ ${type} deleted successfully.`, 'warning');
         }
@@ -1957,7 +1927,7 @@
     };
 
     // ============================================
-    // FILTER TABLE (SEARCH)
+    // FILTER TABLE
     // ============================================
     window.filterTable = function(tableId, query) {
       const rows = document.querySelectorAll(`#${tableId} tr`);

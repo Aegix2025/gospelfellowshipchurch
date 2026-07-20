@@ -62,7 +62,6 @@
     body.dark-mode .social-media a:hover { color: #cccccc; }
     body.dark-mode #darkModeToggle { color: #ffffff; }
 
-    /* Dark mode mobile navbar - WALANG BOXES */
     body.dark-mode .navbar { background: transparent; }
     body.dark-mode .navbar ul li a { 
       color: #ffffff; 
@@ -80,12 +79,10 @@
     body.dark-mode .navbar .mobile-theme-toggle button { color: #ffffff; }
     body.dark-mode .navbar .mobile-theme-toggle button:hover { background: rgba(255,255,255,0.1); }
 
-    /* ===== BACKGROUND TEXT - DARK MODE (WHITE) ===== */
     body.dark-mode .background-text h1 { color: #ffffff; }
     body.dark-mode .background-text h2 { color: #ffffff; }
     body.dark-mode .background-text p { color: #ffffff; }
 
-    /* ===== HOME OVERLAY - DARK MODE (BLACK) ===== */
     body.dark-mode .home {
       background: rgba(0, 0, 0, 0.7);
       color: #ffffff;
@@ -234,6 +231,238 @@
     body.dark-mode .site-footer .social-icons a { color: #ffffff; }
     body.dark-mode .footer-bottom { border-top-color: #333; }
 
+    /* ===== ADMIN LOGIN OVERLAY ===== */
+    .admin-login-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999999;
+      animation: fadeInOverlay 0.4s ease;
+    }
+    .admin-login-overlay.show {
+      display: flex;
+    }
+
+    @keyframes fadeInOverlay {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUpBox {
+      from { opacity: 0; transform: translateY(40px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .admin-login-box {
+      background: #ffffff;
+      padding: 40px 35px 30px;
+      border-radius: 28px;
+      max-width: 400px;
+      width: 92%;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+      position: relative;
+      animation: slideUpBox 0.4s ease;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    body.dark-mode .admin-login-box {
+      background: #1a1a1a;
+      border-color: #333;
+    }
+
+    .admin-login-box .login-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+    .admin-login-box .login-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .admin-login-box .login-logo img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .admin-login-box .login-logo h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #000000;
+      margin: 0;
+    }
+    body.dark-mode .admin-login-box .login-logo h2 {
+      color: #ffffff;
+    }
+
+    .admin-login-box .login-close {
+      background: none;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #999;
+      transition: 0.3s;
+      padding: 0 4px;
+      line-height: 1;
+    }
+    .admin-login-box .login-close:hover {
+      color: #333;
+      transform: rotate(90deg);
+    }
+    body.dark-mode .admin-login-box .login-close {
+      color: #888;
+    }
+    body.dark-mode .admin-login-box .login-close:hover {
+      color: #fff;
+    }
+
+    .admin-login-box .login-subtitle {
+      color: #888;
+      font-size: 0.9rem;
+      margin-bottom: 25px;
+      margin-top: 4px;
+    }
+    body.dark-mode .admin-login-box .login-subtitle {
+      color: #999;
+    }
+
+    .admin-login-box .input-group {
+      position: relative;
+      margin-bottom: 16px;
+    }
+    .admin-login-box .input-group i {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #aaa;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+    .admin-login-box .input-group input {
+      width: 100%;
+      padding: 14px 16px 14px 48px;
+      border: 2px solid #e8e8e8;
+      border-radius: 14px;
+      font-size: 0.95rem;
+      color: #000000;
+      background: #f8f9fa;
+      transition: all 0.3s;
+    }
+    body.dark-mode .admin-login-box .input-group input {
+      background: #000000;
+      color: #ffffff;
+      border-color: #333;
+    }
+    .admin-login-box .input-group input:focus {
+      border-color: #000000;
+      outline: none;
+      background: #ffffff;
+      box-shadow: 0 0 0 4px rgba(0,0,0,0.05);
+    }
+    body.dark-mode .admin-login-box .input-group input:focus {
+      border-color: #ffffff;
+      background: #0a0a0a;
+      box-shadow: 0 0 0 4px rgba(255,255,255,0.05);
+    }
+    .admin-login-box .input-group input:focus + i,
+    .admin-login-box .input-group input:focus ~ i {
+      color: #000000;
+    }
+    body.dark-mode .admin-login-box .input-group input:focus + i,
+    body.dark-mode .admin-login-box .input-group input:focus ~ i {
+      color: #ffffff;
+    }
+    .admin-login-box .input-group input::placeholder {
+      color: #aaa;
+    }
+    body.dark-mode .admin-login-box .input-group input::placeholder {
+      color: #666;
+    }
+
+    .admin-login-box .login-btn {
+      width: 100%;
+      padding: 14px;
+      background: #000000;
+      color: #ffffff;
+      border: none;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .admin-login-box .login-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+    .admin-login-box .login-btn:active {
+      transform: translateY(0);
+    }
+    body.dark-mode .admin-login-box .login-btn {
+      background: #ffffff;
+      color: #000000;
+    }
+    body.dark-mode .admin-login-box .login-btn:hover {
+      background: #eeeeee;
+      box-shadow: 0 8px 25px rgba(255,255,255,0.1);
+    }
+
+    .admin-login-box .login-error {
+      color: #dc3545;
+      text-align: center;
+      margin-top: 12px;
+      font-size: 0.85rem;
+      display: none;
+      background: #fde8e8;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid #f5c6cb;
+    }
+    .admin-login-box .login-error.show {
+      display: block;
+    }
+    body.dark-mode .admin-login-box .login-error {
+      background: #2a1a1a;
+      border-color: #dc3545;
+    }
+    .admin-login-box .login-error i {
+      margin-right: 6px;
+    }
+
+    .admin-login-box .login-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 18px;
+      font-size: 0.75rem;
+      color: #aaa;
+      border-top: 1px solid #eee;
+      padding-top: 16px;
+    }
+    body.dark-mode .admin-login-box .login-footer {
+      border-top-color: #333;
+      color: #666;
+    }
+    .admin-login-box .login-footer span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
     /* ===== HEADER - GLOBAL ===== */
     .header {
       display: flex;
@@ -259,7 +488,12 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       background: rgba(255, 255, 255, 0.95);
     }
-    .logo-img { height: 90px; width: auto; border-radius: 50%; }
+    .logo-img { 
+      height: 90px; 
+      width: auto; 
+      border-radius: 50%; 
+      cursor: pointer; /* For admin access */
+    }
     .logo-text {
       font-size: 2rem;
       font-weight: 700;
@@ -359,7 +593,6 @@
     body.dark-mode .mobile-menu-toggle:hover { background: rgba(255,255,255,0.05); }
     body.dark-mode .mobile-menu-toggle span { background: #ffffff; }
 
-    /* ===== MOBILE NAVBAR - may theme toggle sa baba ===== */
     .navbar .mobile-theme-toggle {
       display: none;
       padding-top: 15px;
@@ -624,7 +857,6 @@
       margin-top: -60px;
       order: 1;
     }
-    /* ===== BACKGROUND TEXT - LIGHT MODE (BLACK) ===== */
     .background-text h1 { 
       font-size: 3rem; 
       font-weight: 300; 
@@ -651,7 +883,6 @@
       text-shadow: none;
       transition: color 0.3s ease; 
     }
-    /* ===== TYPING EFFECT CURSOR ===== */
     .typing-cursor {
       display: inline-block;
       width: 3px;
@@ -700,7 +931,6 @@
       padding: 0 10px; 
     }
 
-    /* ===== HOME OVERLAY - LIGHT MODE (WHITE) ===== */
     .home {
       background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(1px);
@@ -738,7 +968,6 @@
       color: #000000;
       transition: background 0.3s ease, color 0.3s ease;
     }
-    /* ===== COUNTDOWN ANIMATION ===== */
     .countdown-block .num.pulse {
       animation: pulse 0.5s ease;
     }
@@ -1025,7 +1254,6 @@
     body.dark-mode .event-card-content p { color: #ffffff; }
     body.dark-mode .event-tag { background: #333; color: #ffffff; }
 
-    /* ===== "MORE" BUTTON ===== */
     .more-btn-container {
       text-align: center;
       margin-top: 30px;
@@ -1158,7 +1386,7 @@
     body.dark-mode .believe-card h3 { color: #ffffff !important; }
     body.dark-mode .believe-card p { color: #ffffff !important; }
 
-    /* ===== MINISTRIES SECTION (NEW) ===== */
+    /* ===== MINISTRIES SECTION ===== */
     #ministriesSection {
       background: #f0f0f0;
       padding: 80px 0;
@@ -1239,7 +1467,7 @@
       color: #ffffff;
     }
 
-    /* ===== TESTIMONIES SECTION (NEW) ===== */
+    /* ===== TESTIMONIES SECTION ===== */
     #testimoniesSection {
       background: #f5f5f5;
       padding: 80px 0;
@@ -1318,7 +1546,7 @@
       color: #999;
     }
 
-    /* ===== PRAYER WALL SECTION (NEW) ===== */
+    /* ===== PRAYER WALL SECTION ===== */
     #prayerWallSection {
       background: #f0f0f0;
       padding: 80px 0;
@@ -1658,7 +1886,7 @@
     body.dark-mode .date-label { color: #ffffff; }
     body.dark-mode .no-photos { color: #ffffff; }
 
-    /* ===== SEARCH BAR (Keyboard Shortcut Ctrl+K) ===== */
+    /* ===== SEARCH BAR ===== */
     .search-overlay {
       display: none;
       position: fixed;
@@ -1959,12 +2187,10 @@
         border-bottom-color: #1a1a1a;
       }
 
-      /* ===== MOBILE THEME TOGGLE SA BABA NG NAV ===== */
       .navbar .mobile-theme-toggle {
         display: flex !important;
       }
 
-      /* ===== HOME SECTION MOBILE ===== */
       #homeSection {
         padding-top: 80px;
         background-attachment: scroll;
@@ -2062,7 +2288,7 @@
 
 <!-- ===== HEADER ===== -->
 <header class="header" id="mainHeader" role="banner">
-  <img src="Gospel.jpg" alt="Gospel Fellowship Church Logo" class="logo-img">
+  <img src="Gospel.jpg" alt="Gospel Fellowship Church Logo" class="logo-img" id="adminAccessTrigger">
   <a href="#homeSection" class="logo-text" aria-label="Gospel Fellowship Church Home">Gospel Fellowship Church</a>
 
   <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
@@ -2082,7 +2308,6 @@
       <li><a href="#prayerWallSection">Prayer Wall</a></li>
       <li><a href="#contactSection">Contact</a></li>
     </ul>
-    <!-- ===== MOBILE THEME TOGGLE SA BABA ===== -->
     <div class="mobile-theme-toggle">
       <button id="mobileThemeToggle" aria-label="Toggle theme">
         <i class='bx bx-moon' id="mobileThemeIcon"></i>
@@ -2115,6 +2340,40 @@
   </div>
 </header>
 
+<!-- ===== ADMIN LOGIN OVERLAY ===== -->
+<div id="adminLoginOverlay" class="admin-login-overlay">
+  <div class="admin-login-box">
+    <div class="login-header">
+      <div class="login-logo">
+        <img src="Gospel.jpg" alt="Gospel Fellowship Church" onerror="this.src='Gospel.jpg'">
+        <h2>Admin Access</h2>
+      </div>
+      <button class="login-close" onclick="closeAdminLogin()">&times;</button>
+    </div>
+    <p class="login-subtitle">Enter your credentials to access the admin dashboard</p>
+    <form onsubmit="adminLogin(event)">
+      <div class="input-group">
+        <i class='bx bx-user'></i>
+        <input type="text" id="adminUser" placeholder="Username" value="admin" required>
+      </div>
+      <div class="input-group">
+        <i class='bx bx-lock'></i>
+        <input type="password" id="adminPass" placeholder="Password" value="admin123" required>
+      </div>
+      <button type="submit" class="login-btn">
+        <i class='bx bx-log-in'></i> Sign In
+      </button>
+      <div class="login-error" id="loginError">
+        <i class='bx bx-error-circle'></i> Invalid credentials. Please try again.
+      </div>
+    </form>
+    <div class="login-footer">
+      <span>Default: admin / admin123</span>
+      <span>Click logo 5x to access</span>
+    </div>
+  </div>
+</div>
+
 <!-- ===== SEARCH OVERLAY (Ctrl+K) ===== -->
 <div id="searchOverlay" class="search-overlay">
   <div class="search-box">
@@ -2131,10 +2390,9 @@
 <!-- ===== MAIN ===== -->
 <main>
 
-  <!-- ===== HOME SECTION WITH BACKGROUND IMAGE ===== -->
+  <!-- ===== HOME SECTION ===== -->
   <section id="homeSection" class="section page-transition" aria-label="Home">
     <div class="home-wrapper">
-      <!-- ===== IMAGE SLIDER ===== -->
       <div class="slider-container" id="mainSlider">
         <div class="slider-track" id="sliderTrack">
           <div class="slider-slide">
@@ -2290,7 +2548,7 @@
     </div>
   </section>
 
-  <!-- ===== MINISTRIES SECTION (NEW) ===== -->
+  <!-- ===== MINISTRIES SECTION ===== -->
   <section id="ministriesSection" class="section page-transition" aria-label="Ministries">
     <div class="events-container">
       <h2 class="events-main-title">Our Ministries</h2>
@@ -2396,7 +2654,6 @@
             <span class="event-tag">⛪ Sunday Service</span>
           </div>
         </div>
-        <!-- Hidden events for "More" button -->
         <div class="event-card" onclick="showEventDetail('prayer')" style="display:none;">
           <img src="Prayer Meeting/prayer-meeting.jpg" alt="Prayer Meeting 2">
           <div class="event-card-content">
@@ -2415,7 +2672,6 @@
         </div>
       </div>
 
-      <!-- ===== MORE BUTTON ===== -->
       <div class="more-btn-container">
         <button class="more-btn" id="moreEventsBtn" onclick="toggleMoreEvents()">Show More Events ↓</button>
       </div>
@@ -2443,19 +2699,17 @@
         <div class="sermon-card"><img src="Sunday Service/sunday-service.jpg" alt="Obedience"><div class="sermon-card-content"><h3>Obedience Over Sacrifice</h3><p>📅 July 12, 2026</p><p class="sermon-verse">"To obey is better than sacrifice" — 1 Samuel 15:22</p><a href="#" class="event-detail-btn">▶ Watch</a></div></div>
         <div class="sermon-card"><img src="Worship Night/worship-night.jpg" alt="New Song"><div class="sermon-card-content"><h3>A New Song</h3><p>📅 July 17, 2026</p><p class="sermon-verse">"Sing to the Lord a new song" — Psalm 96:1</p><a href="#" class="event-detail-btn">▶ Watch</a></div></div>
         <div class="sermon-card"><img src="Bible Study/bible-study.jpg" alt="Light"><div class="sermon-card-content"><h3>Light to My Path</h3><p>📅 July 16, 2026</p><p class="sermon-verse">"Your word is a lamp to my feet" — Psalm 119:105</p><a href="#" class="event-detail-btn">▶ Watch</a></div></div>
-        <!-- Hidden sermons for "More" button -->
         <div class="sermon-card" style="display:none;"><img src="Gospel.jpg" alt="Faith"><div class="sermon-card-content"><h3>Faith That Moves Mountains</h3><p>📅 July 23, 2026</p><p class="sermon-verse">"If you have faith as small as a mustard seed" — Matthew 17:20</p><a href="#" class="event-detail-btn">▶ Watch</a></div></div>
         <div class="sermon-card" style="display:none;"><img src="Next Gen/Next Gen.jpg" alt="Youth"><div class="sermon-card-content"><h3>Rise Up, Young People</h3><p>📅 July 26, 2026</p><p class="sermon-verse">"Let no one despise your youth" — 1 Timothy 4:12</p><a href="#" class="event-detail-btn">▶ Watch</a></div></div>
         <div class="sermon-card" style="display:none;"><img src="Prayer Meeting/prayer-meeting.jpg" alt="Prayer"><div class="sermon-card-content"><h3>The Power of Prayer</h3><p>📅 July 30, 2026</p><p class="sermon-verse">"Pray without ceasing" — 1 Thessalonians 5:17</p><a href="#" class="event-detail-btn">▶ Watch</a></div></div>
       </div>
-      <!-- ===== MORE BUTTON FOR SERMONS ===== -->
       <div class="more-btn-container">
         <button class="more-btn" id="moreSermonsBtn" onclick="toggleMoreSermons()">Show More Sermons ↓</button>
       </div>
     </div>
   </section>
 
-  <!-- ===== TESTIMONIES SECTION (NEW) ===== -->
+  <!-- ===== TESTIMONIES SECTION ===== -->
   <section id="testimoniesSection" class="section page-transition" aria-label="Testimonies">
     <div class="events-container">
       <h2 class="events-main-title">Testimonies</h2>
@@ -2480,7 +2734,7 @@
     </div>
   </section>
 
-  <!-- ===== PRAYER WALL SECTION (NEW) ===== -->
+  <!-- ===== PRAYER WALL SECTION ===== -->
   <section id="prayerWallSection" class="section page-transition" aria-label="Prayer Wall">
     <div class="events-container">
       <h2 class="events-main-title">🙏 Prayer Wall</h2>
@@ -2553,7 +2807,7 @@
     'use strict';
 
     // ============================================
-    // DARK MODE TOGGLE - Desktop
+    // DARK MODE TOGGLE
     // ============================================
     const darkModeToggle = document.getElementById('darkModeToggle');
     const body = document.body;
@@ -2563,9 +2817,6 @@
       updateThemeIcons();
     });
 
-    // ============================================
-    // DARK MODE TOGGLE - Mobile
-    // ============================================
     const mobileThemeToggle = document.getElementById('mobileThemeToggle');
     const mobileThemeIcon = document.getElementById('mobileThemeIcon');
     const mobileThemeText = document.getElementById('mobileThemeText');
@@ -2575,7 +2826,6 @@
         e.preventDefault();
         body.classList.toggle('dark-mode');
         updateThemeIcons();
-
         const navbar = document.querySelector('.navbar');
         const mobileToggle = document.getElementById('mobileMenuToggle');
         if (navbar && mobileToggle) {
@@ -2585,17 +2835,12 @@
       });
     }
 
-    // ============================================
-    // UPDATE THEME ICONS
-    // ============================================
     function updateThemeIcons() {
       const isDark = body.classList.contains('dark-mode');
-      
       if (darkModeToggle) {
         darkModeToggle.textContent = isDark ? '☀️' : '🌙';
         darkModeToggle.style.color = isDark ? '#ffffff' : '#000000';
       }
-      
       if (mobileThemeIcon && mobileThemeText) {
         if (isDark) {
           mobileThemeIcon.className = 'bx bx-sun';
@@ -2608,7 +2853,62 @@
     }
 
     // ============================================
-    // PAGE TRANSITIONS (Intersection Observer)
+    // ADMIN ACCESS - 5 CLICKS ON LOGO
+    // ============================================
+    let clickCount = 0;
+    let clickTimer = null;
+
+    document.getElementById('adminAccessTrigger')?.addEventListener('click', function() {
+      clickCount++;
+      clearTimeout(clickTimer);
+      clickTimer = setTimeout(() => { clickCount = 0; }, 2000);
+      
+      if (clickCount >= 5) {
+        clickCount = 0;
+        document.getElementById('adminLoginOverlay').classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+
+    // ============================================
+    // ADMIN LOGIN - Redirect to admin.html
+    // ============================================
+    window.adminLogin = function(e) {
+      e.preventDefault();
+      const user = document.getElementById('adminUser').value;
+      const pass = document.getElementById('adminPass').value;
+      const error = document.getElementById('loginError');
+
+      if (user === 'admin' && pass === 'admin123') {
+        window.location.href = 'admin.html';
+      } else {
+        error.classList.add('show');
+        setTimeout(() => {
+          error.classList.remove('show');
+        }, 3000);
+      }
+    };
+
+    // ============================================
+    // CLOSE ADMIN LOGIN
+    // ============================================
+    window.closeAdminLogin = function() {
+      document.getElementById('adminLoginOverlay').classList.remove('show');
+      document.body.style.overflow = 'auto';
+    };
+
+    document.getElementById('adminLoginOverlay')?.addEventListener('click', function(e) {
+      if (e.target === this) closeAdminLogin();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeAdminLogin();
+      }
+    });
+
+    // ============================================
+    // PAGE TRANSITIONS
     // ============================================
     const pageTransitions = document.querySelectorAll('.page-transition');
     const observer = new IntersectionObserver((entries) => {
@@ -2631,7 +2931,6 @@
     const dotsContainer = document.getElementById('sliderDots');
     let slideInterval;
 
-    // Create dots
     for (let i = 0; i < totalSlides; i++) {
       const dot = document.createElement('button');
       dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
@@ -2663,13 +2962,11 @@
       clearInterval(slideInterval);
     }
 
-    // Pause on hover
     const slider = document.getElementById('mainSlider');
     slider.addEventListener('mouseenter', stopSlider);
     slider.addEventListener('mouseleave', startSlider);
     slider.addEventListener('touchstart', stopSlider);
     slider.addEventListener('touchend', startSlider);
-
     startSlider();
 
     // ============================================
@@ -2703,34 +3000,16 @@
           }
         }
       }
-
-      // Wait a bit before starting
       setTimeout(typeEffect, 1000);
     }
-
-    // ============================================
-    // PIGILAN ANG ZOOM SA BUONG WEBSITE
-    // ============================================
-    document.addEventListener('gesturestart', function(e) { e.preventDefault(); });
-    document.addEventListener('gesturechange', function(e) { e.preventDefault(); });
-    document.addEventListener('gestureend', function(e) { e.preventDefault(); });
-    document.addEventListener('dblclick', function(e) { e.preventDefault(); }, { passive: false });
-    document.addEventListener('keydown', function(e) {
-      if (e.ctrlKey && (e.key === '+' || e.key === '-' || e.key === '=' || e.key === '0')) {
-        e.preventDefault();
-      }
-    });
 
     // ============================================
     // KEYBOARD SHORTCUTS
     // ============================================
     document.addEventListener('keydown', function(e) {
-      // ESC to close modals
       if (e.key === 'Escape') {
         closeAllModals();
       }
-      
-      // Ctrl+K to open search
       if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
         e.preventDefault();
         toggleSearch();
@@ -2752,7 +3031,7 @@
     }
 
     // ============================================
-    // SEARCH FUNCTION (Ctrl+K)
+    // SEARCH FUNCTION
     // ============================================
     window.toggleSearch = function() {
       const overlay = document.getElementById('searchOverlay');
@@ -2811,7 +3090,6 @@
       }
     };
 
-    // Close search on overlay click
     document.getElementById('searchOverlay')?.addEventListener('click', function(e) {
       if (e.target === this) closeSearch();
     });
@@ -2845,7 +3123,7 @@
     }
 
     // ============================================
-    // GET STARTED MODAL FUNCTIONS
+    // GET STARTED MODAL
     // ============================================
     window.openGetStarted = function() {
       document.getElementById('getStartedModal').style.display = 'flex';
@@ -2873,7 +3151,7 @@
     }, { passive: true });
 
     // ============================================
-    // SMOOTH SCROLL PARA SA LAHAT NG NAV LINKS
+    // SMOOTH SCROLL
     // ============================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
@@ -2888,7 +3166,7 @@
     });
 
     // ============================================
-    // ACTIVE NAV LINK ON SCROLL
+    // ACTIVE NAV LINK
     // ============================================
     const sections = document.querySelectorAll('.section');
     const navLinks = document.querySelectorAll('.navbar ul li a');
@@ -2980,7 +3258,7 @@
     };
 
     // ============================================
-    // COUNTDOWN WITH ANIMATION
+    // COUNTDOWN
     // ============================================
     let prevSeconds = -1;
 
@@ -3010,7 +3288,6 @@
       const cdMinutes = document.getElementById('cdMinutes');
       const cdSeconds = document.getElementById('cdSeconds');
 
-      // Add pulse animation when seconds change
       if (seconds !== prevSeconds && prevSeconds !== -1) {
         cdSeconds.classList.remove('pulse');
         void cdSeconds.offsetWidth;
@@ -3028,7 +3305,7 @@
     setInterval(updateCountdown, 1000);
 
     // ============================================
-    // "MORE" BUTTONS FOR EVENTS AND SERMONS
+    // "MORE" BUTTONS
     // ============================================
     let eventsExpanded = false;
     let sermonsExpanded = false;
@@ -3037,11 +3314,9 @@
       eventsExpanded = !eventsExpanded;
       const hiddenEvents = document.querySelectorAll('#eventsGrid .event-card[style*="display:none"]');
       const btn = document.getElementById('moreEventsBtn');
-      
       hiddenEvents.forEach(el => {
         el.style.display = eventsExpanded ? '' : 'none';
       });
-      
       btn.textContent = eventsExpanded ? 'Show Less Events ↑' : 'Show More Events ↓';
     };
 
@@ -3049,11 +3324,9 @@
       sermonsExpanded = !sermonsExpanded;
       const hiddenSermons = document.querySelectorAll('#sermonsGrid .sermon-card[style*="display:none"]');
       const btn = document.getElementById('moreSermonsBtn');
-      
       hiddenSermons.forEach(el => {
         el.style.display = sermonsExpanded ? '' : 'none';
       });
-      
       btn.textContent = sermonsExpanded ? 'Show Less Sermons ↑' : 'Show More Sermons ↓';
     };
 
@@ -3340,6 +3613,7 @@
     // ============================================
     updateThemeIcons();
     console.log('✅ Gospel Fellowship Church - Full Website with all features!');
+    console.log('🔐 Admin Access: Click logo 5 times | Username: admin | Password: admin123');
     console.log('📌 Keyboard Shortcuts: ESC to close modals, Ctrl+K to search');
     console.log('📌 PWA Ready - Installable on mobile devices');
   })();
