@@ -1922,10 +1922,163 @@
         font-size: 0.9rem;
       }
 
+      /* ============================================ */
+/* ===== MOBILE FIXES - About Section ===== */
+/* ============================================ */
+
+@media (max-width: 768px) {
+  /* Fix para sa About Section background sa mobile */
+  #aboutSection {
+    padding: 50px 0 30px !important;
+    background: #f5f5f5 !important;
+    min-height: 100vh;
+    width: 100%;
+  }
+  body.dark-mode #aboutSection {
+    background: #000000 !important;
+  }
+
+  /* Force white background sa lahat ng cards sa About */
+  .about-box,
+  .ministry-card,
+  .testimony-card,
+  .prayer-item,
+  .pastor-card,
+  .believe-card {
+    background: #ffffff !important;
+    border-color: #ddd !important;
+  }
+  body.dark-mode .about-box,
+  body.dark-mode .ministry-card,
+  body.dark-mode .testimony-card,
+  body.dark-mode .prayer-item,
+  body.dark-mode .pastor-card,
+  body.dark-mode .believe-card {
+    background: #1a1a1a !important;
+    border-color: #333 !important;
+  }
+
+  /* Fix para sa text colors */
+  .about-box h2,
+  .about-box p,
+  .ministry-card h3,
+  .ministry-card p,
+  .testimony-card .testimony-text,
+  .testimony-card .testimony-author,
+  .testimony-card .testimony-role,
+  .prayer-item .prayer-name,
+  .prayer-item .prayer-request,
+  .prayer-item .prayer-date,
+  .pastor-card h3,
+  .pastor-card .role,
+  .believe-card h3,
+  .believe-card p,
+  .believe-card i {
+    color: #000000 !important;
+  }
+  body.dark-mode .about-box h2,
+  body.dark-mode .about-box p,
+  body.dark-mode .ministry-card h3,
+  body.dark-mode .ministry-card p,
+  body.dark-mode .testimony-card .testimony-text,
+  body.dark-mode .testimony-card .testimony-author,
+  body.dark-mode .testimony-card .testimony-role,
+  body.dark-mode .prayer-item .prayer-name,
+  body.dark-mode .prayer-item .prayer-request,
+  body.dark-mode .prayer-item .prayer-date,
+  body.dark-mode .pastor-card h3,
+  body.dark-mode .pastor-card .role,
+  body.dark-mode .believe-card h3,
+  body.dark-mode .believe-card p,
+  body.dark-mode .believe-card i {
+    color: #ffffff !important;
+  }
+
+  /* Fix para sa about-box hr */
+  .about-box hr {
+    border-color: #000000 !important;
+  }
+  body.dark-mode .about-box hr {
+    border-color: #ffffff !important;
+  }
+
+  /* Fix para sa testimony card before */
+  .testimony-card::before {
+    color: rgba(0,0,0,0.05) !important;
+  }
+  body.dark-mode .testimony-card::before {
+    color: rgba(255,255,255,0.05) !important;
+  }
+
+  /* Fix para sa prayer item before */
+  .prayer-item::before {
+    opacity: 0.2 !important;
+  }
+
+  /* Fix para sa ministries section title at subtitle */
+  .ministries-section h2,
+  .testimonies-section h2,
+  .prayer-wall-section h2,
+  .pastors-section h2 {
+    color: #000000 !important;
+  }
+  body.dark-mode .ministries-section h2,
+  body.dark-mode .testimonies-section h2,
+  body.dark-mode .prayer-wall-section h2,
+  body.dark-mode .pastors-section h2 {
+    color: #ffffff !important;
+  }
+
+  .ministries-section .subtitle,
+  .testimonies-section .subtitle,
+  .prayer-wall-section .subtitle {
+    color: #000000 !important;
+  }
+  body.dark-mode .ministries-section .subtitle,
+  body.dark-mode .testimonies-section .subtitle,
+  body.dark-mode .prayer-wall-section .subtitle {
+    color: #ffffff !important;
+  }
+
+  /* Fix para sa pastor card links */
+  .pastor-card a {
+    color: #000000 !important;
+  }
+  body.dark-mode .pastor-card a {
+    color: #ffffff !important;
+  }
+
+  /* Fix para sa believe section inner */
+  .believe-section .believe-inner {
+    background: #000000 !important;
+  }
+  body.dark-mode .believe-section .believe-inner {
+    background: #ffffff !important;
+  }
+
+  .believe-title,
+  .believe-subtitle {
+    color: #ffffff !important;
+  }
+  body.dark-mode .believe-title,
+  body.dark-mode .believe-subtitle {
+    color: #000000 !important;
+  }
+
+  /* Fix para sa about boxes */
+  .about-box {
+    border: 1px solid #ddd !important;
+  }
+  body.dark-mode .about-box {
+    border-color: #333 !important;
+  }
+}
+
       .about-box { padding: 20px 15px; }
       .about-box h2 { font-size: 1.1rem; }
       .about-box p { font-size: 0.85rem; }
 
+      
       .believe-section .believe-inner { padding: 20px 15px; }
       .believe-title { font-size: 1.3rem; }
       .believe-subtitle { font-size: 0.85rem; }
