@@ -30,7 +30,175 @@
       overflow-x: hidden;
       touch-action: pan-y;
       position: relative;
+      background: #ffffff;
+      color: #000000;
+      transition: background 0.3s ease, color 0.3s ease;
     }
+
+    /* ===== DARK MODE ===== */
+    body.dark-mode {
+      background: #000000;
+      color: #ffffff;
+    }
+
+    /* ===== HEADER ===== */
+    body.dark-mode .header {
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+    }
+    body.dark-mode .header.scrolled {
+      background: rgba(0, 0, 0, 0.95);
+    }
+    body.dark-mode .logo-text { color: #ffffff; }
+    body.dark-mode .navbar ul li a { color: #ffffff; }
+    body.dark-mode .navbar ul li a:hover,
+    body.dark-mode .navbar ul li a.active { background: #ffffff; color: #000000; }
+    body.dark-mode .mobile-menu-toggle span { background: #ffffff; }
+    body.dark-mode .social-media a { color: #ffffff; }
+    body.dark-mode .social-media a:hover { color: #cccccc; }
+    body.dark-mode #darkModeToggle { color: #ffffff; }
+
+    body.dark-mode .background-text h1 { color: #ffffff; }
+    body.dark-mode .background-text h2 { color: #ffffff; }
+    body.dark-mode .background-text p { color: #ffffff; }
+    body.dark-mode .countdown-section { color: #ffffff; border-color: rgba(255,255,255,0.25); }
+    body.dark-mode .countdown-block .num { background: rgba(255,255,255,0.08); color: #ffffff; }
+    body.dark-mode .countdown-block .label { color: #ffffff; }
+
+    body.dark-mode .btn-container .btn { background: #ffffff; color: #000000; }
+    body.dark-mode .btn-container .btn:hover { background: #cccccc; }
+    body.dark-mode .btn-container .btn-give { background: #ffffff; color: #000000; border-color: #ffffff; }
+    body.dark-mode .btn-container .btn-give:hover { background: #cccccc; }
+
+    body.dark-mode .gs-card { background: #1a1a1a; border-color: #333; }
+    body.dark-mode .gs-card::before { background: #ffffff; }
+    body.dark-mode .gs-card .gs-number { background: #ffffff; color: #000000; }
+    body.dark-mode .gs-card h3 { color: #ffffff; }
+    body.dark-mode .gs-card p { color: #ffffff; }
+    body.dark-mode .gs-card i { color: #ffffff !important; }
+    body.dark-mode .gs-card .btn-events { background: #ffffff; color: #000000; }
+    body.dark-mode .gs-card .btn-events:hover { background: #cccccc; }
+    body.dark-mode .gs-card .btn-secondary { background: #ffffff; color: #000000; }
+    body.dark-mode .gs-card .btn-secondary:hover { background: #cccccc; }
+    body.dark-mode .gs-bottom-buttons { border-top-color: #333; }
+    body.dark-mode .gs-bottom-buttons .btn-live { background: #ffffff; color: #000000; }
+    body.dark-mode .gs-bottom-buttons .btn-live:hover { background: #cccccc; }
+    body.dark-mode .gs-bottom-buttons .btn-prayer { background: #ffffff; color: #000000; }
+    body.dark-mode .gs-bottom-buttons .btn-prayer:hover { background: #cccccc; }
+
+    body.dark-mode .modal-content { background: #1a1a1a; }
+    body.dark-mode .modal-content h2 { color: #ffffff; }
+    body.dark-mode .modal-content p { color: #ffffff; }
+    body.dark-mode .modal-close { color: #ffffff; }
+    body.dark-mode .modal-close:hover { color: #cccccc; }
+
+    body.dark-mode #aboutSection { background: #000000; }
+    body.dark-mode .about-box { background: #1a1a1a; border-color: #333; }
+    body.dark-mode .about-box::before { background: #ffffff; }
+    body.dark-mode .about-box h2 { color: #ffffff; }
+    body.dark-mode .about-box hr { border-color: #ffffff; }
+    body.dark-mode .about-box p { color: #ffffff; }
+
+    body.dark-mode .believe-section .believe-inner { background: #ffffff !important; }
+    body.dark-mode .believe-title { color: #000000 !important; }
+    body.dark-mode .believe-subtitle { color: #000000 !important; }
+    body.dark-mode .believe-card { background: #1a1a1a; border-color: #333; }
+    body.dark-mode .believe-card::before { background: #ffffff; }
+    body.dark-mode .believe-card i { color: #ffffff !important; }
+    body.dark-mode .believe-card h3 { color: #ffffff !important; }
+    body.dark-mode .believe-card p { color: #ffffff !important; }
+
+    body.dark-mode .pastors-section h2 { color: #ffffff; }
+    body.dark-mode .pastor-card { background: #1a1a1a; border-color: #333; }
+    body.dark-mode .pastor-card::before { background: #ffffff; }
+    body.dark-mode .pastor-card h3 { color: #ffffff; }
+    body.dark-mode .pastor-card .role { color: #ffffff; }
+    body.dark-mode .pastor-card a { color: #ffffff; }
+    body.dark-mode .pastor-card a:hover { color: #cccccc; }
+
+    body.dark-mode #eventsSection { background: #000000; }
+    body.dark-mode .events-main-title { color: #ffffff; }
+    body.dark-mode .events-main-subtitle { color: #ffffff; }
+    body.dark-mode .event-card { background: #1a1a1a; }
+    body.dark-mode .event-card::before { background: #ffffff; }
+    body.dark-mode .event-card-content h3 { color: #ffffff; }
+    body.dark-mode .event-card-content p { color: #ffffff; }
+    body.dark-mode .event-tag { background: #333; color: #ffffff; }
+
+    body.dark-mode .btn-events { background: #ffffff; color: #000000; }
+    body.dark-mode .btn-events:hover { background: #cccccc; }
+    body.dark-mode .btn-secondary { background: #ffffff; color: #000000; }
+    body.dark-mode .btn-secondary:hover { background: #cccccc; }
+    body.dark-mode .btn-attendees { background: #ffffff; color: #000000; }
+    body.dark-mode .btn-attendees:hover { background: #cccccc; }
+    body.dark-mode .btn-live { background: #ffffff; color: #000000; }
+    body.dark-mode .btn-live:hover { background: #cccccc; }
+    body.dark-mode .btn-prayer { background: #ffffff; color: #000000; }
+    body.dark-mode .btn-prayer:hover { background: #cccccc; }
+    body.dark-mode .btn-announcements { background: #ffffff; color: #000000; }
+    body.dark-mode .btn-announcements:hover { background: #cccccc; }
+
+    body.dark-mode #sermonsSection { background: #0a0a0a; }
+    body.dark-mode .sermon-card { background: #1a1a1a; }
+    body.dark-mode .sermon-card::before { background: #ffffff; }
+    body.dark-mode .sermon-card-content h3 { color: #ffffff; }
+    body.dark-mode .sermon-card-content p { color: #ffffff; }
+    body.dark-mode .sermon-verse { color: #ffffff; }
+    body.dark-mode .event-detail-btn { background: #ffffff; color: #000000; }
+    body.dark-mode .event-detail-btn:hover { background: #cccccc; }
+
+    body.dark-mode #contactSection { background: #000000; }
+    body.dark-mode #contactSection .events-container > div { background: #1a1a1a !important; border-color: #333 !important; }
+    body.dark-mode #contactSection .events-container > div > div:first-child { background: #ffffff; }
+    body.dark-mode #contactSection .events-container > div > div:first-child i { color: #000000 !important; }
+    body.dark-mode #contactSection .events-container > div > div:first-child h3 { color: #000000; }
+    body.dark-mode #contactSection .events-container > div > div:first-child p { color: #000000; }
+    body.dark-mode #contactSection .events-container > div > div:first-child + div i { color: #ffffff !important; }
+    body.dark-mode #contactSection .events-container > div > div:first-child + div h3 { color: #ffffff; }
+    body.dark-mode #contactSection .events-container > div > div:first-child + div p { color: #ffffff; }
+
+    body.dark-mode .front-content { background: #1a1a1a; }
+    body.dark-mode .front-content h2 { color: #ffffff; }
+    body.dark-mode .front-content p { color: #ffffff; }
+    body.dark-mode .close-btn { background: #333; color: #ffffff; }
+    body.dark-mode .close-btn:hover { background: #444; }
+    body.dark-mode .register-form input,
+    body.dark-mode .addlist-form input,
+    body.dark-mode .prayer-form input,
+    body.dark-mode .prayer-form textarea { background: #000000; color: #ffffff; border-color: #333; }
+    body.dark-mode .register-form input::placeholder,
+    body.dark-mode .addlist-form input::placeholder,
+    body.dark-mode .prayer-form input::placeholder,
+    body.dark-mode .prayer-form textarea::placeholder { color: #999; }
+
+    body.dark-mode .event-modal-content { background: #1a1a1a; }
+    body.dark-mode .event-modal-close { color: #ffffff; }
+    body.dark-mode .event-modal-close:hover { color: #cccccc; }
+    body.dark-mode .event-detail-header h2 { color: #ffffff; }
+    body.dark-mode .event-detail-header p { color: #ffffff; }
+    body.dark-mode .event-detail-description { color: #ffffff; }
+    body.dark-mode .event-detail-verse { background: #000000; border-left-color: #ffffff; }
+    body.dark-mode .event-detail-verse .verse-text { color: #ffffff; }
+    body.dark-mode .event-detail-verse .verse-ref { color: #ffffff; }
+    body.dark-mode .date-thumb { background: #000000; border-color: #333; }
+    body.dark-mode .date-thumb:hover { border-color: #ffffff; background: #2a2a2a; }
+    body.dark-mode .date-label { color: #ffffff; }
+    body.dark-mode .no-photos { color: #ffffff; }
+
+    body.dark-mode .login-form .form-content { background: #1a1a1a; }
+    body.dark-mode .login-form h2 { color: #ffffff; }
+    body.dark-mode .login-form input { background: #000000; color: #ffffff; border-color: #333; }
+    body.dark-mode .login-form input::placeholder { color: #999; }
+    body.dark-mode .login-form button[type="submit"] { background: #ffffff; color: #000000; }
+    body.dark-mode .login-form .social-btn.facebook { background: #333; color: #ffffff; }
+    body.dark-mode .login-form .social-btn.google { background: #444; color: #ffffff; }
+    body.dark-mode .login-form .forgot { color: #ffffff; }
+
+    body.dark-mode .site-footer { background: #0a0a0a; color: #ffffff; }
+    body.dark-mode .site-footer h3 { color: #ffffff; }
+    body.dark-mode .site-footer p { color: #ffffff; }
+    body.dark-mode .site-footer .social-icons a { color: #ffffff; }
+    body.dark-mode .footer-bottom { border-top-color: #333; }
 
     /* ===== HEADER - GLOBAL ===== */
     .header {
@@ -61,11 +229,12 @@
     .logo-text {
       font-size: 2rem;
       font-weight: 700;
-      color: #1a2a3a;
+      color: #000000;
       text-decoration: none;
       letter-spacing: -0.5px;
       margin-left: 8px;
       cursor: pointer;
+      transition: color 0.3s ease;
     }
     .navbar ul {
       display: flex;
@@ -79,15 +248,15 @@
       font-weight: 700;
       font-size: 1.05rem;
       cursor: pointer;
-      color: #1a2a3a;
+      color: #000000;
       transition: 0.3s;
       display: inline-block;
       text-decoration: none;
     }
     .navbar ul li a:hover,
     .navbar ul li a.active {
-      background: rgba(92, 201, 255, 0.85);
-      color: #030303;
+      background: #000000;
+      color: #ffffff;
     }
     #darkModeToggle {
       background: transparent;
@@ -96,6 +265,8 @@
       cursor: pointer;
       padding: 0 8px;
       line-height: 1;
+      color: #000000;
+      transition: color 0.3s ease;
     }
     .header-actions {
       display: flex;
@@ -105,12 +276,12 @@
     }
     .social-media a {
       font-size: 1.6rem;
-      color: #1a2a3a;
+      color: #000000;
       transition: 0.3s;
     }
-    .social-media a:hover { color: #3895D3; }
+    .social-media a:hover { color: #666; }
 
-    /* ===== MOBILE MENU TOGGLE (HAMBURGER) ===== */
+    /* ===== MOBILE MENU TOGGLE ===== */
     .mobile-menu-toggle {
       display: none;
       flex-direction: column;
@@ -134,7 +305,7 @@
       display: block;
       width: 28px;
       height: 3px;
-      background: #1a2a3a;
+      background: #000000;
       border-radius: 2px;
       transition: all 0.3s ease;
       transform-origin: center;
@@ -149,8 +320,10 @@
     .mobile-menu-toggle.active span:nth-child(3) {
       transform: rotate(-45deg) translate(5px, -5px);
     }
+    body.dark-mode .mobile-menu-toggle:hover { background: rgba(255,255,255,0.05); }
+    body.dark-mode .mobile-menu-toggle span { background: #ffffff; }
 
-    /* ===== LOGIN FORM (MODAL) ===== */
+    /* ===== LOGIN FORM ===== */
     .login-form {
       display: none;
       position: fixed;
@@ -178,7 +351,7 @@
       cursor: pointer;
       color: #888;
     }
-    .login-form h2 { margin-bottom: 20px; text-align: center; }
+    .login-form h2 { margin-bottom: 20px; text-align: center; color: #000000; }
     .login-form input {
       width: 100%;
       padding: 12px 15px;
@@ -186,12 +359,13 @@
       border: 1px solid #ddd;
       border-radius: 30px;
       font-size: 0.95rem;
+      color: #000000;
     }
     .login-form button[type="submit"] {
       width: 100%;
       padding: 12px;
-      background: rgba(255, 255, 255, 0.85);
-      color: #fff;
+      background: #000000;
+      color: #ffffff;
       border: none;
       border-radius: 30px;
       font-weight: 700;
@@ -216,9 +390,9 @@
       margin: 4px 0;
       cursor: pointer;
     }
-    .social-btn.facebook { background: #1877f2; color: #fff; }
-    .social-btn.google { background: #ea4335; color: #fff; }
-    .forgot { display: block; text-align: center; margin-top: 15px; color: #3895D3; text-decoration: none; }
+    .social-btn.facebook { background: #000000; color: #ffffff; }
+    .social-btn.google { background: #444; color: #ffffff; }
+    .forgot { display: block; text-align: center; margin-top: 15px; color: #000000; text-decoration: none; }
 
     /* ===== FULL WIDTH SECTIONS ===== */
     .section { width: 100%; padding: 80px 0; margin: 0; scroll-margin-top: 80px; min-height: 100vh; }
@@ -228,17 +402,45 @@
       padding: 0 20px;
     }
 
-    /* ===== HOME SECTION ===== */
+    /* ===== HOME SECTION WITH BACKGROUND IMAGE ===== */
     #homeSection {
-      background: linear-gradient(145deg, #dce8f5, #f0f5fc);
+      background-image: url('Gospel.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
       padding: 100px 0 0;
       width: 100%;
       display: flex;
       justify-content: center;
       position: relative;
-      min-height: 90vh;
+      min-height: 100vh;
+      transition: background 0.3s ease;
     }
-    .home-wrapper { position: relative; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    /* Dark overlay para readable ang text */
+    #homeSection::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+    #homeSection .home-wrapper {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    /* Kapag dark mode, mag-add ng darker overlay */
+    body.dark-mode #homeSection::before {
+      background: rgba(0, 0, 0, 0.7);
+    }
+
     .background-content-wrapper {
       display: flex;
       flex-wrap: wrap;
@@ -260,15 +462,30 @@
       margin-top: -40px;
       order: 1;
     }
-    .background-text h1 { font-size: 4rem; font-weight: 300; margin-bottom: 0; }
+    .background-text h1 { 
+      font-size: 4rem; 
+      font-weight: 300; 
+      margin-bottom: 0; 
+      color: #ffffff; 
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+      transition: color 0.3s ease; 
+    }
     .background-text h2 {
       font-size: 5rem;
       font-weight: 700;
-      color: #1a2a3a;
+      color: #ffffff;
       font-family: 'Times New Roman', Times, serif;
       margin-top: 0;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+      transition: color 0.3s ease;
     }
-    .background-text p { font-size: 2rem; color: #2c3e50; margin-top: 10px; }
+    .background-text p { 
+      font-size: 2rem; 
+      color: #ffffff; 
+      margin-top: 10px; 
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+      transition: color 0.3s ease; 
+    }
     .background-img {
       flex: 0 0 220px;
       display: flex;
@@ -283,22 +500,27 @@
       height: 270px;
       border-radius: 50%;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      border: 4px solid #fff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      border: 4px solid #ffffff;
       flex-shrink: 0;
     }
     .circle-logo img { width: 100%; height: 100%; object-fit: cover; }
-    .home-overlay { position: relative; margin-top: -280px; z-index: 2; padding: 0 10px; }
+    .home-overlay { 
+      position: relative; 
+      margin-top: -280px; 
+      z-index: 2; 
+      padding: 0 10px; 
+    }
     .home {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(2px);
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(4px);
       padding: 25px 20px;
       border-radius: 50px;
       text-align: center;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
       max-width: 450px;
       margin: 0 auto 20px;
-      border: 1px solid rgba(255,255,255,0.25);
+      border: 1px solid rgba(255,255,255,0.2);
     }
     .btn-container {
       display: flex;
@@ -318,32 +540,35 @@
       text-decoration: none;
       display: inline-block;
     }
-    .btn-container .btn { background: #3895D3; color: #fff; }
-    .btn-container .btn:hover { background: #1f7bb5; transform: scale(1.02); }
-    .btn-container .btn-give { background: #f5c842; color: #1a2a3a; border: 2px solid #f5c842; }
-    .btn-container .btn-give:hover { background: #e0b330; }
+    .btn-container .btn { background: #ffffff; color: #000000; }
+    .btn-container .btn:hover { background: #cccccc; transform: scale(1.02); }
+    .btn-container .btn-give { background: #ffffff; color: #000000; border: 2px solid #ffffff; }
+    .btn-container .btn-give:hover { background: #cccccc; }
     .countdown-section {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(2px);
-      color: #000000;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(4px);
+      color: #ffffff;
       padding: 25px 20px;
       border-radius: 40px;
       text-align: center;
       max-width: 650px;
       margin: 0 auto;
-      border: 1px solid rgba(255,255,255,0.25);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      transition: color 0.3s ease;
     }
     .countdown-section h3 { font-weight: 300; letter-spacing: 1px; margin-bottom: 15px; font-size: 1.1rem; }
     .countdown-timer { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
     .countdown-block .num {
       font-size: 2.2rem;
       font-weight: 700;
-      background: rgba(3, 3, 3, 0.08);
+      background: rgba(255, 255, 255, 0.15);
       padding: 8px 14px;
       border-radius: 16px;
       display: inline-block;
       min-width: 55px;
+      color: #ffffff;
+      transition: background 0.3s ease, color 0.3s ease;
     }
     .countdown-block .label {
       display: block;
@@ -351,17 +576,18 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       margin-top: 4px;
-      color: #000000;
+      color: #ffffff;
+      transition: color 0.3s ease;
     }
 
-    /* ===== GET STARTED MODAL ===== */
+    /* ===== GET STARTED ===== */
     #getStartedSection { background: transparent; padding: 0; min-height: auto; }
     .events-container { max-width: 1200px; margin: 0 auto; }
-    .events-main-title { font-size: 2.5rem; text-align: center; margin-bottom: 10px; }
-    .events-main-subtitle { text-align: center; color: #555; max-width: 700px; margin: 0 auto 30px; font-size: 1.05rem; }
+    .events-main-title { font-size: 2.5rem; text-align: center; margin-bottom: 10px; color: #000000; transition: color 0.3s ease; }
+    .events-main-subtitle { text-align: center; color: #000000; max-width: 700px; margin: 0 auto 30px; font-size: 1.05rem; transition: color 0.3s ease; }
     .gs-cards { display: flex; gap: 25px; justify-content: center; flex-wrap: wrap; margin: 30px 0 20px; }
     .gs-card {
-      background: rgba(255,255,255,0.85);
+      background: #ffffff;
       padding: 30px 25px;
       border-radius: 15px;
       max-width: 280px;
@@ -369,11 +595,28 @@
       text-align: center;
       box-shadow: 0 4px 15px rgba(0,0,0,0.05);
       flex: 1 1 200px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #ddd;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+    .gs-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      background: #000000;
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+      z-index: 0;
+      transition: background 0.3s ease;
     }
     .gs-card .gs-number {
       width: 40px;
       height: 40px;
-      color: #fff;
+      background: #000000;
+      color: #ffffff;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -381,9 +624,13 @@
       margin: 0 auto 12px;
       font-weight: 700;
       font-size: 1.1rem;
+      position: relative;
+      z-index: 1;
+      transition: background 0.3s ease, color 0.3s ease;
     }
-    .gs-card h3 { margin: 15px 0 10px; font-size: 1.2rem; color: #1a2a3a; }
-    .gs-card p { color: #555; font-size: 14px; margin-bottom: 15px; }
+    .gs-card h3 { margin: 15px 0 10px; font-size: 1.2rem; color: #000000; position: relative; z-index: 1; transition: color 0.3s ease; }
+    .gs-card p { color: #000000; font-size: 14px; margin-bottom: 15px; position: relative; z-index: 1; transition: color 0.3s ease; }
+    .gs-card i { position: relative; z-index: 1; transition: color 0.3s ease; }
     .gs-card .btn-events, .gs-card .btn-secondary {
       display: inline-block;
       text-decoration: none;
@@ -394,11 +641,13 @@
       cursor: pointer;
       transition: 0.3s;
       font-size: 0.9rem;
+      position: relative;
+      z-index: 1;
     }
-    .gs-card .btn-events { background: #3895D3; color: #fff; }
-    .gs-card .btn-events:hover { background: #1f7bb5; }
-    .gs-card .btn-secondary { background: #28a745; color: #fff; }
-    .gs-card .btn-secondary:hover { background: #1e7e34; }
+    .gs-card .btn-events { background: #000000; color: #ffffff; }
+    .gs-card .btn-events:hover { background: #333; }
+    .gs-card .btn-secondary { background: #444; color: #ffffff; }
+    .gs-card .btn-secondary:hover { background: #555; }
     .gs-bottom-buttons {
       display: flex;
       gap: 15px;
@@ -407,6 +656,7 @@
       margin-top: 20px;
       padding-top: 20px;
       border-top: 1px solid #eee;
+      transition: border-color 0.3s ease;
     }
     .gs-bottom-buttons .btn-live, .gs-bottom-buttons .btn-prayer {
       padding: 12px 30px;
@@ -417,12 +667,12 @@
       transition: 0.3s;
       font-size: 0.95rem;
     }
-    .gs-bottom-buttons .btn-live { background: #e63946; color: #fff; }
-    .gs-bottom-buttons .btn-live:hover { background: #c62833; }
-    .gs-bottom-buttons .btn-prayer { background: #6c63ff; color: #fff; }
-    .gs-bottom-buttons .btn-prayer:hover { background: #5a52d5; }
+    .gs-bottom-buttons .btn-live { background: #000000; color: #ffffff; }
+    .gs-bottom-buttons .btn-live:hover { background: #333; }
+    .gs-bottom-buttons .btn-prayer { background: #444; color: #ffffff; }
+    .gs-bottom-buttons .btn-prayer:hover { background: #555; }
 
-    /* ===== MODAL STYLES ===== */
+    /* ===== MODAL ===== */
     .modal {
       display: none;
       position: fixed;
@@ -446,7 +696,10 @@
       border-radius: 20px;
       position: relative;
       animation: modalFadeIn 0.3s ease;
+      transition: background 0.3s ease;
     }
+    .modal-content h2 { color: #000000; transition: color 0.3s ease; }
+    .modal-content p { color: #000000; transition: color 0.3s ease; }
     .modal-close {
       position: absolute;
       top: 15px;
@@ -471,18 +724,18 @@
       transition: 0.3s;
       font-size: 0.95rem;
     }
-    .btn-events { background: #3895D3; color: #fff; }
-    .btn-events:hover { background: #1f7bb5; }
-    .btn-secondary { background: #28a745; color: #fff; }
-    .btn-secondary:hover { background: #1e7e34; }
-    .btn-attendees { background: #6c757d; color: #fff; }
-    .btn-attendees:hover { background: #5a6268; }
-    .btn-live { background: #e63946; color: #fff; }
-    .btn-live:hover { background: #c62833; }
-    .btn-prayer { background: #6c63ff; color: #fff; }
-    .btn-prayer:hover { background: #5a52d5; }
-    .btn-announcements { background: #dc3545; color: #fff; }
-    .btn-announcements:hover { background: #bd2130; }
+    .btn-events { background: #000000; color: #ffffff; }
+    .btn-events:hover { background: #333; }
+    .btn-secondary { background: #444; color: #ffffff; }
+    .btn-secondary:hover { background: #555; }
+    .btn-attendees { background: #666; color: #ffffff; }
+    .btn-attendees:hover { background: #777; }
+    .btn-live { background: #000000; color: #ffffff; }
+    .btn-live:hover { background: #333; }
+    .btn-prayer { background: #444; color: #ffffff; }
+    .btn-prayer:hover { background: #555; }
+    .btn-announcements { background: #000000; color: #ffffff; }
+    .btn-announcements:hover { background: #333; }
     .btn-group {
       display: flex;
       flex-wrap: wrap;
@@ -501,11 +754,26 @@
       overflow: hidden;
       box-shadow: 0 6px 20px rgba(0,0,0,0.05);
       cursor: pointer;
-      transition: 0.3s;
+      transition: 0.3s, background 0.3s ease;
+      position: relative;
+    }
+    .event-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      background: #000000;
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+      z-index: 1;
+      transition: background 0.3s ease;
     }
     .event-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
     .event-card img { width: 100%; height: 160px; object-fit: cover; }
-    .event-card-content { padding: 18px; }
+    .event-card-content { padding: 18px; position: relative; z-index: 0; }
+    .event-card-content h3 { color: #000000; transition: color 0.3s ease; }
+    .event-card-content p { color: #000000; transition: color 0.3s ease; }
     .event-tag {
       display: inline-block;
       background: #eef2f7;
@@ -513,14 +781,17 @@
       border-radius: 30px;
       font-size: 0.75rem;
       font-weight: 600;
+      color: #000000;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
-    /* ===== ABOUT SECTION ===== */
+    /* ===== ABOUT ===== */
     #aboutSection {
-      background: #f0f4f8;
-      color: #1a2a3a;
+      background: #f5f5f5;
+      color: #000000;
       margin: 0 auto;
       padding: 80px 0;
+      transition: background 0.3s ease, color 0.3s ease;
     }
     .about-section {
       display: flex;
@@ -532,32 +803,47 @@
       padding: 0 20px;
     }
     .about-box {
-      background: rgba(255, 255, 255, 0.95);
+      background: #ffffff;
       padding: 35px 30px;
       border-radius: 24px;
       flex: 1 1 220px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.06);
       backdrop-filter: blur(4px);
-      border: 1px solid rgba(0,0,0,0.06);
-      color: #1a2a3a;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #ddd;
+      color: #000000;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      background: #000000;
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+      z-index: 0;
+      transition: background 0.3s ease;
     }
     .about-box:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.10); }
-    .about-box h2 { color: #1a2a3a; font-size: 1.6rem; font-weight: 700; }
-    .about-box hr { margin: 12px 0; border: 2px solid #3895D3; width: 40px; }
-    .about-box p { color: #444; line-height: 1.6; font-size: 1rem; }
+    .about-box h2 { color: #000000; font-size: 1.6rem; font-weight: 700; position: relative; z-index: 1; transition: color 0.3s ease; }
+    .about-box hr { margin: 12px 0; border: 2px solid #000000; width: 40px; position: relative; z-index: 1; transition: border-color 0.3s ease; }
+    .about-box p { color: #000000; line-height: 1.6; font-size: 1rem; position: relative; z-index: 1; transition: color 0.3s ease; }
 
     /* ===== WHAT WE BELIEVE ===== */
     .believe-section { margin: 60px auto; max-width: 1200px; padding: 0 20px; }
     .believe-section .believe-inner {
-      background: #8dcfff !important;
+      background: #000000 !important;
       border-radius: 30px;
       padding: 50px 40px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.15);
       border: none;
+      transition: background 0.3s ease !important;
     }
-    .believe-title { text-align: center; font-size: 2rem; color: #000000 !important; margin-bottom: 10px; font-weight: 700; }
-    .believe-subtitle { text-align: center; color: rgba(3, 3, 3, 0.9) !important; margin-bottom: 40px; font-size: 1rem; }
+    .believe-title { text-align: center; font-size: 2rem; color: #ffffff !important; margin-bottom: 10px; font-weight: 700; transition: color 0.3s ease !important; }
+    .believe-subtitle { text-align: center; color: #ffffff !important; margin-bottom: 40px; font-size: 1rem; transition: color 0.3s ease !important; }
     .believe-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 25px; }
     .believe-card {
       background: #fff;
@@ -565,26 +851,54 @@
       border-radius: 22px;
       padding: 30px 25px;
       text-align: center;
-      transition: .35s ease;
+      transition: .35s ease, background 0.3s ease, border-color 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .believe-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      background: #000000;
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+      z-index: 0;
+      transition: background 0.3s ease;
     }
     .believe-card:hover { transform: translateY(-8px); background: #fff; }
-    .believe-card i { font-size: 60px; color: #000000 !important; margin-bottom: 15px; }
-    .believe-card h3 { color: #000000 !important; margin-bottom: 15px; font-size: 1.3rem; font-weight: 700; }
-    .believe-card p { color: rgba(0, 0, 0, 0.9) !important; line-height: 1.8; font-size: .95rem; }
+    .believe-card i { font-size: 60px; color: #000000 !important; margin-bottom: 15px; position: relative; z-index: 1; transition: color 0.3s ease !important; }
+    .believe-card h3 { color: #000000 !important; margin-bottom: 15px; font-size: 1.3rem; font-weight: 700; position: relative; z-index: 1; transition: color 0.3s ease !important; }
+    .believe-card p { color: #000000 !important; line-height: 1.8; font-size: .95rem; position: relative; z-index: 1; transition: color 0.3s ease !important; }
 
-    /* ===== PASTORS SECTION ===== */
+    /* ===== PASTORS ===== */
     .pastors-section { margin: 60px auto; max-width: 1200px; padding: 0 20px; }
-    .pastors-section h2 { color: #1a2a3a; text-align: center; font-size: 2.2rem; margin-bottom: 40px; font-weight: 700; }
+    .pastors-section h2 { color: #000000; text-align: center; font-size: 2.2rem; margin-bottom: 40px; font-weight: 700; transition: color 0.3s ease; }
     .pastors-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
     .pastor-card {
-      background: rgba(255, 255, 255, 0.95);
+      background: #ffffff;
       backdrop-filter: blur(4px);
-      border: 1px solid rgba(0,0,0,0.06);
+      border: 1px solid #ddd;
       border-radius: 24px;
       padding: 30px 20px;
       text-align: center;
-      transition: 0.3s ease;
+      transition: 0.3s ease, background 0.3s ease, border-color 0.3s ease;
       box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      position: relative;
+      overflow: hidden;
+    }
+    .pastor-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      background: #000000;
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+      z-index: 0;
+      transition: background 0.3s ease;
     }
     .pastor-card:hover { transform: translateY(-8px); box-shadow: 0 12px 35px rgba(0,0,0,0.12); }
     .pastor-card img {
@@ -593,39 +907,63 @@
       object-fit: cover;
       border-radius: 50%;
       margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
     }
-    .pastor-card h3 { color: #1a2a3a; font-size: 1.25rem; margin-bottom: 8px; font-weight: 700; }
-    .pastor-card .role { color: #666; font-size: 1rem; margin-bottom: 15px; }
-    .pastor-card a { color: #3895D3; font-size: 2rem; transition: .3s; }
-    .pastor-card a:hover { color: #1a2a3a; }
+    .pastor-card h3 { color: #000000; font-size: 1.25rem; margin-bottom: 8px; font-weight: 700; position: relative; z-index: 1; transition: color 0.3s ease; }
+    .pastor-card .role { color: #000000; font-size: 1rem; margin-bottom: 15px; position: relative; z-index: 1; transition: color 0.3s ease; }
+    .pastor-card a { color: #000000; font-size: 2rem; transition: .3s; position: relative; z-index: 1; }
+    .pastor-card a:hover { color: #555; }
 
     /* ===== EVENTS ===== */
-    #eventsSection { background: linear-gradient(145deg, #dce8f5, #f0f5fc); margin: 0 auto; }
+    #eventsSection { background: #f5f5f5; margin: 0 auto; transition: background 0.3s ease; }
     #eventsSection .events-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
     /* ===== SERMONS ===== */
-    #sermonsSection { background: #c6e2ff; margin: 0 auto; }
+    #sermonsSection { background: #e8e8e8; margin: 0 auto; transition: background 0.3s ease; }
     #sermonsSection .events-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
     .sermons-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin: 30px 0; }
-    .sermon-card { background: #fff; border-radius: 24px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    .sermon-card { 
+      background: #fff; 
+      border-radius: 24px; 
+      overflow: hidden; 
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      position: relative;
+      transition: background 0.3s ease;
+    }
+    .sermon-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      background: #000000;
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+      z-index: 1;
+      transition: background 0.3s ease;
+    }
     .sermon-card img { width: 100%; height: 170px; object-fit: cover; }
-    .sermon-card-content { padding: 20px; }
-    .sermon-verse { font-style: italic; color: #555; margin: 10px 0; }
+    .sermon-card-content { padding: 20px; position: relative; z-index: 0; }
+    .sermon-card-content h3 { color: #000000; transition: color 0.3s ease; }
+    .sermon-card-content p { color: #000000; transition: color 0.3s ease; }
+    .sermon-verse { font-style: italic; color: #000000; margin: 10px 0; transition: color 0.3s ease; }
 
     /* ===== CONTACT ===== */
-    #contactSection { background: linear-gradient(145deg, #dce8f5, #f0f5fc); margin: 0 auto; }
+    #contactSection { background: #f5f5f5; margin: 0 auto; transition: background 0.3s ease; }
     #contactSection .events-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
     .map-embed-wrapper iframe { width: 100%; height: 220px; border: 0; border-radius: 16px; }
 
     /* ===== FOOTER ===== */
-    .site-footer { background: #1a2a3a; color: #ccc; padding: 40px 20px 20px; margin-top: 0; }
+    .site-footer { background: #000000; color: #ffffff; padding: 40px 20px 20px; margin-top: 0; transition: background 0.3s ease, color 0.3s ease; }
     .footer-container { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; padding: 0 20px; }
     .footer-column { display: flex; flex-wrap: wrap; gap: 40px; }
-    .footer-column h3 { color: #fff; font-weight: 600; margin-bottom: 12px; }
-    .social-icons a { color: #ccc; font-size: 1.6rem; margin-right: 12px; }
-    .footer-bottom { border-top: 1px solid #2a3a4a; padding-top: 20px; text-align: center; margin-top: 30px; }
+    .footer-column h3 { color: #ffffff; font-weight: 600; margin-bottom: 12px; }
+    .footer-column p { color: #ffffff; }
+    .social-icons a { color: #ffffff; font-size: 1.6rem; margin-right: 12px; }
+    .footer-bottom { border-top: 1px solid #333; padding-top: 20px; text-align: center; margin-top: 30px; color: #ffffff; }
 
-    /* ===== MODALS (FRONT) ===== */
+    /* ===== FRONT MODALS ===== */
     .front-page {
       display: none;
       position: fixed;
@@ -643,8 +981,11 @@
       max-width: 500px;
       width: 92%;
       position: relative;
+      transition: background 0.3s ease;
     }
-    .close-btn { background: #eee; border: none; padding: 10px 25px; border-radius: 40px; font-weight: 600; margin-top: 20px; cursor: pointer; }
+    .front-content h2 { color: #000000; transition: color 0.3s ease; }
+    .front-content p { color: #000000; transition: color 0.3s ease; }
+    .close-btn { background: #eee; border: none; padding: 10px 25px; border-radius: 40px; font-weight: 600; margin-top: 20px; cursor: pointer; transition: background 0.3s ease, color 0.3s ease; }
     .close-btn:hover { background: #ddd; }
     .register-form input, .addlist-form input, .prayer-form input, .prayer-form textarea {
       width: 100%;
@@ -677,6 +1018,7 @@
       padding: 40px;
       position: relative;
       animation: fadeIn 0.3s ease;
+      transition: background 0.3s ease;
     }
     .event-modal-content { scrollbar-width: none; -ms-overflow-style: none; }
     .event-modal-content::-webkit-scrollbar { display: none; }
@@ -693,23 +1035,24 @@
     }
     .event-modal-close:hover { color: #333; }
     .event-detail-header { text-align: center; margin-bottom: 25px; }
-    .event-detail-header h2 { font-size: 2rem; color: #1a2a3a; }
-    .event-detail-header p { color: #555; margin: 5px 0; }
-    .event-detail-header .event-location-detail { color: #777; margin: 5px 0; }
-    .event-detail-description { color: #555; line-height: 1.7; margin: 15px 0; }
+    .event-detail-header h2 { font-size: 2rem; color: #000000; transition: color 0.3s ease; }
+    .event-detail-header p { color: #000000; margin: 5px 0; transition: color 0.3s ease; }
+    .event-detail-header .event-location-detail { color: #000000; margin: 5px 0; transition: color 0.3s ease; }
+    .event-detail-description { color: #000000; line-height: 1.7; margin: 15px 0; transition: color 0.3s ease; }
     .event-detail-verse {
-      background: #f5f0e8;
+      background: #f0f0f0;
       padding: 25px;
       border-radius: 10px;
-      border-left: 5px solid #f5c842;
+      border-left: 5px solid #000000;
       margin-top: 20px;
+      transition: background 0.3s ease, border-color 0.3s ease;
     }
-    .event-detail-verse .verse-text { font-size: 1.2rem; font-style: italic; color: #1a2a3a; line-height: 1.8; }
-    .event-detail-verse .verse-ref { display: block; text-align: right; font-weight: 600; color: #555; margin-top: 10px; }
+    .event-detail-verse .verse-text { font-size: 1.2rem; font-style: italic; color: #000000; line-height: 1.8; transition: color 0.3s ease; }
+    .event-detail-verse .verse-ref { display: block; text-align: right; font-weight: 600; color: #000000; margin-top: 10px; transition: color 0.3s ease; }
     .event-detail-btn {
       display: inline-block;
-      background: #3895D3;
-      color: white;
+      background: #000000;
+      color: #ffffff;
       padding: 10px 30px;
       border-radius: 25px;
       text-decoration: none;
@@ -719,7 +1062,7 @@
       border: none;
       cursor: pointer;
     }
-    .event-detail-btn:hover { background: #2c7bbf; transform: scale(1.02); }
+    .event-detail-btn:hover { background: #333; transform: scale(1.02); }
     .date-gallery {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
@@ -732,15 +1075,15 @@
       align-items: center;
       cursor: pointer;
       gap: 6px;
-      transition: transform 0.3s, border-color 0.3s;
+      transition: transform 0.3s, border-color 0.3s, background 0.3s ease;
       padding: 8px;
       border-radius: 12px;
       background: #f8f9fa;
       border: 2px solid transparent;
     }
-    .date-thumb:hover { transform: scale(1.05); border-color: #3895D3; background: #eef4fa; }
+    .date-thumb:hover { transform: scale(1.05); border-color: #000000; background: #eef0f0; }
     .date-thumb img { width: 100%; height: 100px; object-fit: cover; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    .date-label { font-weight: 700; font-size: 0.85rem; color: #1a2a3a; margin-top: 4px; }
+    .date-label { font-weight: 700; font-size: 0.85rem; color: #000000; margin-top: 4px; transition: color 0.3s ease; }
     .activity-gallery {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -750,7 +1093,7 @@
     .activity-gallery .gallery-item { border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: transform 0.3s; aspect-ratio: 4/3; }
     .activity-gallery .gallery-item:hover { transform: scale(1.03); }
     .activity-gallery .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
-    .activity-gallery .no-photos { color: #777; text-align: center; padding: 30px; grid-column: 1 / -1; font-size: 1.1rem; }
+    .activity-gallery .no-photos { color: #777; text-align: center; padding: 30px; grid-column: 1 / -1; font-size: 1.1rem; transition: color 0.3s ease; }
     #backToDatesContainer { text-align: center; margin-top: 15px; }
 
     /* ===== BACK TO TOP ===== */
@@ -760,8 +1103,8 @@
       right: 30px;
       width: 50px;
       height: 50px;
-      background: #3895D3;
-      color: #fff;
+      background: #000000;
+      color: #ffffff;
       border: none;
       border-radius: 50%;
       font-size: 24px;
@@ -771,7 +1114,7 @@
       z-index: 999;
       transition: all 0.3s;
     }
-    #backToTop:hover { transform: scale(1.1); background: #1f7bb5; }
+    #backToTop:hover { transform: scale(1.1); background: #333; }
     @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
 
     /* ============================================ */
@@ -788,7 +1131,6 @@
     }
 
     @media (max-width: 768px) {
-      /* ===== HEADER - MOBILE (Logo + Text + Menu sa iisang line) ===== */
       .header {
         display: flex;
         flex-direction: row;
@@ -813,7 +1155,6 @@
         transition: all 0.3s ease;
         flex-wrap: nowrap;
       }
-
       .header.scrolled {
         background: rgba(255, 255, 255, 0.85);
         backdrop-filter: blur(16px);
@@ -821,8 +1162,6 @@
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
         border: 1px solid rgba(255, 255, 255, 0.3);
       }
-
-      /* Logo maliit */
       .logo-img {
         height: 32px;
         width: 32px;
@@ -831,8 +1170,6 @@
         object-fit: cover;
         margin-right: 0;
       }
-
-      /* Text - katabi ng logo */
       .logo-text {
         font-size: 0.8rem;
         font-weight: 700;
@@ -848,11 +1185,8 @@
         text-overflow: ellipsis;
         margin-left: 0;
       }
-      .logo-text small {
-        display: none;
-      }
+      .logo-text small { display: none; }
 
-      /* MOBILE MENU BUTTON - nasa kanan, katabi ng text */
       .mobile-menu-toggle {
         display: flex !important;
         flex-direction: column;
@@ -888,18 +1222,10 @@
         transform: rotate(-45deg) translate(4px, -4px);
       }
 
-      /* HIDE desktop elements sa mobile */
-      .header-actions {
-        display: none !important;
-      }
-      .social-media {
-        display: none !important;
-      }
-      #darkModeToggle {
-        display: none !important;
-      }
+      .header-actions { display: none !important; }
+      .social-media { display: none !important; }
+      #darkModeToggle { display: none !important; }
 
-      /* NAVBAR - dropdown sa baba */
       .navbar {
         display: none;
         position: absolute;
@@ -910,6 +1236,7 @@
         padding: 15px 20px 25px;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
         border-radius: 0 0 20px 20px;
+        transition: background 0.3s ease;
       }
       .navbar.open {
         display: block;
@@ -928,9 +1255,7 @@
         padding: 0;
         margin: 0;
       }
-      .navbar ul li {
-        width: 100%;
-      }
+      .navbar ul li { width: 100%; }
       .navbar ul li a {
         display: block;
         padding: 12px 18px;
@@ -943,39 +1268,52 @@
         color: #010101;
         text-decoration: none;
         letter-spacing: 0.5px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(0,0,0,0.05);
       }
       .navbar ul li a:hover,
       .navbar ul li a.active {
-        background: rgba(201, 168, 76, 0.15);
-        color: #c9a84c;
+        background: rgba(0,0,0,0.08);
+        color: #1a1a1a;
         padding-left: 24px;
-        border-bottom-color: #c9a84c;
+        border-bottom-color: #1a1a1a;
+      }
+      body.dark-mode .navbar { background: #2a2a2a; }
+      body.dark-mode .navbar ul li a { color: #f5f5f5; border-bottom-color: rgba(255,255,255,0.05); }
+      body.dark-mode .navbar ul li a:hover,
+      body.dark-mode .navbar ul li a.active { background: rgba(255,255,255,0.08); color: #f5f5f5; border-bottom-color: #f5f5f5; }
+
+      /* ===== HOME SECTION MOBILE ===== */
+      #homeSection {
+        padding-top: 80px;
+        background-attachment: scroll; /* Mas maganda sa mobile */
+        min-height: 100vh;
+      }
+      #homeSection::before {
+        background: rgba(0, 0, 0, 0.6);
+      }
+      body.dark-mode #homeSection::before {
+        background: rgba(0, 0, 0, 0.8);
       }
 
-      /* ===== HOME ===== */
-      #homeSection { padding-top: 80px; }
       .background-content-wrapper { flex-direction: column; text-align: center; padding: 30px 20px; }
       .background-text { text-align: center; padding-left: 0; margin-top: 0; order: 2; }
       .background-text h1 { font-size: 2.5rem; }
       .background-text h2 { font-size: 2.8rem; }
       .background-text p { font-size: 1.2rem; }
-      .circle-logo { width: 120px; height: 120px; }
+      .circle-logo { width: 120px; height: 120px; border: 3px solid #ffffff; }
       .background-img { order: 1; margin-top: 0; margin-right: 0; flex: 0 0 120px; }
       .home-overlay { margin-top: -30px; }
-      .home { padding: 15px 12px; border-radius: 25px; }
+      .home { padding: 15px 12px; border-radius: 25px; background: rgba(0,0,0,0.5); }
       .btn-container .btn, .btn-container .btn-give { padding: 10px 20px; font-size: 0.85rem; }
-      .countdown-section { padding: 15px 12px; border-radius: 25px; }
+      .countdown-section { padding: 15px 12px; border-radius: 25px; background: rgba(0,0,0,0.5); }
       .countdown-block .num { font-size: 1.2rem; min-width: 32px; padding: 4px 8px; }
       .countdown-block .label { font-size: 0.5rem; }
       .countdown-timer { gap: 6px; }
 
-      /* ===== ABOUT ===== */
       .about-box { padding: 20px 15px; }
       .about-box h2 { font-size: 1.1rem; }
       .about-box p { font-size: 0.85rem; }
 
-      /* ===== BELIEVE ===== */
       .believe-section .believe-inner { padding: 20px 15px; }
       .believe-title { font-size: 1.3rem; }
       .believe-subtitle { font-size: 0.85rem; }
@@ -984,7 +1322,6 @@
       .believe-card h3 { font-size: 1rem; }
       .believe-card p { font-size: 0.85rem; }
 
-      /* ===== PASTORS ===== */
       .pastors-section h2 { font-size: 1.4rem; }
       .pastors-container { grid-template-columns: 1fr; gap: 12px; }
       .pastor-card { padding: 15px 12px; }
@@ -992,7 +1329,6 @@
       .pastor-card h3 { font-size: 0.95rem; }
       .pastor-card .role { font-size: 0.8rem; }
 
-      /* ===== EVENTS ===== */
       .events-main-title { font-size: 1.3rem; }
       .events-main-subtitle { font-size: 0.85rem; }
       .events-grid { grid-template-columns: 1fr; gap: 12px; }
@@ -1000,16 +1336,13 @@
       .btn-group { flex-direction: column; align-items: center; }
       .btn-group button { width: 100%; max-width: 250px; }
 
-      /* ===== SERMONS ===== */
       .sermons-grid { grid-template-columns: 1fr; gap: 15px; }
 
-      /* ===== GET STARTED MODAL ===== */
       .gs-card { padding: 15px 12px; }
       .gs-bottom-buttons { flex-direction: column; align-items: center; }
       .gs-bottom-buttons .btn-live,
       .gs-bottom-buttons .btn-prayer { width: 100%; max-width: 250px; }
 
-      /* ===== MODALS ===== */
       .modal-content { padding: 20px 12px; margin: 15px auto; }
       .event-modal-content { padding: 20px 15px; }
       .event-detail-header h2 { font-size: 1.2rem; }
@@ -1024,18 +1357,15 @@
 
 <!-- ===== HEADER ===== -->
 <header class="header" id="mainHeader" role="banner">
-  <!-- LEFT: Logo + Text -->
   <img src="Gospel.jpg" alt="Gospel Fellowship Church Logo" class="logo-img">
   <a href="#homeSection" class="logo-text" aria-label="Gospel Fellowship Church Home">Gospel Fellowship Church</a>
 
-  <!-- MOBILE MENU BUTTON (KANAN - katabi ng text) -->
   <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
     <span></span>
     <span></span>
     <span></span>
   </button>
 
-  <!-- NAVBAR (desktop at mobile dropdown) -->
   <nav class="navbar" role="navigation" aria-label="Main Navigation">
     <ul>
       <li><a href="#homeSection" class="active">Home</a></li>
@@ -1046,7 +1376,6 @@
     </ul>
   </nav>
 
-  <!-- HEADER ACTIONS (desktop only) -->
   <div class="header-actions">
     <div class="social-media">
       <a href="https://www.facebook.com/profile.php?id=61590579395623" target="_blank" aria-label="Follow us on Facebook"><i class='bx bxl-facebook'></i></a>
@@ -1077,7 +1406,7 @@
 <!-- ===== MAIN ===== -->
 <main>
 
-  <!-- ===== HOME SECTION ===== -->
+  <!-- ===== HOME SECTION WITH BACKGROUND IMAGE ===== -->
   <section id="homeSection" class="section" aria-label="Home">
     <div class="home-wrapper">
       <div class="background-content-wrapper">
@@ -1128,22 +1457,22 @@
           <p class="events-main-subtitle">Hindi ka nag-iisa. Eto ang tatlong simpleng hakbang para makapagsimula ang iyong journey sa Gospel Fellowship Church.</p>
           <div class="gs-cards">
             <div class="gs-card">
-              <div class="gs-number" style="background:#3895D3;">1</div>
-              <i class='bx bx-church' style="font-size:40px;color:#3895D3;"></i>
+              <div class="gs-number">1</div>
+              <i class='bx bx-church' style="font-size:40px;color:#000000;"></i>
               <h3>Visit Us</h3>
               <p>Sumama sa amin every Sunday, 8:30 AM.</p>
               <a href="#eventsSection" class="btn-events" onclick="closeGetStarted()">See Schedule</a>
             </div>
             <div class="gs-card">
-              <div class="gs-number" style="background:#28a745;">2</div>
-              <i class='bx bx-user-plus' style="font-size:40px;color:#28a745;"></i>
+              <div class="gs-number">2</div>
+              <i class='bx bx-user-plus' style="font-size:40px;color:#000000;"></i>
               <h3>Connect With Us</h3>
               <p>Mag-register para makilala ka namin.</p>
               <button id="gsRegisterBtn" class="btn-secondary" onclick="closeGetStarted()">Register Now</button>
             </div>
             <div class="gs-card">
-              <div class="gs-number" style="background:#f5c842;color:#1a2a3a;">3</div>
-              <i class='bx bx-book-open' style="font-size:40px;color:#f5c842;"></i>
+              <div class="gs-number">3</div>
+              <i class='bx bx-book-open' style="font-size:40px;color:#000000;"></i>
               <h3>Grow In Faith</h3>
               <p>Sumali sa Bible Study, manood ng sermons.</p>
               <a href="#sermonsSection" class="btn-events" onclick="closeGetStarted()">Watch Sermons</a>
@@ -1311,13 +1640,14 @@
     <div class="events-container" style="max-width:800px;">
       <h2 class="events-main-title">Contact Us</h2>
       <p class="events-main-subtitle">We'd love to hear from you!</p>
-      <div style="background:rgba(255,255,255,0.85);padding:30px;border-radius:20px;backdrop-filter:blur(4px);">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;text-align:center;">
-          <div><i class='bx bx-phone' style="font-size:40px;color:#3895D3;"></i><h3>Phone</h3><p>123-456-7890</p></div>
-          <div><i class='bx bx-envelope' style="font-size:40px;color:#3895D3;"></i><h3>Email</h3><p>gospelfellowshipchurch0923@gmail.com</p></div>
-          <div style="grid-column:1/-1;"><i class='bx bx-map' style="font-size:40px;color:#3895D3;"></i><h3>Address</h3><p>008 National Road SF. 2 Purok 1, Limay, Bataan</p></div>
+      <div style="background:#ffffff;padding:30px;border-radius:20px;backdrop-filter:blur(4px);border:1px solid #ddd;position:relative;overflow:hidden;transition:background 0.3s ease, border-color 0.3s ease;">
+        <div style="position:absolute;top:0;left:0;width:30px;height:30px;background:#000000;clip-path:polygon(0 0,100% 0,0 100%);z-index:0;transition:background 0.3s ease;"></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;text-align:center;position:relative;z-index:1;">
+          <div><i class='bx bx-phone' style="font-size:40px;color:#000000;transition:color 0.3s ease;"></i><h3 style="transition:color 0.3s ease;">Phone</h3><p style="transition:color 0.3s ease;">123-456-7890</p></div>
+          <div><i class='bx bx-envelope' style="font-size:40px;color:#000000;transition:color 0.3s ease;"></i><h3 style="transition:color 0.3s ease;">Email</h3><p style="transition:color 0.3s ease;">gospelfellowshipchurch0923@gmail.com</p></div>
+          <div style="grid-column:1/-1;"><i class='bx bx-map' style="font-size:40px;color:#000000;transition:color 0.3s ease;"></i><h3 style="transition:color 0.3s ease;">Address</h3><p style="transition:color 0.3s ease;">008 National Road SF. 2 Purok 1, Limay, Bataan</p></div>
         </div>
-        <div class="map-embed-wrapper"><iframe src="https://www.google.com/maps?q=008+National+Road+SF.+2+Purok+1,+Limay,+Bataan&output=embed" loading="lazy" allowfullscreen></iframe></div>
+        <div class="map-embed-wrapper" style="position:relative;z-index:1;"><iframe src="https://www.google.com/maps?q=008+National+Road+SF.+2+Purok+1,+Limay,+Bataan&output=embed" loading="lazy" allowfullscreen></iframe></div>
       </div>
     </div>
   </section>
@@ -1325,13 +1655,13 @@
 </main>
 
 <!-- ===== MODALS ===== -->
-<div id="giveModal" class="front-page"><div class="front-content"><h2>💝 Give / Donate</h2><p>Thank you for supporting the ministry.</p><div style="background:#f8f9fa;padding:18px;border-radius:10px;margin-top:15px;"><p><strong>GCash:</strong> 0912-345-6789</p><p><strong>Bank:</strong> BDO - Gospel Fellowship Church</p></div><button onclick="document.getElementById('giveModal').style.display='none'" class="close-btn">Close</button></div></div>
+<div id="giveModal" class="front-page"><div class="front-content"><h2>💝 Give / Donate</h2><p>Thank you for supporting the ministry.</p><div style="background:#f8f9fa;padding:18px;border-radius:10px;margin-top:15px;transition:background 0.3s ease;"><p><strong>GCash:</strong> 0912-345-6789</p><p><strong>Bank:</strong> BDO - Gospel Fellowship Church</p></div><button onclick="document.getElementById('giveModal').style.display='none'" class="close-btn">Close</button></div></div>
 
 <div id="prayerModal" class="front-page"><div class="front-content"><h2>🙏 Prayer Request</h2><p>Share your prayer need with us.</p><form class="prayer-form"><input type="text" placeholder="Your Name" required><textarea placeholder="Your Prayer Request" rows="4" required></textarea><button type="submit" class="btn-events" style="width:100%;">Submit Request</button></form><button onclick="document.getElementById('prayerModal').style.display='none'" class="close-btn">Close</button></div></div>
 
 <div id="liveModal" class="front-page"><div class="front-content"><h2>🔴 Watch Live</h2><p>Join our live worship service online!</p><a href="https://www.facebook.com/profile.php?id=61590579395623" target="_blank" class="btn-events" style="display:inline-block;text-decoration:none;margin-top:15px;">📘 Watch on Facebook Live</a><button onclick="document.getElementById('liveModal').style.display='none'" class="close-btn">Close</button></div></div>
 
-<div id="announcementsModal" class="front-page"><div class="front-content"><h2>📢 Announcements</h2><hr><div style="text-align:left;max-height:400px;overflow-y:auto;scrollbar-width:none;-ms-overflow-style:none;"><div style="background:#f8f9fa;padding:15px;border-radius:10px;margin-bottom:10px;"><h3 style="color:#dc3545;">🔥 Next Sunday: Baptismal Service</h3><p>📅 July 21, 2026 • 8:30 AM</p></div><div style="background:#f8f9fa;padding:15px;border-radius:10px;margin-bottom:10px;"><h3 style="color:#28a745;">🌱 Youth Camp 2026</h3><p>📅 July 20-22, 2026</p></div></div><button onclick="document.getElementById('announcementsModal').style.display='none'" class="close-btn">Close</button></div></div>
+<div id="announcementsModal" class="front-page"><div class="front-content"><h2>📢 Announcements</h2><hr><div style="text-align:left;max-height:400px;overflow-y:auto;scrollbar-width:none;-ms-overflow-style:none;"><div style="background:#f8f9fa;padding:15px;border-radius:10px;margin-bottom:10px;transition:background 0.3s ease;"><h3 style="color:#000000;transition:color 0.3s ease;">🔥 Next Sunday: Baptismal Service</h3><p>📅 July 21, 2026 • 8:30 AM</p></div><div style="background:#f8f9fa;padding:15px;border-radius:10px;margin-bottom:10px;transition:background 0.3s ease;"><h3 style="color:#000000;transition:color 0.3s ease;">🌱 Youth Camp 2026</h3><p>📅 July 20-22, 2026</p></div></div><button onclick="document.getElementById('announcementsModal').style.display='none'" class="close-btn">Close</button></div></div>
 
 <!-- ===== FOOTER ===== -->
 <footer class="site-footer">
@@ -1348,6 +1678,24 @@
 <script>
   (function() {
     'use strict';
+
+    // ============================================
+    // DARK MODE TOGGLE
+    // ============================================
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    darkModeToggle.addEventListener('click', function() {
+      body.classList.toggle('dark-mode');
+      
+      if (body.classList.contains('dark-mode')) {
+        this.textContent = '☀️';
+        this.style.color = '#ffffff';
+      } else {
+        this.textContent = '🌙';
+        this.style.color = '#000000';
+      }
+    });
 
     // ============================================
     // PIGILAN ANG ZOOM SA BUONG WEBSITE
@@ -1522,16 +1870,6 @@
     }
     updateCountdown();
     setInterval(updateCountdown, 1000);
-
-    // ============================================
-    // DARK MODE
-    // ============================================
-    document.getElementById('darkModeToggle').addEventListener('click', function() {
-      const isDark = document.body.style.background === '#1a2a3a';
-      document.body.style.background = isDark ? '#f4f7fc' : '#1a2a3a';
-      document.body.style.color = isDark ? '#1a2a3a' : '#eee';
-      this.textContent = isDark ? '🌙' : '☀️';
-    });
 
     // ============================================
     // REGISTER / ATTENDEE MODALS
@@ -1808,7 +2146,7 @@
       if (e.key === 'Escape') closeEventDetail();
     });
 
-    console.log('✅ Gospel Fellowship Church - Fully Updated!');
+    console.log('✅ Gospel Fellowship Church - Full Background Image with Dark Mode!');
   })();
 </script>
 
