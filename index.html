@@ -1287,6 +1287,23 @@
 /* ===== RESPONSIVE ===== */
 /* ============================================ */
 
+/* ===== HAMBURGER - HIDDEN BY DEFAULT (Desktop) ===== */
+.hamburger {
+  display: none;
+}
+
+/* ===== MOBILE ACTIONS - HIDDEN BY DEFAULT ===== */
+.mobile-actions {
+  display: none;
+}
+
+/* ===== HEADER-LEFT - Para sa center alignment ===== */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 /* ===== TABLET (max-width: 992px) ===== */
 @media (max-width: 992px) {
   .pastors-container {
@@ -1314,281 +1331,6 @@
 }
 
 /* ===== MOBILE (max-width: 768px) ===== */
-@media (max-width: 768px) {
-  /* ===== HEADER ===== */
-  .header { 
-    flex-direction: column; 
-    align-items: stretch; 
-    padding: 10px 15px;
-    width: 95%;
-    top: 10px;
-  }
-  .logo-img {
-    height: 60px;
-  }
-  .logo-text {
-    font-size: 1.2rem;
-    text-align: center;
-  }
-  .navbar ul { 
-    justify-content: center; 
-  }
-  .navbar ul li a {
-    padding: 8px 14px;
-    font-size: 0.85rem;
-  }
-  .header-actions { 
-    justify-content: center; 
-  }
-  
-  /* ===== HOME SECTION ===== */
-  #homeSection {
-    padding: 80px 0 0;
-    min-height: 80vh;
-  }
-  .background-content-wrapper {
-    min-height: 350px;
-    padding: 30px 20px;
-    gap: 20px;
-    flex-direction: column;
-    text-align: center;
-  }
-  .background-text {
-    text-align: center;
-    padding-left: 0;
-    margin-top: 0;
-    order: 2;
-  }
-  .background-text h1 {
-    font-size: 2rem;
-  }
-  .background-text h2 {
-    font-size: 2.2rem;
-  }
-  .background-text p {
-    font-size: 1.1rem;
-  }
-  .background-img {
-    flex: 0 0 150px;
-    margin-top: 0;
-    margin-right: 0;
-    order: 1;
-  }
-  .circle-logo {
-    width: 150px;
-    height: 150px;
-  }
-  
-  .home-overlay {
-    margin-top: -40px;
-    padding: 0 5px;
-  }
-  .home {
-    padding: 20px 15px;
-    max-width: 100%;
-    border-radius: 35px;
-  }
-  .btn-container .btn,
-  .btn-container .btn-give {
-    padding: 12px 30px;
-    font-size: 1rem;
-  }
-  .countdown-section {
-    padding: 20px 15px;
-    max-width: 100%;
-    border-radius: 35px;
-  }
-  .countdown-section h3 {
-    font-size: 0.95rem;
-  }
-  .countdown-block .num {
-    font-size: 1.6rem;
-    min-width: 40px;
-    padding: 6px 10px;
-  }
-  .countdown-block .label {
-    font-size: 0.6rem;
-  }
-  .countdown-timer {
-    gap: 10px;
-  }
-  
-  /* ===== ABOUT SECTION ===== */
-  #aboutSection {
-    padding: 60px 0;
-  }
-  .about-section {
-    gap: 15px;
-    padding: 0 15px;
-  }
-  .about-box {
-    flex: 1 1 100%;
-    padding: 25px 20px;
-  }
-  .about-box h2 {
-    font-size: 1.3rem;
-  }
-  .about-box p {
-    font-size: 0.95rem;
-  }
-  
-  /* ===== BELIEVE SECTION ===== */
-  .believe-section {
-    padding: 0 15px;
-  }
-  .believe-section .believe-inner {
-    padding: 30px 20px;
-  }
-  .believe-title {
-    font-size: 1.6rem;
-  }
-  .believe-subtitle {
-    font-size: 0.9rem;
-  }
-  .believe-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-  .believe-card {
-    padding: 25px 20px;
-  }
-  .believe-card i {
-    font-size: 45px;
-  }
-  .believe-card h3 {
-    font-size: 1.1rem;
-  }
-  .believe-card p {
-    font-size: 0.9rem;
-  }
-  
-  /* ===== PASTORS SECTION ===== */
-  .pastors-section {
-    padding: 0 15px;
-  }
-  .pastors-section h2 {
-    font-size: 1.8rem;
-  }
-  .pastors-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-  .pastor-card {
-    padding: 20px 15px;
-  }
-  .pastor-card img {
-    width: 100px;
-    height: 100px;
-  }
-  .pastor-card h3 {
-    font-size: 1rem;
-  }
-  .pastor-card .role {
-    font-size: 0.85rem;
-  }
-  
-  /* ===== EVENTS SECTION ===== */
-  #eventsSection .events-container {
-    padding: 0 15px;
-  }
-  .events-main-title {
-    font-size: 1.8rem;
-  }
-  .events-main-subtitle {
-    font-size: 0.95rem;
-    padding: 0 10px;
-  }
-  .events-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-  }
-  .event-card img {
-    height: 120px;
-  }
-  .event-card-content {
-    padding: 12px;
-  }
-  .event-card-content h3 {
-    font-size: 0.95rem;
-  }
-  .btn-group {
-    gap: 10px;
-  }
-  .btn-group button {
-    padding: 10px 20px;
-    font-size: 0.85rem;
-  }
-  
-  /* ===== SERMONS SECTION ===== */
-  #sermonsSection .events-container {
-    padding: 0 15px;
-  }
-  .sermons-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  /* ===== CONTACT SECTION ===== */
-  #contactSection .events-container {
-    padding: 0 15px;
-  }
-  #contactSection .events-container > div {
-    padding: 20px 15px !important;
-  }
-  #contactSection .events-container > div > div {
-    grid-template-columns: 1fr !important;
-    gap: 15px !important;
-  }
-  
-  /* ===== GET STARTED MODAL ===== */
-  .gs-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-  .gs-card {
-    max-width: 100%;
-    padding: 20px 15px;
-  }
-  .events-main-title {
-    font-size: 1.6rem;
-  }
-  
-  /* ===== MODALS ===== */
-  .modal-content {
-    padding: 25px 15px;
-    margin: 20px auto;
-    width: 95%;
-  }
-  .event-modal-content {
-    padding: 25px 20px;
-  }
-  .event-detail-header h2 {
-    font-size: 1.5rem;
-  }
-  .date-gallery {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 10px;
-  }
-  .activity-gallery {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 10px;
-  }
-  
-  /* ===== FOOTER ===== */
-  .footer-container {
-    padding: 0 15px;
-  }
-  .footer-column {
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  /* ===== SECTION PADDING ===== */
-  .section {
-    padding: 60px 0 40px;
-  }
-}
-
 @media (max-width: 768px) {
   /* ===== HEADER - WITH HAMBURGER ===== */
   .header { 
@@ -1664,7 +1406,7 @@
     transform: rotate(-45deg) translate(4px, -4px);
   }
   
-  /* ===== HIDE DESKTOP ACTIONS ===== */
+  /* ===== HIDE DESKTOP ACTIONS (Facebook & Dark Mode) ===== */
   .header-actions {
     display: none !important;
   }
@@ -1706,7 +1448,7 @@
     text-align: center;
   }
   
-  /* ===== MOBILE ACTIONS (Facebook & Dark Mode) ===== */
+  /* ===== MOBILE ACTIONS (Facebook & Dark Mode) - nasa baba ng menu ===== */
   .mobile-actions {
     display: flex !important;
     gap: 20px;
@@ -2005,7 +1747,6 @@
   .hamburger span {
     width: 18px;
     height: 2px;
-    gap: 3px;
   }
   
   .navbar ul li a {
@@ -2159,12 +1900,6 @@
   .gs-card {
     padding: 15px 12px;
   }
-  .events-main-title {
-    font-size: 1.3rem;
-  }
-  .events-main-subtitle {
-    font-size: 0.85rem;
-  }
   .gs-bottom-buttons {
     flex-direction: column;
     align-items: center;
@@ -2204,23 +1939,6 @@
   }
 }
 
-/* ===== HAMBURGER - HIDDEN BY DEFAULT (Desktop) ===== */
-.hamburger {
-  display: none;
-}
-
-/* ===== MOBILE ACTIONS - HIDDEN BY DEFAULT ===== */
-.mobile-actions {
-  display: none;
-}
-
-/* ===== HEADER-LEFT - Para sa center alignment ===== */
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
 
   </style>
 </head>
@@ -2228,9 +1946,13 @@
 
 <!-- ===== HEADER ===== -->
 <header class="header" id="mainHeader" role="banner">
-  <img src="Gospel.jpg" alt="Gospel Fellowship Church Logo" class="logo-img">
-  <a href="#homeSection" class="logo-text" aria-label="Gospel Fellowship Church Home">Gospel Fellowship Church</a>
+  <!-- LEFT: Logo and Text -->
+  <div class="header-left">
+    <img src="Gospel.jpg" alt="Gospel Fellowship Church Logo" class="logo-img">
+    <a href="#homeSection" class="logo-text" aria-label="Gospel Fellowship Church Home">Gospel Fellowship Church</a>
+  </div>
 
+  <!-- DESKTOP NAVBAR -->
   <nav class="navbar" role="navigation" aria-label="Main Navigation">
     <ul>
       <li><a href="#homeSection" class="active">Home</a></li>
@@ -2239,15 +1961,32 @@
       <li><a href="#sermonsSection">Sermons</a></li>
       <li><a href="#contactSection">Contact</a></li>
     </ul>
+    
+    <!-- MOBILE ACTIONS (lalabas lang sa mobile) -->
+    <div class="mobile-actions">
+      <div class="social-media">
+        <a href="https://www.facebook.com/profile.php?id=61590579395623" target="_blank" aria-label="Follow us on Facebook"><i class='bx bxl-facebook'></i></a>
+      </div>
+      <button id="darkModeToggleMobile" aria-label="Toggle dark mode">🌙</button>
+    </div>
   </nav>
 
+  <!-- RIGHT: Social Media, Dark Mode, and Hamburger -->
   <div class="header-actions">
     <div class="social-media">
       <a href="https://www.facebook.com/profile.php?id=61590579395623" target="_blank" aria-label="Follow us on Facebook"><i class='bx bxl-facebook'></i></a>
     </div>
     <button id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
+    
+    <!-- HAMBURGER MENU BUTTON (lalabas lang sa mobile) -->
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 
+  <!-- LOGIN FORM -->
   <div id="loginForm" class="login-form" role="dialog" aria-label="Sign In Form">
     <div class="form-content">
       <span id="closeForm" aria-label="Close login form">&times;</span>
