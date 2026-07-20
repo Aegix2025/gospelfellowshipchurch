@@ -13,12 +13,12 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
 
     *::-webkit-scrollbar {
-      display: none; /* Chrome, Safari, Opera */
+      display: none;
     }
 
     html {
@@ -26,32 +26,32 @@
     }
 
     body {
-      background: #f4f7fc;
-      color: #1a2a3a;
-      overflow-y: scroll; /* ensures scrolling still works */
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
     }
 
-    /* ===== HEADER ===== */
+    /* ===== HEADER (CENTERED WITH MAX-WIDTH) ===== */
     .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 30px;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    position: fixed;
-    border-radius: 50px;
-
-    top: 15px;
-    left: 60px;
-    right: 60px;
-
-    z-index: 999;
-    flex-wrap: wrap;
-    gap: 5px;
-    transition: all 0.3s ease;
-}
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      position: fixed;
+      border-radius: 50px;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1200px;
+      z-index: 999;
+      flex-wrap: wrap;
+      gap: 5px;
+      transition: all 0.3s ease;
+    }
 
     .header.scrolled {
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
@@ -59,13 +59,13 @@
     }
 
     .logo-img {
-      height: 48px;
+      height: 90px;
       width: auto;
       border-radius: 50%;
     }
 
     .logo-text {
-      font-size: 1.4rem;
+      font-size: 2rem;
       font-weight: 700;
       color: #1a2a3a;
       text-decoration: none;
@@ -77,15 +77,15 @@
     .navbar ul {
       display: flex;
       list-style: none;
-      gap: 8px;
+      gap: 12px;          /* ← Dinagdagan ang gap */
       flex-wrap: wrap;
     }
 
     .navbar ul li a {
-      padding: 8px 16px;
+      padding: 12px 24px;  /* ← Mas malaking padding */
       border-radius: 30px;
-      font-weight: 600;
-      font-size: 0.9rem;
+      font-weight: 700;    /* ← Mas bold */
+      font-size: 1.05rem;  /* ← Mas malaking font */
       cursor: pointer;
       color: #1a2a3a;
       transition: 0.3s;
@@ -191,75 +191,140 @@
     .social-btn.google { background: #ea4335; color: #fff; }
     .forgot { display: block; text-align: center; margin-top: 15px; color: #3895D3; text-decoration: none; }
 
-    /* ===== SECTIONS ===== */
+    /* ============================================ */
+    /* ===== FULL WIDTH SECTIONS ===== */
+    /* ============================================ */
     .section {
-      display: block;
-      padding: 100px 20px 60px;
-      max-width: 1300px;
-      margin: 0 auto;
+      width: 100%;
+      padding: 80px 0;
+      margin: 0;
       scroll-margin-top: 80px;
       min-height: 100vh;
     }
 
-    /* ===== HOME ===== */
-    #homeSection {
-      background: #ffffff;
+    /* ===== CONTENT CONTAINER (Limited & Centered) ===== */
+    .container,
+    .events-container,
+    .about-container,
+    .sermons-container,
+    .contact-container {
+      max-width: 1200px;
       margin: 0 auto;
-      padding-top: 100px;
+      padding: 0 20px;
     }
 
-    .background {
+    /* ============================================ */
+    /* ===== HOME SECTION ===== */
+    /* ============================================ */
+    #homeSection {
+      background: linear-gradient(145deg, #dce8f5, #f0f5fc);  /* ← Isang background lang */
+      padding: 100px 0 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      min-height: 90vh;
+    }
+
+    .home-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== BACKGROUND CONTENT - STEADY (naka-sticky) ===== */
+    .background-content-wrapper {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: space-between;
       gap: 40px;
-      background: linear-gradient(145deg, #dce8f5, #f0f5fc);
-      padding: 40px 30px;
+      padding: 50px 40px;
       border-radius: 40px;
-      margin-bottom: 30px;
+      width: 100%;
+      min-height: 520px;
+      position: sticky;  /* ← STEADY / FIXED */
+      top: 80px;
+      z-index: 1;
     }
 
-    .background-content {
+    /* ===== TEXT - LEFT side ===== */
+    .background-text {
       flex: 1 1 300px;
       text-align: left;
       padding-left: 10px;
+      margin-top: -40px;
+      order: 1;
     }
-    .background-content h1 { font-size: 2.2rem; font-weight: 300; }
-    .background-content h2 { font-size: 2.8rem; font-weight: 700; color: #1a2a3a; font-family: 'Times New Roman', Times, serif; }
-    .background-content p { font-size: 1.2rem; color: #2c3e50; margin-top: 10px; }
 
+    .background-text h1 { 
+      font-size: 4rem; 
+      font-weight: 300; 
+      margin-bottom: 0;
+    }
+    .background-text h2 { 
+      font-size: 5rem; 
+      font-weight: 700; 
+      color: #1a2a3a; 
+      font-family: 'Times New Roman', Times, serif;
+      margin-top: 0;
+    }
+    .background-text p { 
+      font-size: 2rem; 
+      color: #2c3e50; 
+      margin-top: 10px; 
+    }
+
+    /* ===== LOGO - RIGHT side ===== */
     .background-img {
-      flex: 0 0 180px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    flex: 0 0 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -40px;
+    margin-right: -50px;  /* ← Ilipat sa right */
+    order: 2;
+  }
+
+  .circle-logo {
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border: 4px solid #fff;
+    flex-shrink: 0;
+  }
+  .circle-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+    /* ===== OVERLAY - GUMAGALAW (normal scroll) ===== */
+    .home-overlay {
+      position: relative;
+      margin-top: -280px;
+      z-index: 2;
+      padding: 0 10px;
     }
 
-    .circle-logo {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      border: 4px solid #fff;
-      flex-shrink: 0;
-    }
-    .circle-logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
+    /* ===== GET STARTED & GIVE BUTTONS ===== */
     .home {
-      background: rgba(255,255,255,0.7);
-      backdrop-filter: blur(8px);
-      padding: 30px 20px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      padding: 25px 20px;
       border-radius: 50px;
-      margin: 20px 0 40px;
       text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+      max-width: 450px;
+      margin: 0 auto 20px;
+      border: 1px solid rgba(255,255,255,0.25);
     }
+
     .btn-container {
       display: flex;
       justify-content: center;
@@ -291,51 +356,239 @@
     }
     .btn-container .btn-give:hover { background: #e0b330; }
 
+    /* ===== COUNTDOWN ===== */
     .countdown-section {
-      background: #1a2a3a;
-      color: #fff;
-      padding: 30px 20px;
-      border-radius: 40px;
-      text-align: center;
-      margin-top: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    color: #000000;
+    padding: 25px 20px;
+    border-radius: 40px;
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto;
+    border: 1px solid rgba(255,255,255,0.25);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  }
+
+    .countdown-section h3 {
+      font-weight: 300;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
     }
-    .countdown-section h3 { font-weight: 300; letter-spacing: 1px; margin-bottom: 15px; }
+
     .countdown-timer {
       display: flex;
       justify-content: center;
-      gap: 30px;
+      gap: 20px;
       flex-wrap: wrap;
     }
+
     .countdown-block .num {
-      font-size: 2.8rem;
+      font-size: 2.2rem;
       font-weight: 700;
-      background: rgba(255,255,255,0.1);
-      padding: 10px 18px;
-      border-radius: 20px;
+      background: rgba(3, 3, 3, 0.08);
+      padding: 8px 14px;
+      border-radius: 16px;
       display: inline-block;
-      min-width: 70px;
-    }
-    .countdown-block .label {
-      display: block;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-top: 6px;
-      color: #bbb;
+      min-width: 55px;
     }
 
-    /* ===== GET STARTED ===== */
+    .countdown-block .label {
+      display: block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 4px;
+      color: #000000;
+    }
+
+    /* ============================================ */
+    /* ===== GET STARTED MODAL ===== */
+    /* ============================================ */
     #getStartedSection {
-      background: #ffffff;
-      margin: 0 auto;
+      background: transparent;
+      padding: 0;
+      min-height: auto;
     }
 
     .events-container {
       max-width: 1200px;
       margin: 0 auto;
     }
-    .events-main-title { font-size: 2.5rem; text-align: center; }
-    .events-main-subtitle { text-align: center; color: #555; max-width: 700px; margin: 10px auto 30px; }
+
+    .events-main-title { 
+      font-size: 2.5rem; 
+      text-align: center; 
+      margin-bottom: 10px;
+    }
+    .events-main-subtitle { 
+      text-align: center; 
+      color: #555; 
+      max-width: 700px; 
+      margin: 0 auto 30px; 
+      font-size: 1.05rem;
+    }
+
+    /* ===== GET STARTED CARDS ===== */
+    .gs-cards {
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 30px 0 20px;
+    }
+
+    .gs-card {
+      background: rgba(255,255,255,0.85);
+      padding: 30px 25px;
+      border-radius: 15px;
+      max-width: 280px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      flex: 1 1 200px;
+    }
+
+    .gs-card .gs-number {
+      width: 40px;
+      height: 40px;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .gs-card h3 {
+      margin: 15px 0 10px;
+      font-size: 1.2rem;
+      color: #1a2a3a;
+    }
+
+    .gs-card p {
+      color: #555;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .gs-card .btn-events,
+    .gs-card .btn-secondary {
+      display: inline-block;
+      text-decoration: none;
+      padding: 10px 28px;
+      border: none;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 0.9rem;
+    }
+
+    .gs-card .btn-events {
+      background: #3895D3;
+      color: #fff;
+    }
+    .gs-card .btn-events:hover { background: #1f7bb5; }
+
+    .gs-card .btn-secondary {
+      background: #28a745;
+      color: #fff;
+    }
+    .gs-card .btn-secondary:hover { background: #1e7e34; }
+
+    /* ===== BOTTOM BUTTONS ===== */
+    .gs-bottom-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+
+    .gs-bottom-buttons .btn-live,
+    .gs-bottom-buttons .btn-prayer {
+      padding: 12px 30px;
+      border: none;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 0.95rem;
+    }
+
+    .gs-bottom-buttons .btn-live {
+      background: #e63946;
+      color: #fff;
+    }
+    .gs-bottom-buttons .btn-live:hover { background: #c62833; }
+
+    .gs-bottom-buttons .btn-prayer {
+      background: #6c63ff;
+      color: #fff;
+    }
+    .gs-bottom-buttons .btn-prayer:hover { background: #5a52d5; }
+
+    /* ============================================ */
+    /* ===== MODAL STYLES ===== */
+    /* ============================================ */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      overflow-y: auto;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background: #fff;
+      margin: 40px auto;
+      padding: 40px 30px;
+      max-width: 1000px;
+      width: 90%;
+      border-radius: 20px;
+      position: relative;
+      animation: modalFadeIn 0.3s ease;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 35px;
+      font-weight: bold;
+      color: #999;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .modal-close:hover {
+      color: #333;
+    }
+
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
     .btn-events, .btn-secondary, .btn-attendees, .btn-live, .btn-prayer, .btn-announcements {
       padding: 12px 28px;
@@ -392,60 +645,147 @@
       font-weight: 600;
     }
 
-    /* ===== ABOUT ===== */
-    #aboutSection {
-      background: #1a3a5c;
-      color: #ffffff;
-      margin: 0 auto;
-    }
-    #aboutSection .about-box {
-      background: rgba(255,255,255,0.12);
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(255,255,255,0.1);
-      color: #fff;
-    }
-    #aboutSection .about-box h2 { color: #fff; }
-    #aboutSection .about-box p { color: rgba(255,255,255,0.85); }
-    #aboutSection .about-box hr { border-color: #f5c842; }
-    #aboutSection .pastors-section h2 { color: #fff; }
-    #aboutSection .pastor-card {
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-    #aboutSection .pastor-card h3 { color: #fff; }
-    #aboutSection .pastor-card .role { color: rgba(255,255,255,0.7); }
+    /* ============================================ */
+/* ===== ABOUT SECTION ===== */
+/* ============================================ */
+#aboutSection {
+  background: #f0f4f8;
+  color: #1a2a3a;
+  margin: 0 auto;
+  padding: 80px 0;
+}
 
-    .about-section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin: 40px 0;
-    }
-    .about-box {
-      background: rgba(255,255,255,0.12);
-      padding: 30px 25px;
-      border-radius: 24px;
-      flex: 1 1 220px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(255,255,255,0.1);
-      color: #fff;
-    }
-    .about-box h2 { color: #fff; }
-    .about-box hr { margin: 12px 0; border: 1px solid #f5c842; width: 40px; }
-    .about-box p { color: rgba(255,255,255,0.85); }
-    
-    .pastors-section {
-  margin: 60px 0;
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  margin: 0 auto 40px;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.about-box {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 35px 30px;
+  border-radius: 24px;
+  flex: 1 1 220px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(0,0,0,0.06);
+  color: #1a2a3a;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.10);
+}
+
+.about-box h2 { 
+  color: #1a2a3a;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.about-box hr { 
+  margin: 12px 0; 
+  border: 2px solid #3895D3; 
+  width: 40px; 
+}
+
+.about-box p { 
+  color: #444;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* ============================================ */
+/* ===== WHAT WE BELIEVE ===== */
+/* ============================================ */
+.believe-section {
+  margin: 60px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.believe-section .believe-inner {
+  background: #3895D3 !important;  /* ← Force change */
+  border-radius: 30px;
+  padding: 50px 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border: none;
+}
+
+.believe-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #000000 !important;  /* ← Force white */
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.believe-subtitle {
+  text-align: center;
+  color: rgba(3, 3, 3, 0.9) !important;
+  margin-bottom: 40px;
+  font-size: 1rem;
+}
+
+.believe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 25px;
+}
+
+.believe-card {
+  background: #fff;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 22px;
+  padding: 30px 25px;
+  text-align: center;
+  transition: .35s ease;
+}
+
+.believe-card:hover {
+  transform: translateY(-8px);
+  background: #fff;
+}
+
+.believe-card i {
+  font-size: 60px;
+  color: #000000 !important;
+  margin-bottom: 15px;
+}
+
+.believe-card h3 {
+  color: #000000 !important;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.believe-card p {
+  color: rgba(0, 0, 0, 0.9) !important;
+  line-height: 1.8;
+  font-size: .95rem;
+}
+
+/* ============================================ */
+/* ===== PASTORS SECTION ===== */
+/* ============================================ */
+.pastors-section {
+  margin: 60px auto;
+  max-width: 1200px;
+  padding: 0 20px;
 }
 
 .pastors-section h2 {
-  color: #fff;
+  color: #1a2a3a;
   text-align: center;
   font-size: 2.2rem;
   margin-bottom: 40px;
+  font-weight: 700;
 }
 
 .pastors-container {
@@ -455,19 +795,19 @@
 }
 
 .pastor-card {
-  background: rgba(255,255,255,0.12);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(0,0,0,0.06);
   border-radius: 24px;
   padding: 30px 20px;
   text-align: center;
   transition: 0.3s ease;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
 }
 
 .pastor-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.12);
 }
 
 .pastor-card img {
@@ -475,18 +815,19 @@
   height: 140px;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid rgba(255,255,255,0.3);
+  border: 4px solid #3895D3;
   margin-bottom: 18px;
 }
 
 .pastor-card h3 {
-  color: #fff;
+  color: #1a2a3a;
   font-size: 1.25rem;
   margin-bottom: 8px;
+  font-weight: 700;
 }
 
 .pastor-card .role {
-  color: rgba(255,255,255,0.75);
+  color: #666;
   font-size: 1rem;
   margin-bottom: 15px;
 }
@@ -498,38 +839,65 @@
 }
 
 .pastor-card a:hover {
-  color: #fff;
+  color: #1a2a3a;
 }
 
-/* Tablet */
+/* ============================================ */
+/* ===== RESPONSIVE ===== */
+/* ============================================ */
 @media (max-width: 992px) {
   .pastors-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Mobile */
+@media (max-width: 768px) {
+  .believe-section .believe-inner {
+    padding: 35px 25px;
+  }
+  .pastors-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 600px) {
   .pastors-container {
     grid-template-columns: 1fr;
   }
-
   .pastor-card img {
     width: 120px;
     height: 120px;
+  }
+  .about-box {
+    flex: 1 1 100%;
+  }
+  .believe-grid {
+    grid-template-columns: 1fr;
   }
 }
 
     /* ===== EVENTS ===== */
     #eventsSection {
-      background: #e8f0f8;
+      background: linear-gradient(145deg, #dce8f5, #f0f5fc);
       margin: 0 auto;
+    }
+
+    #eventsSection .events-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
     /* ===== SERMONS ===== */
     #sermonsSection {
-      background: #ffffff;
+      background: #c6e2ff;
       margin: 0 auto;
+    }
+
+    #sermonsSection .events-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
     .sermons-grid {
@@ -550,8 +918,14 @@
 
     /* ===== CONTACT ===== */
     #contactSection {
-      background: #e8f0f8;
+      background: linear-gradient(145deg, #dce8f5, #f0f5fc);
       margin: 0 auto;
+    }
+
+    #contactSection .events-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
     .map-embed-wrapper iframe {
@@ -568,7 +942,7 @@
       padding: 40px 20px 20px;
       margin-top: 0;
     }
-    .footer-container { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; }
+    .footer-container { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; padding: 0 20px; }
     .footer-column { display: flex; flex-wrap: wrap; gap: 40px; }
     .footer-column h3 { color: #fff; font-weight: 600; margin-bottom: 12px; }
     .social-icons a { color: #ccc; font-size: 1.6rem; margin-right: 12px; }
@@ -641,7 +1015,6 @@
       animation: fadeIn 0.3s ease;
     }
 
-    /* ===== HIDE SCROLLBAR INSIDE MODAL CONTENT ===== */
     .event-modal-content {
       scrollbar-width: none;
       -ms-overflow-style: none;
@@ -844,92 +1217,236 @@
       to { opacity: 1; transform: scale(1); }
     }
 
+    /* ===== WHAT WE BELIEVE ===== */
+    .believe-section {
+      margin: 60px auto;
+      max-width: 1200px;
+      padding: 0 20px;
+    }
+
+    .believe-section .believe-inner {
+      background: #16395d;
+      border-radius: 30px;
+      padding: 50px 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.15);
+    }
+
+    .believe-title {
+      text-align: center;
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .believe-subtitle {
+      text-align: center;
+      color: rgba(255,255,255,.75);
+      margin-bottom: 40px;
+      font-size: 1rem;
+    }
+
+    .believe-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      gap: 25px;
+    }
+
+    .believe-card {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 22px;
+      padding: 30px 25px;
+      text-align: center;
+      transition: .35s ease;
+    }
+
+    .believe-card:hover {
+      transform: translateY(-8px);
+      background: rgba(255,255,255,.13);
+    }
+
+    .believe-card i {
+      font-size: 60px;
+      color: #f5c842;
+      margin-bottom: 15px;
+    }
+
+    .believe-card h3 {
+      color: #f5c842;
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+
+    .believe-card p {
+      color: rgba(255,255,255,.85);
+      line-height: 1.8;
+      font-size: .95rem;
+    }
+
+    /* ============================================ */
+    /* ===== RESPONSIVE ===== */
+    /* ============================================ */
     @media (max-width: 768px) {
-      .header { flex-direction: column; align-items: stretch; padding: 10px 15px; }
+      .header { 
+        flex-direction: column; 
+        align-items: stretch; 
+        padding: 10px 15px;
+        width: 95%;
+      }
       .navbar ul { justify-content: center; }
       .header-actions { justify-content: center; }
-      .background-content h2 { font-size: 2rem; }
-      .background { justify-content: center; }
-      .background-content { text-align: center; padding-left: 0; }
+      
+      .home-overlay {
+        margin-top: -50px;
+      }
+      .home {
+        padding: 20px 15px;
+        max-width: 100%;
+        border-radius: 35px;
+      }
+      .countdown-section {
+        padding: 20px 15px;
+        max-width: 100%;
+        border-radius: 35px;
+      }
+      .countdown-block .num {
+        font-size: 1.8rem;
+        min-width: 45px;
+        padding: 6px 10px;
+      }
+      .countdown-timer {
+        gap: 12px;
+      }
+      .background {
+        min-height: 250px;
+        padding: 30px 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .background-content h2 {
+        font-size: 2rem;
+      }
+      .background-content {
+        text-align: left;
+        padding-left: 0;
+      }
+      .circle-logo {
+        width: 130px;
+        height: 130px;
+      }
+      .background-img {
+        flex: 0 0 130px;
+      }
+      
+      .gs-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      .gs-card {
+        max-width: 350px;
+      }
+      .events-main-title {
+        font-size: 2rem;
+      }
+      
       .event-modal-content { padding: 25px; }
       .date-gallery { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
       .activity-gallery { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
-      .section { padding: 90px 15px 40px; }
+      .section { padding: 90px 0 40px; }
+      .pastors-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .believe-section .believe-inner {
+        padding: 35px 25px;
+      }
     }
 
     @media (max-width: 480px) {
+      .home-overlay {
+        margin-top: -30px;
+      }
+      .home {
+        padding: 15px 12px;
+        border-radius: 25px;
+      }
+      .btn-container .btn,
+      .btn-container .btn-give {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+      }
+      .countdown-section {
+        padding: 15px 12px;
+        border-radius: 25px;
+      }
+      .countdown-block .num {
+        font-size: 1.4rem;
+        min-width: 35px;
+        padding: 4px 8px;
+      }
+      .countdown-block .label {
+        font-size: 0.55rem;
+      }
+      .countdown-timer {
+        gap: 8px;
+      }
+      .background {
+        flex-direction: column;
+        text-align: center;
+        min-height: 200px;
+        padding: 20px 15px;
+        gap: 15px;
+      }
+      .background-content {
+        text-align: center;
+      }
+      .background-content h1 {
+        font-size: 1.3rem;
+      }
+      .background-content h2 {
+        font-size: 1.5rem;
+      }
+      .background-content p {
+        font-size: 0.9rem;
+      }
+      .circle-logo {
+        width: 100px;
+        height: 100px;
+      }
+      .background-img {
+        flex: 0 0 100px;
+      }
+      
+      .gs-card {
+        padding: 20px 15px;
+        max-width: 100%;
+      }
+      .events-main-title {
+        font-size: 1.6rem;
+      }
+      .events-main-subtitle {
+        font-size: 0.9rem;
+      }
+      .gs-bottom-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      .gs-bottom-buttons .btn-live,
+      .gs-bottom-buttons .btn-prayer {
+        width: 100%;
+        max-width: 250px;
+      }
+      
       .date-gallery { grid-template-columns: repeat(2, 1fr); }
       .activity-gallery { grid-template-columns: 1fr 1fr; }
+      .pastors-container {
+        grid-template-columns: 1fr;
+      }
+      .pastor-card img {
+        width: 120px;
+        height: 120px;
+      }
     }
-
-    /* ===== WHAT WE BELIEVE ===== */
-.believe-section {
-    margin-top: 60px;
-    background: #16395d;
-    border-radius: 30px;
-    padding: 50px 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.15);
-}
-
-.believe-title {
-    text-align: center;
-    font-size: 2rem;
-    color: #fff;
-    margin-bottom: 10px;
-}
-
-.believe-subtitle {
-    text-align: center;
-    color: rgba(255,255,255,.75);
-    margin-bottom: 40px;
-    font-size: 1rem;
-}
-
-.believe-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-    gap: 25px;
-}
-
-.believe-card {
-    background: rgba(255,255,255,.08);
-    border: 1px solid rgba(255,255,255,.08);
-    border-radius: 22px;
-    padding: 30px 25px;
-    text-align: center;
-    transition: .35s ease;
-}
-
-.believe-card:hover {
-    transform: translateY(-8px);
-    background: rgba(255,255,255,.13);
-}
-
-.believe-card i {
-    font-size: 60px;
-    color: #f5c842;
-    margin-bottom: 15px;
-}
-
-.believe-card h3 {
-    color: #f5c842;
-    margin-bottom: 15px;
-    font-size: 1.3rem;
-}
-
-.believe-card p {
-    color: rgba(255,255,255,.85);
-    line-height: 1.8;
-    font-size: .95rem;
-}
-
-@media(max-width:768px){
-
-    .believe-section{
-        padding:35px 25px;
-    }
-
-}
   </style>
 </head>
 <body>
@@ -981,73 +1498,93 @@
 
   <!-- ===== HOME SECTION ===== -->
   <section id="homeSection" class="section" aria-label="Home">
-    <div class="background">
-      <div class="background-img">
-        <div class="circle-logo">
-          <img src="Gospel.jpg" alt="Gospel Fellowship Church Logo">
+    <div class="home-wrapper">
+      <!-- BACKGROUND CONTENT - Logo at Text -->
+      <div class="background-content-wrapper">
+        <div class="background-img">
+          <div class="circle-logo">
+            <img src="Gospel.jpg" alt="Gospel Fellowship Church Logo">
+          </div>
+        </div>
+        <div class="background-text">
+          <h1>Welcome to</h1>
+          <h2>Gospel Fellowship Church</h2>
+          <p>Your spiritual home for faith, community, and growth.</p>
         </div>
       </div>
-      <div class="background-content">
-        <h1>Welcome to</h1>
-        <h2>Gospel Fellowship Church</h2>
-        <p>Your spiritual home for faith, community, and growth.</p>
-      </div>
-    </div>
 
-    <div class="home">
-      <div class="home-content">
-        <div class="btn-container">
-          <a href="#getStartedSection" class="btn" role="button">Get Started</a>
-          <button class="btn-give" onclick="document.getElementById('giveModal').style.display='flex'">💝 Give</button>
+      <!-- OVERLAY - GUMAGALAW (normal scroll) -->
+      <div class="home-overlay">
+        <div class="home">
+          <div class="home-content">
+            <div class="btn-container">
+              <a href="#" class="btn" role="button" onclick="openGetStarted(); return false;">Get Started</a>
+              <button class="btn-give" onclick="document.getElementById('giveModal').style.display='flex'">💝 Give</button>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="countdown-section">
-      <h3>⏰ Countdown to Next Sunday Service</h3>
-      <div class="countdown-timer" id="countdownTimer">
-        <div class="countdown-block"><span class="num" id="cdDays">00</span><span class="label">Days</span></div>
-        <div class="countdown-block"><span class="num" id="cdHours">00</span><span class="label">Hours</span></div>
-        <div class="countdown-block"><span class="num" id="cdMinutes">00</span><span class="label">Minutes</span></div>
-        <div class="countdown-block"><span class="num" id="cdSeconds">00</span><span class="label">Seconds</span></div>
+        <div class="countdown-section">
+          <div class="countdown-inner">
+            <h3>⏰ Countdown to Next Sunday Service</h3>
+            <div class="countdown-timer" id="countdownTimer">
+              <div class="countdown-block"><span class="num" id="cdDays">00</span><span class="label">Days</span></div>
+              <div class="countdown-block"><span class="num" id="cdHours">00</span><span class="label">Hours</span></div>
+              <div class="countdown-block"><span class="num" id="cdMinutes">00</span><span class="label">Minutes</span></div>
+              <div class="countdown-block"><span class="num" id="cdSeconds">00</span><span class="label">Seconds</span></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== GET STARTED SECTION ===== -->
-  <section id="getStartedSection" class="section" aria-label="Get Started">
-    <div class="events-container">
-      <h2 class="events-main-title">Get Started</h2>
-      <p class="events-main-subtitle">Hindi ka nag-iisa. Eto ang tatlong simpleng hakbang para makapagsimula ang iyong journey sa Gospel Fellowship Church.</p>
-      <div style="display:flex; gap:25px; justify-content:center; flex-wrap:wrap; margin:30px 0;">
-        <div style="background:rgba(255,255,255,0.85); padding:30px; border-radius:15px; max-width:300px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.05);">
-          <div style="width:40px;height:40px;background:#3895D3;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">1</div>
-          <i class='bx bx-church' style="font-size:40px;color:#3895D3;"></i>
-          <h3 style="margin:15px 0 10px;">Visit Us</h3>
-          <p style="color:#555;font-size:14px;">Sumama sa amin every Sunday, 8:30 AM.</p>
-          <a href="#eventsSection" class="btn-events" style="display:inline-block;text-decoration:none;padding:10px 28px;">See Schedule</a>
+  <!-- ===== GET STARTED MODAL ===== -->
+  <div id="getStartedModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeGetStarted()">&times;</span>
+      <section id="getStartedSection" class="section" aria-label="Get Started">
+        <div class="events-container">
+          <h2 class="events-main-title">Get Started</h2>
+          <p class="events-main-subtitle">Hindi ka nag-iisa. Eto ang tatlong simpleng hakbang para makapagsimula ang iyong journey sa Gospel Fellowship Church.</p>
+          
+          <!-- Cards - Isang line lang -->
+          <div class="gs-cards">
+            <!-- Card 1 -->
+            <div class="gs-card">
+              <div class="gs-number" style="background:#3895D3;">1</div>
+              <i class='bx bx-church' style="font-size:40px;color:#3895D3;"></i>
+              <h3>Visit Us</h3>
+              <p>Sumama sa amin every Sunday, 8:30 AM.</p>
+              <a href="#eventsSection" class="btn-events" onclick="closeGetStarted()">See Schedule</a>
+            </div>
+            <!-- Card 2 -->
+            <div class="gs-card">
+              <div class="gs-number" style="background:#28a745;">2</div>
+              <i class='bx bx-user-plus' style="font-size:40px;color:#28a745;"></i>
+              <h3>Connect With Us</h3>
+              <p>Mag-register para makilala ka namin.</p>
+              <button id="gsRegisterBtn" class="btn-secondary" onclick="closeGetStarted()">Register Now</button>
+            </div>
+            <!-- Card 3 -->
+            <div class="gs-card">
+              <div class="gs-number" style="background:#f5c842;color:#1a2a3a;">3</div>
+              <i class='bx bx-book-open' style="font-size:40px;color:#f5c842;"></i>
+              <h3>Grow In Faith</h3>
+              <p>Sumali sa Bible Study, manood ng sermons.</p>
+              <a href="#sermonsSection" class="btn-events" onclick="closeGetStarted()">Watch Sermons</a>
+            </div>
+          </div>
+
+          <!-- Watch Live at Prayer Request - NASA BABA -->
+          <div class="gs-bottom-buttons">
+            <button onclick="document.getElementById('liveModal').style.display='flex'" class="btn-live">🔴 Watch Live</button>
+            <button onclick="document.getElementById('prayerModal').style.display='flex'" class="btn-prayer">🙏 Prayer Request</button>
+          </div>
         </div>
-        <div style="background:rgba(255,255,255,0.85); padding:30px; border-radius:15px; max-width:300px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.05);">
-          <div style="width:40px;height:40px;background:#28a745;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">2</div>
-          <i class='bx bx-user-plus' style="font-size:40px;color:#28a745;"></i>
-          <h3 style="margin:15px 0 10px;">Connect With Us</h3>
-          <p style="color:#555;font-size:14px;">Mag-register para makilala ka namin.</p>
-          <button id="gsRegisterBtn" class="btn-secondary" style="width:auto;padding:10px 28px;">Register Now</button>
-        </div>
-        <div style="background:rgba(255,255,255,0.85); padding:30px; border-radius:15px; max-width:300px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.05);">
-          <div style="width:40px;height:40px;background:#f5c842;color:#1a2a3a;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">3</div>
-          <i class='bx bx-book-open' style="font-size:40px;color:#f5c842;"></i>
-          <h3 style="margin:15px 0 10px;">Grow In Faith</h3>
-          <p style="color:#555;font-size:14px;">Sumali sa Bible Study, manood ng sermons.</p>
-          <a href="#sermonsSection" class="btn-events" style="display:inline-block;text-decoration:none;padding:10px 28px;">Watch Sermons</a>
-        </div>
-      </div>
-      <div style="text-align:center; margin-top:20px;">
-        <button onclick="document.getElementById('liveModal').style.display='flex'" class="btn-live">🔴 Watch Live</button>
-        <button onclick="document.getElementById('prayerModal').style.display='flex'" class="btn-prayer">🙏 Prayer Request</button>
-      </div>
+      </section>
     </div>
-  </section>
+  </div>
 
   <!-- ===== ABOUT SECTION ===== -->
   <section id="aboutSection" class="section" aria-label="About Us">
@@ -1058,56 +1595,31 @@
     </div>
 
     <div class="believe-section">
-
-      <h2 class="believe-title">
-          What We Believe
-      </h2>
-
-      <p class="believe-subtitle">
-          Our faith is founded on Jesus Christ, the Holy Bible, and the unity of His Church.
-      </p>
-
-      <div class="believe-grid">
-        <div class="believe-card">
-          <i class='bx bx-cross'></i>
+      <div class="believe-inner">
+        <h2 class="believe-title">What We Believe</h2>
+        <p class="believe-subtitle">Our faith is founded on Jesus Christ, the Holy Bible, and the unity of His Church.</p>
+        <div class="believe-grid">
+          <div class="believe-card">
+            <i class='bx bx-cross'></i>
             <h3>The Gospel</h3>
-                <p>
-                    Jesus Christ died for our sins, was buried, and rose again.
-                    Through Him we receive forgiveness, salvation,
-                    and eternal life by grace through faith.
-                </p>
-            </div>
-
-            <div class="believe-card">
-                <i class='bx bx-book-open'></i>
-
-                <h3>The Bible</h3>
-
-                <p>
-                    The Holy Bible is the inspired Word of God.
-                    It is our foundation for faith,
-                    spiritual growth, and everyday living.
-                </p>
-            </div>
-
-            <div class="believe-card">
-                <i class='bx bx-group'></i>
-
-                <h3>The Church</h3>
-
-                <p>
-                    We believe the Church is the family of God,
-                    called to worship Christ, make disciples,
-                    and share His love with the world.
-                </p>
-            </div>
-
+            <p>Jesus Christ died for our sins, was buried, and rose again. Through Him we receive forgiveness, salvation, and eternal life by grace through faith.</p>
+          </div>
+          <div class="believe-card">
+            <i class='bx bx-book-open'></i>
+            <h3>The Bible</h3>
+            <p>The Holy Bible is the inspired Word of God. It is our foundation for faith, spiritual growth, and everyday living.</p>
+          </div>
+          <div class="believe-card">
+            <i class='bx bx-group'></i>
+            <h3>The Church</h3>
+            <p>We believe the Church is the family of God, called to worship Christ, make disciples, and share His love with the world.</p>
+          </div>
         </div>
-
+      </div>
     </div>
 
-
-    <div class="pastors-section"><h2>OUR LEADERS:</h2>
+    <div class="pastors-section">
+      <h2>OUR LEADERS:</h2>
       <div class="pastors-container">
         <div class="pastor-card"><img src="Leaders/pastor10.jpg" alt="Pastor"><h3>Zaldy Bernaldo</h3><p class="role">Pastor</p><a href="#"><i class='bx bxl-facebook'></i></a></div>
         <div class="pastor-card"><img src="Leaders/pastor13.jpg" alt="Oliver"><h3>Oliver Ricarpo</h3><p class="role">Associate Pastor</p><a href="#"><i class='bx bxl-facebook'></i></a></div>
@@ -1141,7 +1653,6 @@
       </div>
 
       <div class="events-grid">
-        <!-- ===== EVENT CARDS - MAY onclick ===== -->
         <div class="event-card" onclick="showEventDetail('anniversary')">
           <img src="Gospel.jpg" alt="Anniversaries">
           <div class="event-card-content">
@@ -1149,7 +1660,6 @@
             <span class="event-tag">📅 God Victory</span>
           </div>
         </div>
-
         <div class="event-card" onclick="showEventDetail('youth')">
           <img src="Next Gen/Next Gen.jpg" alt="Next Generation Youth Fellowship">
           <div class="event-card-content">
@@ -1159,7 +1669,6 @@
             <span class="event-tag">🌱 Next Gen</span>
           </div>
         </div>
-
         <div class="event-card" onclick="showEventDetail('prayer')">
           <img src="Prayer Meeting/prayer-meeting.jpg" alt="Prayer Meeting">
           <div class="event-card-content">
@@ -1169,7 +1678,6 @@
             <span class="event-tag">🙏 Prayer</span>
           </div>
         </div>
-
         <div class="event-card" onclick="showEventDetail('biblestudy')">
           <img src="Bible Study/bible-study.jpg" alt="Bible Study">
           <div class="event-card-content">
@@ -1179,7 +1687,6 @@
             <span class="event-tag">📖 Bible Study</span>
           </div>
         </div>
-
         <div class="event-card" onclick="showEventDetail('worship')">
           <img src="Worship Night/worship-night.jpg" alt="Worship Night">
           <div class="event-card-content">
@@ -1189,7 +1696,6 @@
             <span class="event-tag">🎵 Worship</span>
           </div>
         </div>
-
         <div class="event-card" onclick="showEventDetail('sunday')">
           <img src="Sunday Service/sunday-service.jpg" alt="Sunday Service">
           <div class="event-card-content">
@@ -1210,10 +1716,10 @@
   <!-- ===== EVENT DETAIL MODAL ===== -->
   <div id="eventDetailModal" class="event-modal">
     <div class="event-modal-content">
-        <button class="event-modal-close" onclick="closeEventDetail()">&times;</button>
-        <div id="eventDetailContent"></div>
+      <button class="event-modal-close" onclick="closeEventDetail()">&times;</button>
+      <div id="eventDetailContent"></div>
     </div>
-</div>
+  </div>
 
   <!-- ===== SERMONS SECTION ===== -->
   <section id="sermonsSection" class="section" aria-label="Sermons">
@@ -1272,6 +1778,33 @@
     'use strict';
 
     // ============================================
+    // GET STARTED MODAL FUNCTIONS
+    // ============================================
+    window.openGetStarted = function() {
+      document.getElementById('getStartedModal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    window.closeGetStarted = function() {
+      document.getElementById('getStartedModal').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal on outside click
+    document.getElementById('getStartedModal')?.addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeGetStarted();
+      }
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeGetStarted();
+      }
+    });
+
+    // ============================================
     // HEADER SCROLL EFFECT
     // ============================================
     const header = document.querySelector('.header');
@@ -1302,7 +1835,7 @@
     });
 
     // ============================================
-    // ACTIVE NAV LINK ON SCROLL - AUTO HIGHLIGHT
+    // ACTIVE NAV LINK ON SCROLL
     // ============================================
     const sections = document.querySelectorAll('.section');
     const navLinks = document.querySelectorAll('.navbar ul li a');
@@ -1456,7 +1989,7 @@
     })();
 
     // ============================================
-    // EVENT DATA - WITH 10 IMAGES PER DATE
+    // EVENT DATA
     // ============================================
     const eventData = {
       sunday: {
@@ -1497,7 +2030,7 @@
         dateEntries: [
           { date: 'June 8', photos: ['prayer-0608-1.jpg','prayer-0608-2.jpg','prayer-0608-3.jpg','prayer-0608-4.jpg','prayer-0608-5.jpg','prayer-0608-6.jpg','prayer-0608-7.jpg','prayer-0608-8.jpg','prayer-0608-9.jpg','prayer-0608-10.jpg'] },
           { date: 'June 15', photos: ['prayer-0615-1.jpg','prayer-0615-2.jpg','prayer-0615-3.jpg','prayer-0615-4.jpg','prayer-0615-5.jpg','prayer-0615-6.jpg','prayer-0615-7.jpg','prayer-0615-8.jpg','prayer-0615-9.jpg','prayer-0615-10.jpg'] },
-          { date: 'July 13', photos: ['Prayer Meeting/prayer.png','Prayer Meeting/1.png','Prayer Meeting/2.png','Prayer Meeting/3.png','Prayer Meeting/4.png','Prayer Meeting/5.png','Prayer Meeting/6.png','Prayer Meeting/7.png','Prayer Meeting/8.png','Prayer Meeting/9.png','Prayer Meeting/10.png','Prayer Meeting/11.png','Prayer Meeting/12.png','Prayer Meeting/14.png','Prayer Meeting/15.png',] }
+          { date: 'July 13', photos: ['Prayer Meeting/prayer.png','Prayer Meeting/1.png','Prayer Meeting/2.png','Prayer Meeting/3.png','Prayer Meeting/4.png','Prayer Meeting/5.png','Prayer Meeting/6.png','Prayer Meeting/7.png','Prayer Meeting/8.png','Prayer Meeting/9.png','Prayer Meeting/10.png','Prayer Meeting/11.png','Prayer Meeting/12.png','Prayer Meeting/14.png','Prayer Meeting/15.png'] }
         ]
       },
       biblestudy: {
@@ -1544,7 +2077,7 @@
     let currentEventId = null;
 
     // ============================================
-    // SHOW EVENT DETAIL - opens modal with date gallery
+    // SHOW EVENT DETAIL
     // ============================================
     window.showEventDetail = function(eventId) {
       console.log('Event clicked:', eventId);
@@ -1558,7 +2091,6 @@
         return;
       }
 
-      // Build date gallery with thumbnails and date labels
       let datesHTML = '';
       if (data.dateEntries && data.dateEntries.length) {
         datesHTML = `<div id="dateGallery" class="date-gallery">`;
@@ -1604,7 +2136,7 @@
     }
 
     // ============================================
-    // SHOW ACTIVITY IMAGES - 10 images per date
+    // SHOW ACTIVITY IMAGES
     // ============================================
     window.showActivityImages = function showActivityImages(eventId, dateIndex) {
       const data = eventData[eventId];
@@ -1616,7 +2148,6 @@
       const backContainer = document.getElementById('backToDatesContainer');
       const verseContainer = document.getElementById('eventDetailVerse');
 
-      // Get all photos (up to 10)
       const photos = Array.isArray(entry.photos) ? entry.photos : [];
 
       let galleryHtml = '';
@@ -1637,11 +2168,9 @@
       activityGallery.innerHTML = galleryHtml;
       activityGallery.style.display = 'block';
 
-      // Hide date gallery, show back button
       if (dateGallery) dateGallery.style.display = 'none';
       if (backContainer) backContainer.style.display = 'block';
 
-      // Update verse if available for this specific date
       if (verseContainer) {
         const verseText = entry.verse || data.defaultVerse || '';
         const verseRef = entry.verseRef || data.defaultVerseRef || '';
@@ -1682,7 +2211,6 @@
       modal.classList.remove('show');
       document.body.style.overflow = 'auto';
       
-      // Reset display states
       const dateGallery = document.getElementById('dateGallery');
       const activityGallery = document.getElementById('activityGallery');
       const backContainer = document.getElementById('backToDatesContainer');
@@ -1692,18 +2220,16 @@
       if (backContainer) backContainer.style.display = 'none';
     }
 
-    // Close modal on outside click
     document.addEventListener('click', function(e) {
       const modal = document.getElementById('eventDetailModal');
       if (e.target === modal) closeEventDetail();
     });
 
-    // Close modal on Escape key
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeEventDetail();
     });
 
-    console.log('✅ Gospel Fellowship Church - Events with Date Gallery, 10 images per date, and Scroll functionality!');
+    console.log('✅ Gospel Fellowship Church - Fully Updated!');
   })();
 </script>
 
