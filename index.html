@@ -259,6 +259,7 @@
     .logo-text {
       font-size: 2rem;
       font-weight: 700;
+      font-family: 'Times New Roman', Times, serif;
       color: #000000;
       text-decoration: none;
       letter-spacing: -0.5px;
@@ -277,6 +278,7 @@
       border-radius: 30px;
       font-weight: 700;
       font-size: 1.05rem;
+      font-family: 'Times New Roman', Times, serif;
       cursor: pointer;
       color: #000000;
       transition: 0.3s;
@@ -291,7 +293,7 @@
     #darkModeToggle {
       background: transparent;
       border: none;
-      font-size: 1.4rem;
+      font-size: 2rem;
       cursor: pointer;
       padding: 0 8px;
       line-height: 1;
@@ -511,27 +513,29 @@
       width: 100%;
       min-height: 520px;
       position: sticky;
-      top: 80px;
+      top: 100px;
       z-index: 1;
     }
+
     .background-text {
       flex: 1 1 300px;
       text-align: left;
       padding-left: 10px;
-      margin-top: -40px;
+      margin-top: -60px;
       order: 1;
     }
     /* ===== BACKGROUND TEXT - LIGHT MODE (BLACK) ===== */
     .background-text h1 { 
-      font-size: 4rem; 
+      font-size: 3rem; 
       font-weight: 300; 
+      font-family: 'Times New Roman', Times, serif;
       margin-bottom: 0;
       color: #000000;
       text-shadow: none;
       transition: color 0.3s ease; 
     }
     .background-text h2 {
-      font-size: 5rem;
+      font-size: 4rem;
       font-weight: 700;
       color: #000000;
       font-family: 'Times New Roman', Times, serif;
@@ -541,6 +545,7 @@
     }
     .background-text p { 
       font-size: 2rem; 
+      font-family: 'Times New Roman', Times, serif;
       color: #000000;
       margin-top: 10px;
       text-shadow: none;
@@ -564,10 +569,15 @@
       border: 4px solid #ffffff;
       flex-shrink: 0;
     }
-    .circle-logo img { width: 100%; height: 100%; object-fit: cover; }
+    .circle-logo img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+    }
+
     .home-overlay { 
       position: relative; 
-      margin-top: -280px; 
+      margin-top: -190px; 
       z-index: 2; 
       padding: 0 10px; 
     }
@@ -575,7 +585,7 @@
     /* ===== HOME OVERLAY - LIGHT MODE (WHITE) ===== */
     .home {
       background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(1px);
       padding: 25px 20px;
       border-radius: 50px;
       text-align: center;
@@ -588,7 +598,7 @@
     }
     .countdown-section {
       background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(1px);
       color: #000000;
       padding: 25px 20px;
       border-radius: 40px;
@@ -612,7 +622,7 @@
     }
     .countdown-block .label {
       display: block;
-      font-size: 0.7rem;
+      font-size: 1rem;
       text-transform: uppercase;
       letter-spacing: 1px;
       margin-top: 4px;
