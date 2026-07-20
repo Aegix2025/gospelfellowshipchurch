@@ -1590,7 +1590,7 @@
 }
 
 @media (max-width: 768px) {
-  /* ===== HEADER - COMPACT MOBILE ===== */
+  /* ===== HEADER - WITH HAMBURGER ===== */
   .header { 
     display: flex;
     flex-direction: row;
@@ -1601,6 +1601,16 @@
     top: 10px;
     border-radius: 30px;
     gap: 4px;
+    flex-wrap: wrap;
+  }
+  
+  /* ===== LEFT SIDE - Logo at Text (naka-center) ===== */
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    justify-content: center;
   }
   
   .logo-img {
@@ -1610,41 +1620,119 @@
   }
   
   .logo-text {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin-left: 4px;
     flex-shrink: 1;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 120px;
+    max-width: 140px;
+    text-align: center;
+  }
+  
+  /* ===== HAMBURGER BUTTON - LUMALABAS SA MOBILE ===== */
+  .hamburger {
+    display: flex !important;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 1000;
+    order: 2;
+  }
+  
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2.5px;
+    background: #1a2a3a;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+  
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(4px, 4px);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(4px, -4px);
+  }
+  
+  /* ===== HIDE DESKTOP ACTIONS ===== */
+  .header-actions {
+    display: none !important;
+  }
+  
+  /* ===== NAVBAR - NAKASARA (hidden) ===== */
+  .navbar {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px 15px;
+    margin-top: 10px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.10);
+    border: 1px solid rgba(0,0,0,0.06);
+    order: 3;
+    flex-basis: 100%;
+  }
+  
+  .navbar.open {
+    display: flex;
   }
   
   .navbar ul {
     display: flex;
-    gap: 3px;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
   }
   
   .navbar ul li a {
-    padding: 4px 8px;
-    font-size: 0.65rem;
-    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    border-radius: 30px;
+    width: 100%;
+    text-align: center;
   }
   
-  .header-actions {
-    display: flex;
+  /* ===== MOBILE ACTIONS (Facebook & Dark Mode) ===== */
+  .mobile-actions {
+    display: flex !important;
+    gap: 20px;
     align-items: center;
-    gap: 4px;
+    justify-content: center;
+    padding-top: 15px;
+    margin-top: 10px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    width: 100%;
   }
   
-  .social-media a {
-    font-size: 1rem;
+  .mobile-actions .social-media a {
+    font-size: 1.6rem;
+    color: #1a2a3a;
   }
   
-  #darkModeToggle {
-    font-size: 1rem;
-    padding: 0 4px;
+  .mobile-actions .social-media a:hover {
+    color: #3895D3;
+  }
+  
+  #darkModeToggleMobile {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0 8px;
   }
   
   /* ===== HOME ===== */
@@ -1652,6 +1740,7 @@
     flex-direction: column;
     text-align: center;
     padding: 30px 20px;
+    min-height: 300px;
   }
   .background-text {
     text-align: center;
@@ -1659,16 +1748,300 @@
     margin-top: 0;
     order: 2;
   }
+  .background-text h1 {
+    font-size: 2rem;
+  }
+  .background-text h2 {
+    font-size: 2.2rem;
+  }
+  .background-text p {
+    font-size: 1.1rem;
+  }
   .circle-logo {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
   }
   .background-img {
     order: 1;
     margin-top: 0;
     margin-right: 0;
+    flex: 0 0 130px;
   }
 
+  .home-overlay {
+    margin-top: -40px;
+  }
+  .home {
+    padding: 20px 15px;
+    border-radius: 30px;
+    max-width: 100%;
+  }
+  .btn-container .btn,
+  .btn-container .btn-give {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
+  .countdown-section {
+    padding: 20px 15px;
+    border-radius: 30px;
+    max-width: 100%;
+  }
+  .countdown-section h3 {
+    font-size: 0.95rem;
+  }
+  .countdown-block .num {
+    font-size: 1.6rem;
+    min-width: 40px;
+    padding: 6px 10px;
+  }
+  .countdown-block .label {
+    font-size: 0.6rem;
+  }
+  .countdown-timer {
+    gap: 10px;
+  }
+  
+  /* ===== ABOUT ===== */
+  #aboutSection {
+    padding: 60px 0;
+  }
+  .about-section {
+    gap: 15px;
+    padding: 0 15px;
+  }
+  .about-box {
+    flex: 1 1 100%;
+    padding: 25px 20px;
+  }
+  .about-box h2 {
+    font-size: 1.3rem;
+  }
+  .about-box p {
+    font-size: 0.95rem;
+  }
+  
+  /* ===== BELIEVE ===== */
+  .believe-section {
+    padding: 0 15px;
+  }
+  .believe-section .believe-inner {
+    padding: 30px 20px;
+  }
+  .believe-title {
+    font-size: 1.5rem;
+  }
+  .believe-subtitle {
+    font-size: 0.9rem;
+  }
+  .believe-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .believe-card {
+    padding: 25px 20px;
+  }
+  .believe-card i {
+    font-size: 45px;
+  }
+  .believe-card h3 {
+    font-size: 1.1rem;
+  }
+  .believe-card p {
+    font-size: 0.9rem;
+  }
+  
+  /* ===== PASTORS ===== */
+  .pastors-section {
+    padding: 0 15px;
+  }
+  .pastors-section h2 {
+    font-size: 1.6rem;
+  }
+  .pastors-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  .pastor-card {
+    padding: 20px 15px;
+  }
+  .pastor-card img {
+    width: 100px;
+    height: 100px;
+  }
+  .pastor-card h3 {
+    font-size: 1rem;
+  }
+  .pastor-card .role {
+    font-size: 0.85rem;
+  }
+  
+  /* ===== EVENTS ===== */
+  #eventsSection .events-container {
+    padding: 0 15px;
+  }
+  .events-main-title {
+    font-size: 1.6rem;
+  }
+  .events-main-subtitle {
+    font-size: 0.95rem;
+  }
+  .events-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  .event-card img {
+    height: 120px;
+  }
+  .event-card-content {
+    padding: 12px;
+  }
+  .event-card-content h3 {
+    font-size: 0.95rem;
+  }
+  .btn-group {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .btn-group button {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+  
+  /* ===== SERMONS ===== */
+  #sermonsSection .events-container {
+    padding: 0 15px;
+  }
+  .sermons-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  /* ===== CONTACT ===== */
+  #contactSection .events-container {
+    padding: 0 15px;
+  }
+  #contactSection .events-container > div {
+    padding: 20px 15px !important;
+  }
+  #contactSection .events-container > div > div {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+  
+  /* ===== GET STARTED MODAL ===== */
+  .gs-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .gs-card {
+    max-width: 100%;
+    padding: 20px 15px;
+  }
+  .gs-bottom-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .gs-bottom-buttons .btn-live,
+  .gs-bottom-buttons .btn-prayer {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  /* ===== MODALS ===== */
+  .modal-content {
+    padding: 25px 15px;
+    margin: 20px auto;
+    width: 95%;
+  }
+  .event-modal-content {
+    padding: 25px 20px;
+  }
+  .event-detail-header h2 {
+    font-size: 1.5rem;
+  }
+  .date-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+  }
+  .activity-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+  
+  /* ===== FOOTER ===== */
+  .footer-container {
+    padding: 0 15px;
+  }
+  .footer-column {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* ===== SECTION PADDING ===== */
+  .section {
+    padding: 60px 0 40px;
+  }
+}
+
+/* ===== SMALL MOBILE (max-width: 480px) ===== */
+@media (max-width: 480px) {
+  /* ===== HEADER ===== */
+  .header {
+    padding: 6px 10px;
+    width: 97%;
+    border-radius: 25px;
+    top: 8px;
+  }
+  
+  .logo-img {
+    height: 30px;
+  }
+  
+  .logo-text {
+    font-size: 0.75rem;
+    max-width: 100px;
+  }
+  
+  .hamburger span {
+    width: 18px;
+    height: 2px;
+    gap: 3px;
+  }
+  
+  .navbar ul li a {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+  
+  .mobile-actions .social-media a {
+    font-size: 1.3rem;
+  }
+  
+  #darkModeToggleMobile {
+    font-size: 1.2rem;
+  }
+  
+  /* ===== HOME ===== */
+  .background-content-wrapper {
+    min-height: 250px;
+    padding: 20px 15px;
+  }
+  .background-text h1 {
+    font-size: 1.5rem;
+  }
+  .background-text h2 {
+    font-size: 1.8rem;
+  }
+  .background-text p {
+    font-size: 0.95rem;
+  }
+  .circle-logo {
+    width: 100px;
+    height: 100px;
+  }
+  .background-img {
+    flex: 0 0 100px;
+  }
   .home-overlay {
     margin-top: -30px;
   }
@@ -1678,8 +2051,8 @@
   }
   .btn-container .btn,
   .btn-container .btn-give {
-    padding: 10px 20px;
-    font-size: 0.85rem;
+    padding: 10px 18px;
+    font-size: 0.8rem;
   }
   .countdown-section {
     padding: 15px 12px;
@@ -1829,6 +2202,23 @@
   .section {
     padding: 50px 0 30px;
   }
+}
+
+/* ===== HAMBURGER - HIDDEN BY DEFAULT (Desktop) ===== */
+.hamburger {
+  display: none;
+}
+
+/* ===== MOBILE ACTIONS - HIDDEN BY DEFAULT ===== */
+.mobile-actions {
+  display: none;
+}
+
+/* ===== HEADER-LEFT - Para sa center alignment ===== */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 
