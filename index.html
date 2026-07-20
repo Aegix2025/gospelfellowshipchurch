@@ -1605,25 +1605,26 @@
   
   /* ===== HOME ===== */
   .background-content-wrapper {
-    min-height: 280px;
-    padding: 20px 15px;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
   }
-  .background-text h1 {
-    font-size: 1.5rem;
-  }
-  .background-text h2 {
-    font-size: 1.8rem;
-  }
-  .background-text p {
-    font-size: 0.95rem;
+  .background-text {
+     text-align: center;
+    padding-left: 0;
+    margin-top: 0;
+    order: 2;
   }
   .circle-logo {
     width: 120px;
     height: 120px;
   }
   .background-img {
-    flex: 0 0 120px;
+    order: 1;
+    margin-top: 0;
+    margin-right: 0;
   }
+
   .home-overlay {
     margin-top: -30px;
   }
@@ -1783,24 +1784,6 @@
   /* ===== SECTION PADDING ===== */
   .section {
     padding: 50px 0 30px;
-  }
-
-    /* ===== HOME SECTION MOBILE FIX ===== */
-  .background-content-wrapper {
-    flex-direction: column;
-    text-align: center;
-    padding: 30px 20px;
-  }
-  .background-text {
-    text-align: center;
-    padding-left: 0;
-    margin-top: 0;
-    order: 2;
-  }
-  .background-img {
-    order: 1;
-    margin-top: 0;
-    margin-right: 0;
   }
 }
 
