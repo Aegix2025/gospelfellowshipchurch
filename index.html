@@ -962,9 +962,10 @@
       object-fit: cover; 
     }
 
+    /* ===== HOME OVERLAY - FIXED ===== */
     .home-overlay { 
       position: relative; 
-      margin-top: -190px; 
+      margin-top: 20px;
       z-index: 2; 
       padding: 0 10px; 
     }
@@ -2147,7 +2148,6 @@
       .background-text p { font-size: 1.5rem; }
       .circle-logo { width: 200px; height: 200px; }
       .background-img { flex: 0 0 200px; }
-      .home-overlay { margin-top: -180px; }
       .slider-container { aspect-ratio: 16/8; }
       .slider-slide .slide-caption { font-size: 1rem; padding: 10px 18px; bottom: 20px; left: 20px; }
       .testimonies-grid { grid-template-columns: repeat(2, 1fr); }
@@ -2323,7 +2323,12 @@
       .background-text p { font-size: 1.2rem; }
       .circle-logo { width: 120px; height: 120px; border: 3px solid #ffffff; }
       .background-img { order: 1; margin-top: 0; margin-right: 0; flex: 0 0 120px; }
-      .home-overlay { margin-top: -90px; }
+      
+      /* ===== HOME OVERLAY MOBILE FIX ===== */
+      .home-overlay { 
+        margin-top: 40px !important; 
+      }
+      
       .home { padding: 15px 12px; border-radius: 25px; }
       .countdown-section { padding: 15px 12px; border-radius: 25px; }
       .countdown-block .num { font-size: 1.2rem; min-width: 32px; padding: 4px 8px; }
@@ -2638,7 +2643,7 @@
             <div class="slide-caption">🎵 Worship Night • Every Friday 7:00 PM</div>
           </div>
           <div class="slider-slide">
-            <img src="Youth.jpg" alt="Youth Ministry">
+            <img src="Next Gen/Next Gen.jpg" alt="Youth Ministry">
             <div class="slide-caption">🌱 Next Generation Youth Fellowship</div>
           </div>
         </div>
@@ -2781,41 +2786,51 @@
       </div>
     </div>
 
-    <!-- ===== MINISTRIES (inside About) ===== -->
+        <!-- ===== MINISTRIES (inside About) ===== -->
     <div class="ministries-section">
       <h2>🙌 Our Ministries</h2>
       <p class="subtitle">Serving God and the community through these ministries.</p>
+      
+      <!-- Ministry Cards -->
       <div class="ministries-grid">
-        <div class="ministry-card">
+        <div class="ministry-card" onclick="openMinistry('children')">
           <i class='bx bx-child'></i>
           <h3>Children's Ministry</h3>
           <p>Nurturing faith in our little ones with love and fun activities.</p>
         </div>
-        <div class="ministry-card">
+        <div class="ministry-card" onclick="openMinistry('youth')">
           <i class='bx bx-group'></i>
           <h3>Youth Ministry</h3>
           <p>Empowering the next generation to live for Christ.</p>
         </div>
-        <div class="ministry-card">
+        <div class="ministry-card" onclick="openMinistry('worship')">
           <i class='bx bx-music'></i>
           <h3>Worship Ministry</h3>
           <p>Leading the church in heartfelt worship through music.</p>
         </div>
-        <div class="ministry-card">
+        <div class="ministry-card" onclick="openMinistry('ushering')">
           <i class='bx bx-hands'></i>
           <h3>Ushering Ministry</h3>
           <p>Welcoming everyone with a smile and serving with joy.</p>
         </div>
-        <div class="ministry-card">
+        <div class="ministry-card" onclick="openMinistry('media')">
           <i class='bx bx-video'></i>
           <h3>Media Ministry</h3>
           <p>Sharing the gospel through technology and creativity.</p>
         </div>
-        <div class="ministry-card">
+        <div class="ministry-card" onclick="openMinistry('prayer')">
           <i class='bx bx-heart'></i>
           <h3>Prayer Ministry</h3>
           <p>Interceding for the church and the world through prayer.</p>
         </div>
+      </div>
+    </div>
+
+    <!-- ===== MINISTRY DETAIL MODAL ===== -->
+    <div id="ministryModal" class="ministry-modal">
+      <div class="ministry-modal-content">
+        <button class="ministry-modal-close" onclick="closeMinistry()">&times;</button>
+        <div id="ministryDetailContent"></div>
       </div>
     </div>
 
