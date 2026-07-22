@@ -1094,3 +1094,44 @@ function loadSongsFromStorage() {
 
 // Load songs from localStorage on page load
 loadSongsFromStorage();
+
+// ===== OPTIMIZED OBSERVER FOR SMOOTH ANIMATIONS =====
+const animationObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Add visible class to the element
+      entry.target.classList.add('visible');
+      
+      // Also add visible class to all child elements with animation classes
+      const animatedChildren = entry.target.querySelectorAll('.about-box, .believe-card, .pastor-card, .ministry-card, .testimony-card');
+      animatedChildren.forEach((child, index) => {
+        // Add a small delay for each child
+        setTimeout(() => {
+          child.classList.add('visible');
+        }, index * 50);
+      });
+    }
+  });
+}, { 
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+});
+
+// Observe all sections with page-transition class
+document.querySelectorAll('.page-transition, #aboutSection').forEach(el => {
+  animationObserver.observe(el);
+});
+
+// ===== PERFORMANCE: Use passive event listeners =====
+document.addEventListener('scroll', function() {
+  // Your scroll code here
+}, { passive: true });
+
+// ===== PERFORMANCE: Debounce resize events =====
+let resizeTimer;
+window.addEventListener('resize', function() {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    // Your resize code here
+  }, 250);
+});
